@@ -57,16 +57,13 @@ int main(int argc, char* argv[]) {
         Bigram nuevo ;
         if(isValidCharacter(tolower(texto.at(i)), validCharacters)){
             caracter1 = tolower(texto.at(i)) ;
-            for (int j=i+1 ; j<texto.size() ; j++) {
-                if (isValidCharacter(tolower(texto.at(j)), validCharacters)){
-                    caracter2 = tolower(texto.at(j)) ;
+                if (isValidCharacter(tolower(texto.at(i+1)), validCharacters)){
+                    caracter2 = tolower(texto.at(i+1)) ;
                     nuevo = Bigram(caracter1, caracter2) ;
                     array[util++] = nuevo ;
-                    j=texto.size() ;
                 }
             }
         }
-    }
     
     // Show the bigrams stored in the array
     cout << " ----- BIGRAMS BEFORE CONVERSION ----- " << endl;
