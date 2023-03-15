@@ -1,0 +1,57 @@
+\hypertarget{Bigram_8cpp_source}{}\doxysection{Bigram.\+cpp}
+\label{Bigram_8cpp_source}\index{src/Bigram.cpp@{src/Bigram.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Bigram_8h}{Bigram.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00012}\mbox{\hyperlink{classBigram_adc1fcc2edad75ea9885cdfc821159310}{00012}} \mbox{\hyperlink{classBigram_adc1fcc2edad75ea9885cdfc821159310}{Bigram::Bigram}}(\textcolor{keyword}{const} std::string \&text) \{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00013}00013     \textcolor{keywordflow}{if} (text.size() != 2) \{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00014}00014         \_text[0] = \textcolor{charliteral}{'\_'};}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00015}00015         \_text[1] = \textcolor{charliteral}{'\_'};}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00016}00016         \_text[2] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00017}00017     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00018}00018         \_text[0] = text[0];}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00019}00019         \_text[1] = text[1];}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00020}00020         \_text[2] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00021}00021     \}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00022}00022 \}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00031}\mbox{\hyperlink{classBigram_a29672d1f6a5d34d063ea9b512d967d6c}{00031}} \mbox{\hyperlink{classBigram_adc1fcc2edad75ea9885cdfc821159310}{Bigram::Bigram}}(\textcolor{keywordtype}{char} first, \textcolor{keywordtype}{char} second) \{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00032}00032     \textcolor{comment}{//Hay que añadir un \(\backslash\)0 al final del array de caracteres ya que ahora es un cstring}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00033}00033     \_text[0] = first;}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00034}00034     \_text[1] = second;}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00035}00035     \_text[2] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00036}00036 \}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00042}\mbox{\hyperlink{classBigram_ae8a73bc031d48028abea3a78ecbd61b0}{00042}} std::string \mbox{\hyperlink{classBigram_ae8a73bc031d48028abea3a78ecbd61b0}{Bigram::getText}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00043}00043     \textcolor{keywordflow}{return} \_text;}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00044}00044 \}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00050}\mbox{\hyperlink{classBigram_a7a782c0fe5764cd4d42427fa284b79d1}{00050}} std::string \mbox{\hyperlink{classBigram_a7a782c0fe5764cd4d42427fa284b79d1}{Bigram::toString}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00051}00051     \textcolor{keywordflow}{return} \_text;}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00052}00052 \}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00061}\mbox{\hyperlink{classBigram_ae653a8bb70d1f0f8ddde88196ef51564}{00061}} \textcolor{keyword}{const} \textcolor{keywordtype}{char} \&\mbox{\hyperlink{classBigram_ae653a8bb70d1f0f8ddde88196ef51564}{Bigram::at}}(\textcolor{keywordtype}{int} index)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00062}00062     \textcolor{keywordflow}{if} (index > 1 || index < 0) \{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00063}00063         \textcolor{keywordflow}{throw} (std::out\_of\_range(\textcolor{stringliteral}{"{}The given index has to be either 0 or 1."{}}));}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00064}00064     \}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00065}00065     \textcolor{keywordflow}{return} \_text[index];}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00066}00066 \}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00075}\mbox{\hyperlink{classBigram_a56175c243027c773f85cf4f1a73d766c}{00075}} \textcolor{keywordtype}{char} \& \mbox{\hyperlink{classBigram_ae653a8bb70d1f0f8ddde88196ef51564}{Bigram::at}}(\textcolor{keywordtype}{int} index) \{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00076}00076     \textcolor{keywordflow}{if} (index > 1 || index < 0) \{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00077}00077         \textcolor{keywordflow}{throw} (std::out\_of\_range(\textcolor{stringliteral}{"{}The given index has to be either 0 or 1."{}}));}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00078}00078     \}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00079}00079     \textcolor{keywordflow}{return} \_text[index];}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00080}00080 \}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00092}\mbox{\hyperlink{Bigram_8h_afe6e716ad7a25257188a41370600dfad}{00092}} \textcolor{keywordtype}{bool} isValidCharacter(\textcolor{keywordtype}{char} character, \textcolor{keyword}{const} std::string\& validCharacters) \{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00093}00093     \textcolor{keywordflow}{return} validCharacters.find(character) != std::string::npos;}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00094}00094 \}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00096}\mbox{\hyperlink{classBigram_ac23a498073a7c802d254235f0e63c147}{00096}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classBigram_ac23a498073a7c802d254235f0e63c147}{Bigram::toUpper}}() \{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00097}00097     \_text[0] = toupper(\_text[0]);}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00098}00098     \_text[1] = toupper(\_text[1]);}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00099}00099 \}}
+
+\end{DoxyCode}

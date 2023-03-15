@@ -1,0 +1,139 @@
+\hypertarget{classBigramFreq}{}\doxysection{Bigram\+Freq Class Reference}
+\label{classBigramFreq}\index{BigramFreq@{BigramFreq}}
+
+
+A pair of a \mbox{\hyperlink{classBigram}{Bigram}} object and a frequency (an int), that gives the frequency of a \mbox{\hyperlink{classBigram}{Bigram}} (times it appears) in a text.  
+
+
+
+
+{\ttfamily \#include $<$Bigram\+Freq.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBigramFreq_a5f9e6a372e68b03f42d09bc02fed9319}{Bigram\+Freq}} ()
+\begin{DoxyCompactList}\small\item\em Base constructor. It builds a \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} object with \char`\"{}\+\_\+\+\_\+\char`\"{} as the text of the bigram and 0 as the frequency. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBigram}{Bigram}} \mbox{\hyperlink{classBigramFreq_a50103d9864b9c254642243f7d51f7054}{get\+Bigram}} ()
+\begin{DoxyCompactList}\small\item\em Gets a const reference to the \mbox{\hyperlink{classBigram}{Bigram}} of this \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} object. Query method. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classBigramFreq_a849f944559e8bc87eeba83ccb3defdc1}{get\+Frequency}} ()
+\begin{DoxyCompactList}\small\item\em Gets the frequency of this \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} object Query method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBigramFreq_aefea747a30cc73aa6d9691ec49e15033}{set\+Bigram}} (\mbox{\hyperlink{classBigram}{Bigram}} bigram)
+\begin{DoxyCompactList}\small\item\em Sets the \mbox{\hyperlink{classBigram}{Bigram}} of this \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} object Modifier method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBigramFreq_a4e81e3f63bd80b4ca42dba6014c836e3}{set\+Frequency}} (int frequency)
+\begin{DoxyCompactList}\small\item\em Sets the frequency of this \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} object. Modifier method. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classBigramFreq_af7f5cf937b365fa1ea15c4b9873cf5c1}{to\+String}} ()
+\begin{DoxyCompactList}\small\item\em Obtains a string with the string and frecuency of the bigram in this object (separated by a whitespace). Query method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A pair of a \mbox{\hyperlink{classBigram}{Bigram}} object and a frequency (an int), that gives the frequency of a \mbox{\hyperlink{classBigram}{Bigram}} (times it appears) in a text. 
+
+Definition at line \mbox{\hyperlink{BigramFreq_8h_source_l00025}{25}} of file \mbox{\hyperlink{BigramFreq_8h_source}{Bigram\+Freq.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBigramFreq_a5f9e6a372e68b03f42d09bc02fed9319}\label{classBigramFreq_a5f9e6a372e68b03f42d09bc02fed9319}} 
+\index{BigramFreq@{BigramFreq}!BigramFreq@{BigramFreq}}
+\index{BigramFreq@{BigramFreq}!BigramFreq@{BigramFreq}}
+\doxysubsubsection{\texorpdfstring{BigramFreq()}{BigramFreq()}}
+{\footnotesize\ttfamily Bigram\+Freq\+::\+Bigram\+Freq (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Base constructor. It builds a \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} object with \char`\"{}\+\_\+\+\_\+\char`\"{} as the text of the bigram and 0 as the frequency. 
+
+
+
+Definition at line \mbox{\hyperlink{BigramFreq_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{BigramFreq_8cpp_source}{Bigram\+Freq.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010                        \{}
+\DoxyCodeLine{00011 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBigramFreq_a50103d9864b9c254642243f7d51f7054}\label{classBigramFreq_a50103d9864b9c254642243f7d51f7054}} 
+\index{BigramFreq@{BigramFreq}!getBigram@{getBigram}}
+\index{getBigram@{getBigram}!BigramFreq@{BigramFreq}}
+\doxysubsubsection{\texorpdfstring{getBigram()}{getBigram()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBigram}{Bigram}} Bigram\+Freq\+::get\+Bigram (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets a const reference to the \mbox{\hyperlink{classBigram}{Bigram}} of this \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} object. Query method. 
+
+\begin{DoxyReturn}{Returns}
+A const reference to the \mbox{\hyperlink{classBigram}{Bigram}} of this \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBigramFreq_a849f944559e8bc87eeba83ccb3defdc1}\label{classBigramFreq_a849f944559e8bc87eeba83ccb3defdc1}} 
+\index{BigramFreq@{BigramFreq}!getFrequency@{getFrequency}}
+\index{getFrequency@{getFrequency}!BigramFreq@{BigramFreq}}
+\doxysubsubsection{\texorpdfstring{getFrequency()}{getFrequency()}}
+{\footnotesize\ttfamily int Bigram\+Freq\+::get\+Frequency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the frequency of this \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} object Query method. 
+
+\begin{DoxyReturn}{Returns}
+The frequency of this \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBigramFreq_aefea747a30cc73aa6d9691ec49e15033}\label{classBigramFreq_aefea747a30cc73aa6d9691ec49e15033}} 
+\index{BigramFreq@{BigramFreq}!setBigram@{setBigram}}
+\index{setBigram@{setBigram}!BigramFreq@{BigramFreq}}
+\doxysubsubsection{\texorpdfstring{setBigram()}{setBigram()}}
+{\footnotesize\ttfamily void Bigram\+Freq\+::set\+Bigram (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBigram}{Bigram}}}]{bigram }\end{DoxyParamCaption})}
+
+
+
+Sets the \mbox{\hyperlink{classBigram}{Bigram}} of this \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} object Modifier method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bigram} & The new \mbox{\hyperlink{classBigram}{Bigram}} value for this object. Input parameter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBigramFreq_a4e81e3f63bd80b4ca42dba6014c836e3}\label{classBigramFreq_a4e81e3f63bd80b4ca42dba6014c836e3}} 
+\index{BigramFreq@{BigramFreq}!setFrequency@{setFrequency}}
+\index{setFrequency@{setFrequency}!BigramFreq@{BigramFreq}}
+\doxysubsubsection{\texorpdfstring{setFrequency()}{setFrequency()}}
+{\footnotesize\ttfamily void Bigram\+Freq\+::set\+Frequency (\begin{DoxyParamCaption}\item[{int}]{frequency }\end{DoxyParamCaption})}
+
+
+
+Sets the frequency of this \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} object. Modifier method. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & if {\ttfamily frequency} is negative \\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em frequency} & the new frequency value for this \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} object. Input parameter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBigramFreq_af7f5cf937b365fa1ea15c4b9873cf5c1}\label{classBigramFreq_af7f5cf937b365fa1ea15c4b9873cf5c1}} 
+\index{BigramFreq@{BigramFreq}!toString@{toString}}
+\index{toString@{toString}!BigramFreq@{BigramFreq}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string Bigram\+Freq\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtains a string with the string and frecuency of the bigram in this object (separated by a whitespace). Query method. 
+
+\begin{DoxyReturn}{Returns}
+A string with the string and frecuency of the bigram in this object. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Bigram\+Freq.\+h\item 
+src/Bigram\+Freq.\+cpp\end{DoxyCompactItemize}

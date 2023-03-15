@@ -10,6 +10,3 @@
 BigramFreq::BigramFreq() {
 }
 
-BigramFreq::BigramFreq(const BigramFreq& orig) {
-}
-

@@ -15,9 +15,7 @@ Bigram::Bigram(const std::string &text) {
         _text[1] = '_';
         _text[2] = '\0';
     } else {
-        _text[0] = text[0];
-        _text[1] = text[1];
-        _text[2] = '\0';
+        strncpy(_text, text.c_str(), 2) ;
     }
 }
 
@@ -33,6 +31,21 @@ Bigram::Bigram(char first, char second) {
     _text[0] = first;
     _text[1] = second;
     _text[2] = '\0';
+}
+
+Bigram::Bigram(char text[]) {
+    int count = 0;
+    while (text[count] != '\0')
+        count++;
+    if (count != 2) {
+        _text[0] = '_';
+        _text[1] = '_';
+        _text[2] = '\0';
+    }else {
+        _text[0] = text[0] ;
+        _text[1] = text[1] ;
+        _text[2] = '\0' ;
+    }
 }
 
 /**

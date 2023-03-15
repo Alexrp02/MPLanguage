@@ -1,0 +1,120 @@
+\hypertarget{ArrayBigramFreqFunctions_8h}{}\doxysection{include/\+Array\+Bigram\+Freq\+Functions.h File Reference}
+\label{ArrayBigramFreqFunctions_8h}\index{include/ArrayBigramFreqFunctions.h@{include/ArrayBigramFreqFunctions.h}}
+{\ttfamily \#include \char`\"{}Bigram\+Freq.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ArrayBigramFreqFunctions_8h_a704bda29ef596307b9e06e60796b8b54}{read\+Array\+Bigram\+Freq}} (\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} array\mbox{[}$\,$\mbox{]}, int dim, int n\+Elements)
+\begin{DoxyCompactList}\small\item\em Reads the number of used elements and the elements of an array of \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ArrayBigramFreqFunctions_8h_afb350c0b9d4ca009518751feebd4a15b}{print\+Array\+Bigram\+Freq}} (\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} array\mbox{[}$\,$\mbox{]}, int n\+Elements)
+\begin{DoxyCompactList}\small\item\em Prints in the standard output the number of used elements and the elements of an array of \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ArrayBigramFreqFunctions_8h_a778ef2343bf33c9542335fe395145f4c}{swap\+Elements\+Array\+Bigram\+Freq}} (\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} array\mbox{[}$\,$\mbox{]}, int n\+Elements, int first, int second)
+\begin{DoxyCompactList}\small\item\em Swaps the elements at positions {\ttfamily first} and {\ttfamily second} in the given array of \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ArrayBigramFreqFunctions_8h_a383360b5a1b02aae1086bbdf03d5dd80}{sort\+Array\+Bigram\+Freq}} (\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} array\mbox{[}$\,$\mbox{]}, int n\+Elements)
+\begin{DoxyCompactList}\small\item\em Sorts the given array of \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} in decreasing order of frequency and in decreasing order of \mbox{\hyperlink{classBigram}{Bigram}} when frequency is the same. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ArrayBigramFreqFunctions_8h_a197b9bcdb2578a5f610901f600f1ce9e}{to\+Upper\+Array\+Bigram\+Freq}} (\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} array\mbox{[}$\,$\mbox{]}, int n\+Elements)
+\begin{DoxyCompactList}\small\item\em Converts to uppercase all the bigrams within the given array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+estudiante1\+: Ramos Peña, Alejandro
+\end{DoxyAuthor}
+Created on 7 February 2023, 19\+:45 
+
+Definition in file \mbox{\hyperlink{ArrayBigramFreqFunctions_8h_source}{Array\+Bigram\+Freq\+Functions.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ArrayBigramFreqFunctions_8h_afb350c0b9d4ca009518751feebd4a15b}\label{ArrayBigramFreqFunctions_8h_afb350c0b9d4ca009518751feebd4a15b}} 
+\index{ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}!printArrayBigramFreq@{printArrayBigramFreq}}
+\index{printArrayBigramFreq@{printArrayBigramFreq}!ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}}
+\doxysubsubsection{\texorpdfstring{printArrayBigramFreq()}{printArrayBigramFreq()}}
+{\footnotesize\ttfamily void print\+Array\+Bigram\+Freq (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}}]{array\mbox{[}$\,$\mbox{]},  }\item[{int}]{n\+Elements }\end{DoxyParamCaption})}
+
+
+
+Prints in the standard output the number of used elements and the elements of an array of \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & The array of \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} to be printed. Input parameter \\
+\hline
+{\em n\+Elements} & The number of elements used by the array. Input parameter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ArrayBigramFreqFunctions_8h_a704bda29ef596307b9e06e60796b8b54}\label{ArrayBigramFreqFunctions_8h_a704bda29ef596307b9e06e60796b8b54}} 
+\index{ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}!readArrayBigramFreq@{readArrayBigramFreq}}
+\index{readArrayBigramFreq@{readArrayBigramFreq}!ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}}
+\doxysubsubsection{\texorpdfstring{readArrayBigramFreq()}{readArrayBigramFreq()}}
+{\footnotesize\ttfamily void read\+Array\+Bigram\+Freq (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}}]{array\mbox{[}$\,$\mbox{]},  }\item[{int}]{dim,  }\item[{int}]{n\+Elements }\end{DoxyParamCaption})}
+
+
+
+Reads the number of used elements and the elements of an array of \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & The array where the elements will be stored. Output parameter \\
+\hline
+{\em dim} & The capacity of the array. Input parameter \\
+\hline
+{\em n\+Elements} & The number of elements used by the array. Output parameter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ArrayBigramFreqFunctions_8h_a383360b5a1b02aae1086bbdf03d5dd80}\label{ArrayBigramFreqFunctions_8h_a383360b5a1b02aae1086bbdf03d5dd80}} 
+\index{ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}!sortArrayBigramFreq@{sortArrayBigramFreq}}
+\index{sortArrayBigramFreq@{sortArrayBigramFreq}!ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}}
+\doxysubsubsection{\texorpdfstring{sortArrayBigramFreq()}{sortArrayBigramFreq()}}
+{\footnotesize\ttfamily void sort\+Array\+Bigram\+Freq (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}}]{array\mbox{[}$\,$\mbox{]},  }\item[{int}]{n\+Elements }\end{DoxyParamCaption})}
+
+
+
+Sorts the given array of \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} in decreasing order of frequency and in decreasing order of \mbox{\hyperlink{classBigram}{Bigram}} when frequency is the same. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & The array of \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}. Input/\+Output parameter \\
+\hline
+{\em n\+Elements} & The number of elements used by the array. Input parameter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ArrayBigramFreqFunctions_8h_a778ef2343bf33c9542335fe395145f4c}\label{ArrayBigramFreqFunctions_8h_a778ef2343bf33c9542335fe395145f4c}} 
+\index{ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}!swapElementsArrayBigramFreq@{swapElementsArrayBigramFreq}}
+\index{swapElementsArrayBigramFreq@{swapElementsArrayBigramFreq}!ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}}
+\doxysubsubsection{\texorpdfstring{swapElementsArrayBigramFreq()}{swapElementsArrayBigramFreq()}}
+{\footnotesize\ttfamily void swap\+Elements\+Array\+Bigram\+Freq (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}}]{array\mbox{[}$\,$\mbox{]},  }\item[{int}]{n\+Elements,  }\item[{int}]{first,  }\item[{int}]{second }\end{DoxyParamCaption})}
+
+
+
+Swaps the elements at positions {\ttfamily first} and {\ttfamily second} in the given array of \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & The array of \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}. Input/\+Output parameter \\
+\hline
+{\em n\+Elements} & The number of elements used by the array. Input parameter \\
+\hline
+{\em first} & the position of the first element to be swaped. Input parameter \\
+\hline
+{\em second} & the position of the second element to be swaped. Input parameter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ArrayBigramFreqFunctions_8h_a197b9bcdb2578a5f610901f600f1ce9e}\label{ArrayBigramFreqFunctions_8h_a197b9bcdb2578a5f610901f600f1ce9e}} 
+\index{ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}!toUpperArrayBigramFreq@{toUpperArrayBigramFreq}}
+\index{toUpperArrayBigramFreq@{toUpperArrayBigramFreq}!ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}}
+\doxysubsubsection{\texorpdfstring{toUpperArrayBigramFreq()}{toUpperArrayBigramFreq()}}
+{\footnotesize\ttfamily void to\+Upper\+Array\+Bigram\+Freq (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}}]{array\mbox{[}$\,$\mbox{]},  }\item[{int}]{n\+Elements }\end{DoxyParamCaption})}
+
+
+
+Converts to uppercase all the bigrams within the given array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & An array of \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} objects. Input/\+Output parameter \\
+\hline
+{\em n\+Elements} & The number of elements in the array. Input parameter \\
+\hline
+\end{DoxyParams}
