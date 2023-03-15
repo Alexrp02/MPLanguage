@@ -6,9 +6,7 @@
 
 /** 
  * @file ArrayBigramFreqFunctions.h
- * @author Silvia Acid Carrillo <acid@decsai.ugr.es>
- * @author Andrés Cano Utrera <acu@decsai.ugr.es>
- * @author Luis Castillo Vidal <L.Castillo@decsai.ugr.es>
+ * @author estudiante1: Ramos Peña, Alejandro
  * 
  * Created on 7 February 2023, 19:45
  */
@@ -48,7 +46,7 @@ void swapElementsArrayBigramFreq(BigramFreq array[], int nElements, int first,
 
 /**
  * @brief Sorts the given array of BigramFreq in decreasing order of 
- * frequency
+ * frequency and in decreasing order of Bigram when frequency is the same.
  * @param array The array of BigramFreq. Input/Output parameter
  * @param nElements The number of elements used by the array. Input parameter
 */
