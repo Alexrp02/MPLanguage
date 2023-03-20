@@ -16,6 +16,7 @@
 #include <stdio.h> 
 #include "Bigram.h"
 #include "BigramFreq.h"
+#include "ArrayBigramFreqFunctions.h"
 using namespace std ;
 
 /**
@@ -44,6 +45,13 @@ int main(int argc, char* argv[]) {
         b.setFrequency(freq) ;
         array[i] = b ;
     }
+    
+    cout << tam << endl ;
+    for (int i=0 ; i<tam ; i++) {
+        cout << array[i].getBigram().toString() << " " << array[i].getFrequency() << endl ;
+    }
+    
+    quickSort(array, 0, tam-1) ;
     
     cout << tam << endl ;
     for (int i=0 ; i<tam ; i++) {
