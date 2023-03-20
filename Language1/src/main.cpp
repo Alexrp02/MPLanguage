@@ -48,14 +48,15 @@ int main(int argc, char* argv[]) {
     
     cout << tam << endl ;
     for (int i=0 ; i<tam ; i++) {
-        cout << array[i].getBigram().toString() << " " << array[i].getFrequency() << endl ;
+        cout << array[i].getBigram()->toString() << " " << array[i].getFrequency() << endl ;
     }
     
     quickSort(array, 0, tam-1) ;
+    toUpperArrayBigramFreq(array, tam) ;
     
     cout << tam << endl ;
     for (int i=0 ; i<tam ; i++) {
-        cout << array[i].getBigram().toString() << " " << array[i].getFrequency() << endl ;
+        cout << array[i].getBigram()->toString() << " " << array[i].getFrequency() << endl ;
     }
 }
 

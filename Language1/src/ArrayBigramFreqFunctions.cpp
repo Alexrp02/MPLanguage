@@ -57,7 +57,11 @@ void sortArrayBigramFreq(BigramFreq array[], int nElements) {
  * @param array An array of BigramFreq objects. Input/Output parameter
  * @param nElements The number of elements in the array. Input parameter
  */
-void toUpperArrayBigramFreq(BigramFreq array[], int nElements);
+void toUpperArrayBigramFreq(BigramFreq array[], int nElements) {
+    for (int i=0 ; i< nElements ; i++) {
+        array[i].getBigram()->toUpper() ;
+    }
+}
 
 void quickSort(BigramFreq array[], int low, int high) {
     if (low >= high || low < 0) {
