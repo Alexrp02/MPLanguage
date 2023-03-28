@@ -11,6 +11,7 @@
  */
 
 #include "ArrayBigramFreqFunctions.h"
+using namespace std ;
 
 /**
  * @brief Reads the number of used elements and the elements of an array of
@@ -20,7 +21,19 @@
  * @param nElements The number of elements used by the array. Output parameter
  */
 void readArrayBigramFreq(BigramFreq array[], const int dim, int& nElements) {
-
+    cin >> nElements ;
+    if(nElements > dim ) nElements = dim ;
+    
+    for (int i=0 ; i<nElements ; i++) {
+        string text ;
+        int freq ;
+        BigramFreq b ;
+        cin >> text ;
+        cin >> freq ;
+        b.setBigram(Bigram(text)) ;
+        b.setFrequency(freq) ;
+        array[i] = b ;
+    }
 }
 
 /**
@@ -29,7 +42,12 @@ void readArrayBigramFreq(BigramFreq array[], const int dim, int& nElements) {
  * @param array The array of BigramFreq to be printed. Input parameter
  * @param nElements The number of elements used by the array. Input parameter
  */
-void printArrayBigramFreq(BigramFreq array[], int nElements);
+void printArrayBigramFreq(BigramFreq array[], int nElements) {
+    cout << nElements << endl ;
+    for (int i=0 ; i<nElements ; i++) {
+        cout << array[i].getBigram()->toString() << " " << array[i].getFrequency() << endl ;
+    }
+}
 
 /**
  * @brief Swaps the elements at positions @p first and @p second in the given
@@ -40,7 +58,11 @@ void printArrayBigramFreq(BigramFreq array[], int nElements);
  * @param second the position of the second element to be swaped. Input parameter
  */
 void swapElementsArrayBigramFreq(BigramFreq array[], int nElements, int first,
-        int second);
+        int second) {
+    BigramFreq aux = array[second] ;
+    array[second] = array[first] ;
+    array [first] = array[second] ;
+}
 
 /**
  * @brief Sorts the given array of BigramFreq in decreasing order of 
@@ -49,7 +71,7 @@ void swapElementsArrayBigramFreq(BigramFreq array[], int nElements, int first,
  * @param nElements The number of elements used by the array. Input parameter
  */
 void sortArrayBigramFreq(BigramFreq array[], int nElements) {
-
+    quickSort(array, 0, nElements-1) ;
 }
 
 /**

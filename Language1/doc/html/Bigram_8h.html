@@ -81,6 +81,7 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
 </div>
 <p><a href="Bigram_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -135,10 +136,10 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the given character is contained in <code>validCharacters</code>; false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Bigram_8cpp_source.html#l00092">92</a> of file <a class="el" href="Bigram_8cpp_source.html">Bigram.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   92</span>                                                                        {</div>
-<div class="line"><span class="lineno">   93</span>    <span class="keywordflow">return</span> validCharacters.find(character) != std::string::npos;</div>
-<div class="line"><span class="lineno">   94</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Bigram_8cpp_source.html#l00105">105</a> of file <a class="el" href="Bigram_8cpp_source.html">Bigram.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>                                                                        {</div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">return</span> validCharacters.find(character) != std::string::npos;</div>
+<div class="line"><span class="lineno">  107</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

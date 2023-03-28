@@ -19,66 +19,25 @@
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015 \textcolor{preprocessor}{\#include <iostream>}}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016 \textcolor{preprocessor}{\#include <stdio.h>} }
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}00017 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Bigram_8h}{Bigram.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018 \textcolor{keyword}{using namespace }std ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}00019 }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031 \textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char}* argv[]) \{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}00032     \textcolor{comment}{// This string contains the list of characters that are considered as}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}00033     \textcolor{comment}{// valid within a word. The rest of characters are considered as}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034     \textcolor{comment}{// separators}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035     \textcolor{keyword}{const} std::string validCharacters = \textcolor{stringliteral}{"{}abcdefghijklmnopqrstuvwxyz\(\backslash\)xE0\(\backslash\)xE1\(\backslash\)xE2\(\backslash\)xE3\(\backslash\)xE4\(\backslash\)xE5\(\backslash\)xE6\(\backslash\)xE7\(\backslash\)xE8\(\backslash\)xE9\(\backslash\)xEA\(\backslash\)xEB\(\backslash\)xEC\(\backslash\)xED\(\backslash\)xEE\(\backslash\)xEF\(\backslash\)xF0\(\backslash\)xF1\(\backslash\)xF2\(\backslash\)xF3\(\backslash\)xF4\(\backslash\)xF5\(\backslash\)xF6\(\backslash\)xF8\(\backslash\)xF9\(\backslash\)xFA\(\backslash\)xFB\(\backslash\)xFC\(\backslash\)xFD\(\backslash\)xFE\(\backslash\)xFF"{}};}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036     \textcolor{keyword}{const} \textcolor{keywordtype}{int} TAM = 100 ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037     }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038     \textcolor{comment}{// Read a text}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039     \textcolor{keywordtype}{string} texto = \textcolor{stringliteral}{"{}"{}} ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040     cin >> texto ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041     cout << \textcolor{stringliteral}{"{} -\/-\/-\/-\/-\/ INPUT TEXT -\/-\/-\/-\/-\/"{}} << endl ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042     cout << texto << endl ;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018 \textcolor{preprocessor}{\#include "{}BigramFreq.h"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}00019 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{ArrayBigramFreqFunctions_8h}{ArrayBigramFreqFunctions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}00020 \textcolor{keyword}{using namespace }std ;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}00033 \textcolor{keyword}{const} \textcolor{keywordtype}{int} DIM = 500 ;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035 \textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char}* argv[]) \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036     \textcolor{keywordtype}{int} tam ; }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037     \mbox{\hyperlink{classBigramFreq}{BigramFreq}} array[DIM] ;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038     readArrayBigramFreq(array, DIM, tam ) ;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039     }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040     printArrayBigramFreq(array, tam) ;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041     }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042     sortArrayBigramFreq(array, tam) ;}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043     }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044     \textcolor{comment}{// Read a bigram (tex with two characters)}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045     \textcolor{keywordtype}{string} string\_input = \textcolor{stringliteral}{"{}"{}} ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046     cin >> string\_input ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047     \mbox{\hyperlink{classBigram}{Bigram}} bigram\_input = \mbox{\hyperlink{classBigram}{Bigram}}(string\_input) ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}00048     cout << \textcolor{stringliteral}{"{} -\/-\/-\/-\/-\/ INPUT BIGRAM FOR CONVERSION -\/-\/-\/-\/-\/ "{}} << endl ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049     cout << bigram\_input.\mbox{\hyperlink{classBigram_a7a782c0fe5764cd4d42427fa284b79d1}{toString}}() << endl ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050     }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}00051     \textcolor{comment}{// Find the bigrams in text and put them in an array of Bigrams}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052     \textcolor{keywordtype}{int} util = 0 ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00053}00053     \mbox{\hyperlink{classBigram}{Bigram}} array[TAM] ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00054}00054     }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00055}00055     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<texto.size()-\/1 ; i++) \{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056         \textcolor{keywordtype}{char} caracter1, caracter2 ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057         \mbox{\hyperlink{classBigram}{Bigram}} nuevo ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058         \textcolor{keywordflow}{if}(isValidCharacter(tolower(texto.at(i)), validCharacters))\{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059             caracter1 = tolower(texto.at(i)) ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060                 \textcolor{keywordflow}{if} (isValidCharacter(tolower(texto.at(i+1)), validCharacters))\{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061                     caracter2 = tolower(texto.at(i+1)) ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062                     nuevo = \mbox{\hyperlink{classBigram}{Bigram}}(caracter1, caracter2) ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00063}00063                     array[util++] = nuevo ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00064}00064                 \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00065}00065             \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00066}00066         \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00067}00067     }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00068}00068     \textcolor{comment}{// Show the bigrams stored in the array}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00069}00069     cout << \textcolor{stringliteral}{"{} -\/-\/-\/-\/-\/ BIGRAMS BEFORE CONVERSION -\/-\/-\/-\/-\/ "{}} << endl;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00070}00070     cout << \textcolor{stringliteral}{"{}LENGTH="{}} << util << endl ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00071}00071     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0 ; i<util ; i++) \{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00072}00072         cout << array[i].\mbox{\hyperlink{classBigram_a7a782c0fe5764cd4d42427fa284b79d1}{toString}}() << endl ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00073}00073     \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00074}00074     }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00075}00075     \textcolor{comment}{// Convert to uppercase the bigrams in the array that are equals to input bigram}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00076}00076     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0 ; i<util ; i++)\{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00077}00077         \textcolor{keywordflow}{if}(array[i].toString() == bigram\_input.\mbox{\hyperlink{classBigram_a7a782c0fe5764cd4d42427fa284b79d1}{toString}}()) \{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00078}00078             array[i].\mbox{\hyperlink{classBigram_ac23a498073a7c802d254235f0e63c147}{toUpper}}() ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00079}00079         \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00080}00080     \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00081}00081     }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00082}00082     \textcolor{comment}{// Show again the bigrams stored in the array}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00083}00083     cout << \textcolor{stringliteral}{"{} -\/-\/-\/-\/-\/ BIGRAMS AFTER CONVERSION -\/-\/-\/-\/-\/ "{}} << endl;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00084}00084     cout << \textcolor{stringliteral}{"{}LENGTH="{}} << util << endl ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00085}00085     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0 ; i<util ; i++) \{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00086}00086         cout << array[i].\mbox{\hyperlink{classBigram_a7a782c0fe5764cd4d42427fa284b79d1}{toString}}() << endl ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00087}00087     \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00088}00088 \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044     toUpperArrayBigramFreq(array, tam) ;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045     }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046     printArrayBigramFreq(array, tam) ;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047 \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}00048 }
 
 \end{DoxyCode}

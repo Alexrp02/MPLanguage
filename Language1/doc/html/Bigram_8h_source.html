@@ -86,41 +86,41 @@ $(function() {
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classBigram.html">   25</a></span><span class="keyword">class </span><a class="code hl_class" href="classBigram.html">Bigram</a> {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:    </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_class" href="classBigram.html">Bigram</a>(<span class="keyword">const</span> std::string&amp; text=<span class="stringliteral">&quot;__&quot;</span>);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_class" href="classBigram.html">Bigram</a>(<span class="keywordtype">char</span> first, <span class="keywordtype">char</span> second);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classBigram.html#a8d32480f5a9edbc17f4bd83f1cfc486b">   55</a></span>    <a class="code hl_function" href="classBigram.html#a8d32480f5a9edbc17f4bd83f1cfc486b">Bigram</a>(<span class="keywordtype">char</span> text[]);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    std::string <a class="code hl_function" href="classBigram.html#ae8a73bc031d48028abea3a78ecbd61b0">getText</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    std::string <a class="code hl_function" href="classBigram.html#a7a782c0fe5764cd4d42427fa284b79d1">toString</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>&amp; <a class="code hl_function" href="classBigram.html#ae653a8bb70d1f0f8ddde88196ef51564">at</a>(<span class="keywordtype">int</span> index) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordtype">char</span>&amp; <a class="code hl_function" href="classBigram.html#ae653a8bb70d1f0f8ddde88196ef51564">at</a>(<span class="keywordtype">int</span> index);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBigram.html#ac23a498073a7c802d254235f0e63c147">toUpper</a>();</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="keyword">private</span>:   </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordtype">char</span> _text[3];</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>};</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keywordtype">bool</span> <a class="code hl_function" href="Bigram_8h.html#afe6e716ad7a25257188a41370600dfad">isValidCharacter</a>(<span class="keywordtype">char</span> character, <span class="keyword">const</span> std::string&amp; validCharacters);</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="preprocessor">#endif </span><span class="comment">/* BIGRAM_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="ttc" id="aBigram_8h_html_afe6e716ad7a25257188a41370600dfad"><div class="ttname"><a href="Bigram_8h.html#afe6e716ad7a25257188a41370600dfad">isValidCharacter</a></div><div class="ttdeci">bool isValidCharacter(char character, const std::string &amp;validCharacters)</div><div class="ttdef"><b>Definition:</b> <a href="Bigram_8cpp_source.html#l00092">Bigram.cpp:92</a></div></div>
-<div class="ttc" id="aclassBigram_html"><div class="ttname"><a href="classBigram.html">Bigram</a></div><div class="ttdoc">It represents a pair of characters. It is used to store pairs of consecutive characters from a text....</div><div class="ttdef"><b>Definition:</b> <a href="Bigram_8h_source.html#l00025">Bigram.h:25</a></div></div>
-<div class="ttc" id="aclassBigram_html_a7a782c0fe5764cd4d42427fa284b79d1"><div class="ttname"><a href="classBigram.html#a7a782c0fe5764cd4d42427fa284b79d1">Bigram::toString</a></div><div class="ttdeci">std::string toString() const</div><div class="ttdoc">Obtains a copy of the text of this bigram as a string object.</div><div class="ttdef"><b>Definition:</b> <a href="Bigram_8cpp_source.html#l00050">Bigram.cpp:50</a></div></div>
-<div class="ttc" id="aclassBigram_html_a8d32480f5a9edbc17f4bd83f1cfc486b"><div class="ttname"><a href="classBigram.html#a8d32480f5a9edbc17f4bd83f1cfc486b">Bigram::Bigram</a></div><div class="ttdeci">Bigram(char text[])</div><div class="ttdoc">It builds a Bigram object with text (a c-string) as the text of the bigram. If the c-string text cont...</div></div>
-<div class="ttc" id="aclassBigram_html_ac23a498073a7c802d254235f0e63c147"><div class="ttname"><a href="classBigram.html#ac23a498073a7c802d254235f0e63c147">Bigram::toUpper</a></div><div class="ttdeci">void toUpper()</div><div class="ttdef"><b>Definition:</b> <a href="Bigram_8cpp_source.html#l00096">Bigram.cpp:96</a></div></div>
-<div class="ttc" id="aclassBigram_html_ae653a8bb70d1f0f8ddde88196ef51564"><div class="ttname"><a href="classBigram.html#ae653a8bb70d1f0f8ddde88196ef51564">Bigram::at</a></div><div class="ttdeci">const char &amp; at(int index) const</div><div class="ttdoc">Gets a const reference to the character at the given position.</div><div class="ttdef"><b>Definition:</b> <a href="Bigram_8cpp_source.html#l00061">Bigram.cpp:61</a></div></div>
-<div class="ttc" id="aclassBigram_html_ae8a73bc031d48028abea3a78ecbd61b0"><div class="ttname"><a href="classBigram.html#ae8a73bc031d48028abea3a78ecbd61b0">Bigram::getText</a></div><div class="ttdeci">std::string getText() const</div><div class="ttdoc">Obtains a copy of the text of this bigram as a string object.</div><div class="ttdef"><b>Definition:</b> <a href="Bigram_8cpp_source.html#l00042">Bigram.cpp:42</a></div></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;cstring&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classBigram.html">   26</a></span><span class="keyword">class </span><a class="code hl_class" href="classBigram.html">Bigram</a> {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">public</span>:    </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_class" href="classBigram.html">Bigram</a>(<span class="keyword">const</span> std::string&amp; text=<span class="stringliteral">&quot;__&quot;</span>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_class" href="classBigram.html">Bigram</a>(<span class="keywordtype">char</span> first, <span class="keywordtype">char</span> second);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_class" href="classBigram.html">Bigram</a>(<span class="keywordtype">char</span> text[]);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    std::string <a class="code hl_function" href="classBigram.html#ae8a73bc031d48028abea3a78ecbd61b0">getText</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    std::string <a class="code hl_function" href="classBigram.html#a7a782c0fe5764cd4d42427fa284b79d1">toString</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>&amp; <a class="code hl_function" href="classBigram.html#ae653a8bb70d1f0f8ddde88196ef51564">at</a>(<span class="keywordtype">int</span> index) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">char</span>&amp; <a class="code hl_function" href="classBigram.html#ae653a8bb70d1f0f8ddde88196ef51564">at</a>(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBigram.html#ac23a498073a7c802d254235f0e63c147">toUpper</a>();</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keyword">private</span>:   </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordtype">char</span> _text[3];</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>};</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="keywordtype">bool</span> <a class="code hl_function" href="Bigram_8h.html#afe6e716ad7a25257188a41370600dfad">isValidCharacter</a>(<span class="keywordtype">char</span> character, <span class="keyword">const</span> std::string&amp; validCharacters);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="preprocessor">#endif </span><span class="comment">/* BIGRAM_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="ttc" id="aBigram_8h_html_afe6e716ad7a25257188a41370600dfad"><div class="ttname"><a href="Bigram_8h.html#afe6e716ad7a25257188a41370600dfad">isValidCharacter</a></div><div class="ttdeci">bool isValidCharacter(char character, const std::string &amp;validCharacters)</div><div class="ttdef"><b>Definition:</b> <a href="Bigram_8cpp_source.html#l00105">Bigram.cpp:105</a></div></div>
+<div class="ttc" id="aclassBigram_html"><div class="ttname"><a href="classBigram.html">Bigram</a></div><div class="ttdoc">It represents a pair of characters. It is used to store pairs of consecutive characters from a text....</div><div class="ttdef"><b>Definition:</b> <a href="Bigram_8h_source.html#l00026">Bigram.h:26</a></div></div>
+<div class="ttc" id="aclassBigram_html_a7a782c0fe5764cd4d42427fa284b79d1"><div class="ttname"><a href="classBigram.html#a7a782c0fe5764cd4d42427fa284b79d1">Bigram::toString</a></div><div class="ttdeci">std::string toString() const</div><div class="ttdoc">Obtains a copy of the text of this bigram as a string object.</div><div class="ttdef"><b>Definition:</b> <a href="Bigram_8cpp_source.html#l00063">Bigram.cpp:63</a></div></div>
+<div class="ttc" id="aclassBigram_html_ac23a498073a7c802d254235f0e63c147"><div class="ttname"><a href="classBigram.html#ac23a498073a7c802d254235f0e63c147">Bigram::toUpper</a></div><div class="ttdeci">void toUpper()</div><div class="ttdef"><b>Definition:</b> <a href="Bigram_8cpp_source.html#l00109">Bigram.cpp:109</a></div></div>
+<div class="ttc" id="aclassBigram_html_ae653a8bb70d1f0f8ddde88196ef51564"><div class="ttname"><a href="classBigram.html#ae653a8bb70d1f0f8ddde88196ef51564">Bigram::at</a></div><div class="ttdeci">const char &amp; at(int index) const</div><div class="ttdoc">Gets a const reference to the character at the given position.</div><div class="ttdef"><b>Definition:</b> <a href="Bigram_8cpp_source.html#l00074">Bigram.cpp:74</a></div></div>
+<div class="ttc" id="aclassBigram_html_ae8a73bc031d48028abea3a78ecbd61b0"><div class="ttname"><a href="classBigram.html#ae8a73bc031d48028abea3a78ecbd61b0">Bigram::getText</a></div><div class="ttdeci">std::string getText() const</div><div class="ttdoc">Obtains a copy of the text of this bigram as a string object.</div><div class="ttdef"><b>Definition:</b> <a href="Bigram_8cpp_source.html#l00055">Bigram.cpp:55</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

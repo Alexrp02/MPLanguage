@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['tostring_0',['toString',['../classBigram.html#a7a782c0fe5764cd4d42427fa284b79d1',1,'Bigram::toString()'],['../classBigramFreq.html#af7f5cf937b365fa1ea15c4b9873cf5c1',1,'BigramFreq::toString()']]],
-  ['toupper_1',['toUpper',['../classBigram.html#ac23a498073a7c802d254235f0e63c147',1,'Bigram']]],
-  ['toupperarraybigramfreq_2',['toUpperArrayBigramFreq',['../ArrayBigramFreqFunctions_8h.html#a197b9bcdb2578a5f610901f600f1ce9e',1,'ArrayBigramFreqFunctions.h']]]
+  ['setbigram_0',['setBigram',['../classBigramFreq.html#aefea747a30cc73aa6d9691ec49e15033',1,'BigramFreq']]],
+  ['setfrequency_1',['setFrequency',['../classBigramFreq.html#a4e81e3f63bd80b4ca42dba6014c836e3',1,'BigramFreq']]],
+  ['sortarraybigramfreq_2',['sortArrayBigramFreq',['../ArrayBigramFreqFunctions_8h.html#a383360b5a1b02aae1086bbdf03d5dd80',1,'ArrayBigramFreqFunctions.cpp']]],
+  ['swap_3',['swap',['../ArrayBigramFreqFunctions_8h.html#acd649ea5c9e9d3a8cca59c7f8e5bcd74',1,'ArrayBigramFreqFunctions.cpp']]],
+  ['swapelementsarraybigramfreq_4',['swapElementsArrayBigramFreq',['../ArrayBigramFreqFunctions_8h.html#a778ef2343bf33c9542335fe395145f4c',1,'ArrayBigramFreqFunctions.cpp']]]
 ];

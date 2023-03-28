@@ -30,33 +30,19 @@ using namespace std ;
  * Running example:
  * > language0 < data/SimpleText.txt
  */
+const int DIM = 500 ;
+
 int main(int argc, char* argv[]) {
     int tam ; 
-    cin >> tam ;
-    BigramFreq array[tam] ;
+    BigramFreq array[DIM] ;
+    readArrayBigramFreq(array, DIM, tam ) ;
     
-    for (int i=0 ; i<tam ; i++) {
-        string text ;
-        int freq ;
-        BigramFreq b ;
-        cin >> text ;
-        cin >> freq ;
-        b.setBigram(Bigram(text)) ;
-        b.setFrequency(freq) ;
-        array[i] = b ;
-    }
+    printArrayBigramFreq(array, tam) ;
     
-    cout << tam << endl ;
-    for (int i=0 ; i<tam ; i++) {
-        cout << array[i].getBigram()->toString() << " " << array[i].getFrequency() << endl ;
-    }
+    sortArrayBigramFreq(array, tam) ;
     
-    quickSort(array, 0, tam-1) ;
     toUpperArrayBigramFreq(array, tam) ;
     
-    cout << tam << endl ;
-    for (int i=0 ; i<tam ; i++) {
-        cout << array[i].getBigram()->toString() << " " << array[i].getFrequency() << endl ;
-    }
+    printArrayBigramFreq(array, tam) ;
 }
 

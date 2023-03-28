@@ -93,71 +93,29 @@ $(function() {
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;stdio.h&gt;</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="Bigram_8h.html">Bigram.h</a>&quot;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using namespace </span>std ;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">// This string contains the list of characters that are considered as</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">// valid within a word. The rest of characters are considered as</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="comment">// separators</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">const</span> std::string validCharacters = <span class="stringliteral">&quot;abcdefghijklmnopqrstuvwxyz\xE0\xE1\xE2\xE3\xE4\xE5\xE6\xE7\xE8\xE9\xEA\xEB\xEC\xED\xEE\xEF\xF0\xF1\xF2\xF3\xF4\xF5\xF6\xF8\xF9\xFA\xFB\xFC\xFD\xFE\xFF&quot;</span>;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> TAM = 100 ;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">// Read a text</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">string</span> texto = <span class="stringliteral">&quot;&quot;</span> ;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    cin &gt;&gt; texto ;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    cout &lt;&lt; <span class="stringliteral">&quot; ----- INPUT TEXT -----&quot;</span> &lt;&lt; endl ;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    cout &lt;&lt; texto &lt;&lt; endl ;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;BigramFreq.h&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="ArrayBigramFreqFunctions_8h.html">ArrayBigramFreqFunctions.h</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">using namespace </span>std ;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">const</span> <span class="keywordtype">int</span> DIM = 500 ;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">int</span> tam ; </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_class" href="classBigramFreq.html">BigramFreq</a> array[DIM] ;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    readArrayBigramFreq(array, DIM, tam ) ;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    printArrayBigramFreq(array, tam) ;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    sortArrayBigramFreq(array, tam) ;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">// Read a bigram (tex with two characters)</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">string</span> string_input = <span class="stringliteral">&quot;&quot;</span> ;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    cin &gt;&gt; string_input ;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_class" href="classBigram.html">Bigram</a> bigram_input = <a class="code hl_class" href="classBigram.html">Bigram</a>(string_input) ;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    cout &lt;&lt; <span class="stringliteral">&quot; ----- INPUT BIGRAM FOR CONVERSION ----- &quot;</span> &lt;&lt; endl ;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    cout &lt;&lt; bigram_input.<a class="code hl_function" href="classBigram.html#a7a782c0fe5764cd4d42427fa284b79d1">toString</a>() &lt;&lt; endl ;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">// Find the bigrams in text and put them in an array of Bigrams</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">int</span> util = 0 ;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_class" href="classBigram.html">Bigram</a> array[TAM] ;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;texto.size()-1 ; i++) {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordtype">char</span> caracter1, caracter2 ;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <a class="code hl_class" href="classBigram.html">Bigram</a> nuevo ;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">if</span>(isValidCharacter(tolower(texto.at(i)), validCharacters)){</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            caracter1 = tolower(texto.at(i)) ;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                <span class="keywordflow">if</span> (isValidCharacter(tolower(texto.at(i+1)), validCharacters)){</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                    caracter2 = tolower(texto.at(i+1)) ;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                    nuevo = <a class="code hl_class" href="classBigram.html">Bigram</a>(caracter1, caracter2) ;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                    array[util++] = nuevo ;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                }</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            }</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        }</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="comment">// Show the bigrams stored in the array</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    cout &lt;&lt; <span class="stringliteral">&quot; ----- BIGRAMS BEFORE CONVERSION ----- &quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    cout &lt;&lt; <span class="stringliteral">&quot;LENGTH=&quot;</span> &lt;&lt; util &lt;&lt; endl ;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0 ; i&lt;util ; i++) {</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        cout &lt;&lt; array[i].<a class="code hl_function" href="classBigram.html#a7a782c0fe5764cd4d42427fa284b79d1">toString</a>() &lt;&lt; endl ;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="comment">// Convert to uppercase the bigrams in the array that are equals to input bigram</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0 ; i&lt;util ; i++){</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">if</span>(array[i].toString() == bigram_input.<a class="code hl_function" href="classBigram.html#a7a782c0fe5764cd4d42427fa284b79d1">toString</a>()) {</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            array[i].<a class="code hl_function" href="classBigram.html#ac23a498073a7c802d254235f0e63c147">toUpper</a>() ;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        }</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    }</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="comment">// Show again the bigrams stored in the array</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    cout &lt;&lt; <span class="stringliteral">&quot; ----- BIGRAMS AFTER CONVERSION ----- &quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    cout &lt;&lt; <span class="stringliteral">&quot;LENGTH=&quot;</span> &lt;&lt; util &lt;&lt; endl ;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0 ; i&lt;util ; i++) {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        cout &lt;&lt; array[i].<a class="code hl_function" href="classBigram.html#a7a782c0fe5764cd4d42427fa284b79d1">toString</a>() &lt;&lt; endl ;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    toUpperArrayBigramFreq(array, tam) ;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    printArrayBigramFreq(array, tam) ;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="ttc" id="aArrayBigramFreqFunctions_8h_html"><div class="ttname"><a href="ArrayBigramFreqFunctions_8h.html">ArrayBigramFreqFunctions.h</a></div></div>
 <div class="ttc" id="aBigram_8h_html"><div class="ttname"><a href="Bigram_8h.html">Bigram.h</a></div></div>
-<div class="ttc" id="aclassBigram_html"><div class="ttname"><a href="classBigram.html">Bigram</a></div><div class="ttdoc">It represents a pair of characters. It is used to store pairs of consecutive characters from a text....</div><div class="ttdef"><b>Definition:</b> <a href="Bigram_8h_source.html#l00025">Bigram.h:25</a></div></div>
-<div class="ttc" id="aclassBigram_html_a7a782c0fe5764cd4d42427fa284b79d1"><div class="ttname"><a href="classBigram.html#a7a782c0fe5764cd4d42427fa284b79d1">Bigram::toString</a></div><div class="ttdeci">std::string toString() const</div><div class="ttdoc">Obtains a copy of the text of this bigram as a string object.</div><div class="ttdef"><b>Definition:</b> <a href="Bigram_8cpp_source.html#l00050">Bigram.cpp:50</a></div></div>
-<div class="ttc" id="aclassBigram_html_ac23a498073a7c802d254235f0e63c147"><div class="ttname"><a href="classBigram.html#ac23a498073a7c802d254235f0e63c147">Bigram::toUpper</a></div><div class="ttdeci">void toUpper()</div><div class="ttdef"><b>Definition:</b> <a href="Bigram_8cpp_source.html#l00096">Bigram.cpp:96</a></div></div>
+<div class="ttc" id="aclassBigramFreq_html"><div class="ttname"><a href="classBigramFreq.html">BigramFreq</a></div><div class="ttdoc">A pair of a Bigram object and a frequency (an int), that gives the frequency of a Bigram (times it ap...</div><div class="ttdef"><b>Definition:</b> <a href="BigramFreq_8h_source.html#l00025">BigramFreq.h:25</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

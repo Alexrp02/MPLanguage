@@ -1,0 +1,96 @@
+\hypertarget{ArrayBigramFreqFunctions_8cpp_source}{}\doxysection{Array\+Bigram\+Freq\+Functions.\+cpp}
+\label{ArrayBigramFreqFunctions_8cpp_source}\index{src/ArrayBigramFreqFunctions.cpp@{src/ArrayBigramFreqFunctions.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00002}00002 \textcolor{comment}{ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-\/default.txt to change this license}}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00003}00003 \textcolor{comment}{ * Click nbfs://nbhost/SystemFileSystem/Templates/cppFiles/class.cc to edit this template}}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00004}00004 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00006}00006 \textcolor{comment}{/* }}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00007}00007 \textcolor{comment}{ * File:   ArrayBigramFreqFunctions.cpp}}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00008}00008 \textcolor{comment}{ * Author: alexrp}}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00009}00009 \textcolor{comment}{ * }}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00010}00010 \textcolor{comment}{ * Created on 20 de marzo de 2023, 11:58}}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00011}00011 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00013}00013 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{ArrayBigramFreqFunctions_8h}{ArrayBigramFreqFunctions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00014}00014 \textcolor{keyword}{using namespace }std ;}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00023}\mbox{\hyperlink{ArrayBigramFreqFunctions_8h_a9d0e14c5faa677cd54a2d5d8705f01f1}{00023}} \textcolor{keywordtype}{void} readArrayBigramFreq(\mbox{\hyperlink{classBigramFreq}{BigramFreq}} array[], \textcolor{keyword}{const} \textcolor{keywordtype}{int} dim, \textcolor{keywordtype}{int}\& nElements) \{}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00024}00024     cin >> nElements ;}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00025}00025     \textcolor{keywordflow}{if}(nElements > dim ) nElements = dim ;}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00026}00026     }
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00027}00027     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0 ; i<nElements ; i++) \{}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00028}00028         \textcolor{keywordtype}{string} text ;}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00029}00029         \textcolor{keywordtype}{int} freq ;}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00030}00030         \mbox{\hyperlink{classBigramFreq}{BigramFreq}} b ;}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00031}00031         cin >> text ;}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00032}00032         cin >> freq ;}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00033}00033         b.\mbox{\hyperlink{classBigramFreq_aefea747a30cc73aa6d9691ec49e15033}{setBigram}}(\mbox{\hyperlink{classBigram}{Bigram}}(text)) ;}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00034}00034         b.\mbox{\hyperlink{classBigramFreq_a4e81e3f63bd80b4ca42dba6014c836e3}{setFrequency}}(freq) ;}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00035}00035         array[i] = b ;}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00036}00036     \}}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00037}00037 \}}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00045}\mbox{\hyperlink{ArrayBigramFreqFunctions_8h_afb350c0b9d4ca009518751feebd4a15b}{00045}} \textcolor{keywordtype}{void} printArrayBigramFreq(\mbox{\hyperlink{classBigramFreq}{BigramFreq}} array[], \textcolor{keywordtype}{int} nElements) \{}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00046}00046     cout << nElements << endl ;}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00047}00047     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0 ; i<nElements ; i++) \{}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00048}00048         cout << array[i].\mbox{\hyperlink{classBigramFreq_a35fc546848a8567561e20d1c712a3ac4}{getBigram}}()-\/>\mbox{\hyperlink{classBigram_a7a782c0fe5764cd4d42427fa284b79d1}{toString}}() << \textcolor{stringliteral}{"{} "{}} << array[i].\mbox{\hyperlink{classBigramFreq_a849f944559e8bc87eeba83ccb3defdc1}{getFrequency}}() << endl ;}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00049}00049     \}}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00050}00050 \}}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00060}\mbox{\hyperlink{ArrayBigramFreqFunctions_8h_a778ef2343bf33c9542335fe395145f4c}{00060}} \textcolor{keywordtype}{void} swapElementsArrayBigramFreq(\mbox{\hyperlink{classBigramFreq}{BigramFreq}} array[], \textcolor{keywordtype}{int} nElements, \textcolor{keywordtype}{int} first,}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00061}00061         \textcolor{keywordtype}{int} second) \{}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00062}00062     \mbox{\hyperlink{classBigramFreq}{BigramFreq}} aux = array[second] ;}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00063}00063     array[second] = array[first] ;}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00064}00064     array [first] = array[second] ;}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00065}00065 \}}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00073}\mbox{\hyperlink{ArrayBigramFreqFunctions_8h_a383360b5a1b02aae1086bbdf03d5dd80}{00073}} \textcolor{keywordtype}{void} sortArrayBigramFreq(\mbox{\hyperlink{classBigramFreq}{BigramFreq}} array[], \textcolor{keywordtype}{int} nElements) \{}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00074}00074     quickSort(array, 0, nElements-\/1) ;}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00075}00075 \}}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00082}\mbox{\hyperlink{ArrayBigramFreqFunctions_8h_a197b9bcdb2578a5f610901f600f1ce9e}{00082}} \textcolor{keywordtype}{void} toUpperArrayBigramFreq(\mbox{\hyperlink{classBigramFreq}{BigramFreq}} array[], \textcolor{keywordtype}{int} nElements) \{}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00083}00083     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0 ; i< nElements ; i++) \{}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00084}00084         array[i].\mbox{\hyperlink{classBigramFreq_a35fc546848a8567561e20d1c712a3ac4}{getBigram}}()-\/>\mbox{\hyperlink{classBigram_ac23a498073a7c802d254235f0e63c147}{toUpper}}() ;}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00085}00085     \}}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00086}00086 \}}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00088}\mbox{\hyperlink{ArrayBigramFreqFunctions_8h_a5b22f5cd6d515ac4baed002148bece94}{00088}} \textcolor{keywordtype}{void} quickSort(\mbox{\hyperlink{classBigramFreq}{BigramFreq}} array[], \textcolor{keywordtype}{int} low, \textcolor{keywordtype}{int} high) \{}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00089}00089     \textcolor{keywordflow}{if} (low >= high || low < 0) \{}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00090}00090         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00091}00091     \}}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00093}00093     \textcolor{keywordtype}{int} pivot = partition(array, low, high);}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00094}00094     quickSort(array, low, pivot-\/1);}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00095}00095     quickSort(array, pivot+1, high);}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00097}00097 \}}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00099}\mbox{\hyperlink{ArrayBigramFreqFunctions_8h_a3c94fd780cc7c981df0da69c2284b056}{00099}} \textcolor{keywordtype}{int} partition(\mbox{\hyperlink{classBigramFreq}{BigramFreq}} array[], \textcolor{keywordtype}{int} low, \textcolor{keywordtype}{int} high) \{}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00100}00100     \mbox{\hyperlink{classBigramFreq}{BigramFreq}} pivot = array[high];}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00101}00101     \textcolor{keywordtype}{int} pivotInd = low -\/ 1;}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00103}00103     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = low; i < high; i++) \{}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00104}00104         \textcolor{keywordflow}{if} (array[i].getFrequency() == pivot.\mbox{\hyperlink{classBigramFreq_a849f944559e8bc87eeba83ccb3defdc1}{getFrequency}}() \&\& array[i].\mbox{\hyperlink{classBigramFreq_af7f5cf937b365fa1ea15c4b9873cf5c1}{toString}}().compare(pivot.\mbox{\hyperlink{classBigramFreq_af7f5cf937b365fa1ea15c4b9873cf5c1}{toString}}()) < 0) \{}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00105}00105             pivotInd++;}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00106}00106             swap(array, pivotInd, i);}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00107}00107         \}}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00108}00108         \textcolor{keywordflow}{if} (array[i].getFrequency() > pivot.\mbox{\hyperlink{classBigramFreq_a849f944559e8bc87eeba83ccb3defdc1}{getFrequency}}()) \{}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00109}00109             pivotInd++;}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00110}00110             swap(array, pivotInd, i);}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00111}00111         \}}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00112}00112     \}}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00113}00113     pivotInd++;}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00114}00114     swap(array, pivotInd, high);}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00115}00115     \textcolor{keywordflow}{return} pivotInd;}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00116}00116 \}}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00118}\mbox{\hyperlink{ArrayBigramFreqFunctions_8h_acd649ea5c9e9d3a8cca59c7f8e5bcd74}{00118}} \textcolor{keywordtype}{void} swap(\mbox{\hyperlink{classBigramFreq}{BigramFreq}} array[], \textcolor{keyword}{const} \textcolor{keywordtype}{int} pos1, \textcolor{keyword}{const} \textcolor{keywordtype}{int} pos2) \{}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00119}00119     \mbox{\hyperlink{classBigramFreq}{BigramFreq}} aux = array[pos1];}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00120}00120     array[pos1] = array[pos2];}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00121}00121     array[pos2] = aux;}
+\DoxyCodeLine{\Hypertarget{ArrayBigramFreqFunctions_8cpp_source_l00122}00122 \}}
+
+\end{DoxyCode}

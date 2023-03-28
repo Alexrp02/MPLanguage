@@ -14,6 +14,9 @@
 #define ARRAYBIGRAMFREQFUNCTIONS_H
 
 #include "BigramFreq.h"
+#include <string>
+#include <iostream>
+#include <stdio.h> 
 
 /**
  * @brief Reads the number of used elements and the elements of an array of
@@ -59,10 +62,29 @@ void sortArrayBigramFreq(BigramFreq array[], int nElements);
  */
 void toUpperArrayBigramFreq(BigramFreq array[], int nElements);
 
+/**
+ * @brief Sorts the given array in the delimited zone by the @p low and @p high, calling other functions like swap and partition.
+ * @param array The array to be sorted.
+ * @param low The lower index of the array to be sorted.
+ * @param high The high index of the array to be sorted.
+ */
 void quickSort(BigramFreq array[] , int low, int high) ;
 
+/**
+ * 
+ * @param array The array where the swap is going to be done.
+ * @param pos1 The position of the first item to be swapped.
+ * @param pos2 The position of the second item to be swapped.
+ */
 void swap(BigramFreq array[], int pos1, int pos2) ;
 
+/**
+ * 
+ * @param array The array to be partitioned.
+ * @param low The lower bound where the array is going to be partitioned.
+ * @param high The higher bound where the array is going to be partitioned.
+ * @return The position where the pivot is (the pivot is in the final position of the sorted array).
+ */
 int partition(BigramFreq array[], int low, int high) ;
 
 #endif /* ARRAYBIGRAMFREQFUNCTIONS_H */
