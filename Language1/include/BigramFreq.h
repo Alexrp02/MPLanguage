@@ -35,7 +35,7 @@ public:
      * Query method
      * @return A const reference to the Bigram of this BigramFreq object
      */
-    Bigram* getBigram();
+    Bigram getBigram();
 
     /**
      * @brief Gets the frequency of this BigramFreq object

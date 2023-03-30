@@ -21,8 +21,8 @@ BigramFreq::BigramFreq() {
  * Query method
  * @return A const reference to the Bigram of this BigramFreq object
  */
-Bigram* BigramFreq::getBigram() {
-    return &_bigram;
+Bigram BigramFreq::getBigram() {
+    return _bigram;
 }
 
 /**
