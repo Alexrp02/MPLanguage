@@ -45,17 +45,16 @@ int main(int argc, char** argv) {
     int nElements;
     //Gestionamos los ficheros de entrada con un bucle for
     for (int i = 1; i < argc - 1; i++) {
-
         //Vamos abriendo los ficheros de entrada de uno en uno
         entrada.open(argv[i]);
-
+        
         //Comprobamos si el fichero ha sido abierto correctamente, si no, se enviará un mensaje de error y finalizaremos el programa
         //con un código de estado 1.
         if (!entrada) {
-            cerr << "El fichero " << argv[i] << " no existe o no se ha podido abrir correctamente";
+            cerr << endl << "El fichero " << argv[i] << " no existe o no se ha podido abrir correctamente";
             exit(1);
         }
-
+        
         //Tomamos el numero de elementos para poder iterar sobre el fichero
         entrada >> nElements;
         cout << "El numero de elementos es " << nElements << endl;
