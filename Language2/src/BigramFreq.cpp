@@ -21,8 +21,8 @@ BigramFreq::BigramFreq() {
  * Query method
  * @return A const reference to the Bigram of this BigramFreq object
  */
-Bigram* BigramFreq::getBigram() {
-    return &_bigram;
+const Bigram BigramFreq::getBigram() const{
+    return _bigram;
 }
 
 /**
@@ -30,7 +30,7 @@ Bigram* BigramFreq::getBigram() {
  * Query method
  * @return The frequency of this BigramFreq object
  */
-int BigramFreq::getFrequency() {
+int BigramFreq::getFrequency() const{
     return _frequency;
 }
 
@@ -39,7 +39,7 @@ int BigramFreq::getFrequency() {
  * Modifier method
  * @param bigram The new Bigram value for this object. Input parameter
  */
-void BigramFreq::setBigram(Bigram bigram) {
+void BigramFreq::setBigram(Bigram& bigram) {
     _bigram = bigram ;
 }
 
@@ -59,6 +59,6 @@ void BigramFreq::setFrequency(int frequency) {
  * @return A string with the string and frecuency of the bigram
  * in this object. 
  */
-std::string BigramFreq::toString() {
+std::string BigramFreq::toString() const{
     return (_bigram.toString() + " " + std::to_string(_frequency)) ;
 }

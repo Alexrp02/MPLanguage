@@ -33,16 +33,43 @@ using namespace std ;
 const int DIM = 500 ;
 
 int main(int argc, char* argv[]) {
-    int tam ; 
+    int tam=0 ; 
+    
+    //Declaración del array
     BigramFreq array[DIM] ;
-    readArrayBigramFreq(array, DIM, tam ) ;
+    
+    //Creamos bf1
+    BigramFreq bf1;
+    bf1.setBigram(Bigram('a','a')) ;
+    bf1.setFrequency(10) ;
+    
+    //Creamos bf2
+    BigramFreq bf2;
+    bf2.setBigram(Bigram('B','B')) ;
+    bf2.setFrequency(10) ;
+    
+    //Convertimos en mayusculas
+    Bigram aux = bf1.getBigram() ;
+    aux.toUpper() ;
+    bf1.setBigram(aux) ;
+    
+    array[0] = bf1 ;
+    tam++ ;
+    array[1] = bf2 ;
+    tam++ ;
+    
+    sortArrayBigramFreq(array, tam) ; 
     
     printArrayBigramFreq(array, tam) ;
     
-    sortArrayBigramFreq(array, tam) ;
-    
-    toUpperArrayBigramFreq(array, tam) ;
-    
-    printArrayBigramFreq(array, tam) ;
+//    readArrayBigramFreq(array, DIM, tam ) ;
+//    
+//    printArrayBigramFreq(array, tam) ;
+//    
+//    sortArrayBigramFreq(array, tam) ;
+//    
+//    toUpperArrayBigramFreq(array, tam) ;
+//    
+//    printArrayBigramFreq(array, tam) ;
 }
 

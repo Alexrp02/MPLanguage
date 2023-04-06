@@ -30,7 +30,8 @@ void readArrayBigramFreq(BigramFreq array[], const int dim, int& nElements) {
         BigramFreq b ;
         cin >> text ;
         cin >> freq ;
-        b.setBigram(Bigram(text)) ;
+        Bigram bigram = Bigram(text) ;
+        b.setBigram(bigram) ;
         b.setFrequency(freq) ;
         array[i] = b ;
     }
@@ -45,7 +46,7 @@ void readArrayBigramFreq(BigramFreq array[], const int dim, int& nElements) {
 void printArrayBigramFreq(BigramFreq array[], int nElements) {
     cout << nElements << endl ;
     for (int i=0 ; i<nElements ; i++) {
-        cout << array[i].getBigram()->toString() << " " << array[i].getFrequency() << endl ;
+        cout << array[i].getBigram().toString() << " " << array[i].getFrequency() << endl ;
     }
 }
 
@@ -81,7 +82,9 @@ void sortArrayBigramFreq(BigramFreq array[], int nElements) {
  */
 void toUpperArrayBigramFreq(BigramFreq array[], int nElements) {
     for (int i=0 ; i< nElements ; i++) {
-        array[i].getBigram()->toUpper() ;
+        Bigram aux = array[i].getBigram() ;
+        aux.toUpper() ;
+        array[i].setBigram(aux) ;
     }
 }
 
