@@ -180,10 +180,10 @@ void Language::save(const char fileName[]) const {
     file << MAGIC_STRING_T << endl;
 
     //Save the language id
-    file << _languageId << endl;
+    file << getLanguageId() << endl;
 
     //Save the number of bigrams
-    file << _size << endl;
+    file << getSize() << endl;
 
     //Save the list of bigrams with frequencies on different lines
     for (int i = 0; i < _size; i++) {
@@ -238,12 +238,13 @@ void Language::load(const char fileName[]) {
         file >> bigramText;
         file >> bigramFrequency;
 
-        //Set the bigram info with the text and frequency from the file.
+        //Set the bigramFreq object with the text and frequency from the file.
         BigramFreq b;
         Bigram bigram = Bigram(bigramText);
         b.setBigram(bigram);
         b.setFrequency(bigramFrequency);
 
+        //Add the created BigramFreq to the array.
         _vectorBigramFreq[i] = b;
     }
     file.close();
