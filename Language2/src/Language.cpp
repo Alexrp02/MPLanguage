@@ -176,16 +176,16 @@ void Language::save(const char fileName[]) const {
     //If there was an error opening it, throw exception.
     if (!file)
         throw (std::ios_base::failure(std::string("An error occurred while opening the file ") + std::string(fileName)));
-    //The magic string
+    //Save the magic string
     file << MAGIC_STRING_T << endl;
 
-    //The language id
+    //Save the language id
     file << _languageId << endl;
 
-    //Number of bigrams
+    //Save the number of bigrams
     file << _size << endl;
 
-    //The list of bigrams with frequencies
+    //Save the list of bigrams with frequencies on different lines
     for (int i = 0; i < _size; i++) {
         file << _vectorBigramFreq[i].toString() << endl;
     }
