@@ -57,7 +57,7 @@ public:
      * Modifier method.
      * @param id The new identifier. Input parameter 
      */
-    void setLanguageId(std::string id);
+    void setLanguageId(const std::string& id);
 
 
     /**
@@ -102,7 +102,7 @@ public:
      * @return If found, it returns the position where the bigram 
      * was found. If not, it returns -1
      */
-    int findBigram(Bigram& bigram) const;
+    int findBigram(const Bigram& bigram) const;
 
     /**
      * @brief Obtains a string with the following content:
@@ -133,7 +133,7 @@ public:
      * if the given file cannot be opened or if an error occurs while writing
      * to the file
      */
-    void save(char fileName[]) const;
+    void save(const char fileName[]) const;
 
     /**
      * @brief Loads into this object the Language object stored in the given 
@@ -150,7 +150,7 @@ public:
      * @throw throw std::invalid_argument Throws a std::invalid_argument if
      * an invalid magic string is found in the given file
      */
-    void load(char fileName[]);
+    void load(const char fileName[]);
     
     /**
      * @brief Appends a copy of the given BigramFreq to this Language object.
@@ -176,7 +176,7 @@ public:
      * Modifier method
      * @param language A Language object. Input parameter
      */
-    void join(Language& language);
+    void join(const Language& language);
     
 private:
     static const int DIM_VECTOR_BIGRAM_FREQ = 2000; ///< The capacity of the array _vectorBigramFreq

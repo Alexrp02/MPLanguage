@@ -13,6 +13,8 @@
         <gdb_interceptlist>
           <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
         </gdb_interceptlist>
+        <gdb_signals>
+        </gdb_signals>
         <gdb_options>
           <DebugOptions>
           </DebugOptions>
@@ -24,13 +26,18 @@
       </nativedebugger>
       <runprofile version="9">
         <runcommandpicklist>
-          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" &lt; ./data/SimpleText.txt</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" &lt; ./data/SimpleTextbigrams.txt</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" &lt; data/30bigrams.bgr data/30bigrams2.bgr bigrams30_302.bgr.out</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" &lt; ./data/30bigrams.bgr ./data/30bigrams2.bgr bigrams30_302.bgr.out</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" ./data/30bigrams.bgr ./data/30bigrams2.bgr bigrams30_302.bgr.out</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" ./data/30bigrams.bgr ./data/36bigrams.bgr bigrams30_302.bgr.out</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" &lt; ./data/SimpleTextbigrams.txt</runcommand>
+        <runcommand>"${OUTPUT_PATH}" ./data/30bigrams.bgr ./data/36bigrams.bgr bigrams30_302.bgr.out</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
+        <console-type>2</console-type>
         <terminal-type>0</terminal-type>
         <remove-instrumentation>0</remove-instrumentation>
         <environment>
