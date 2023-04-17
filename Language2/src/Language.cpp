@@ -5,10 +5,7 @@
 
 /** 
  * @file Language.cpp
- * @author Silvia Acid Carrillo <acid@decsai.ugr.es>
- * @author Andrés Cano Utrera <acu@decsai.ugr.es>
- * @author Luis Castillo Vidal <L.Castillo@decsai.ugr.es>
- * 
+ * @author estudiante1: Ramos Peña, Alejandro
  * Created on 29 January 2023, 11:00
  */
 
@@ -40,7 +37,7 @@ Language::Language() {
  * Input parameter
  */
 Language::Language(int numberBigrams) {
-    if (numberBigrams > DIM_VECTOR_BIGRAM_FREQ or numberBigrams < 0)
+    if (numberBigrams > Language::DIM_VECTOR_BIGRAM_FREQ or numberBigrams < 0)
         throw (std::out_of_range("The number of bigram frequencies can´t be less than 0 and more than " + DIM_VECTOR_BIGRAM_FREQ));
 
     _languageId = string("unknown");
@@ -138,11 +135,12 @@ int Language::findBigram(const Bigram& bigram) const {
  * bigram-frequency in the object
  */
 std::string Language::toString() const {
-    std::string result = string(_size + "\n");
+    std::string result;
+    result += to_string(getSize()) + "\n";
     for (int i = 0; i < _size; i++) {
+        //        cout << "The Bigram is " << _vectorBigramFreq[i].getBigram().toString() << endl ;
         result += _vectorBigramFreq[i].toString();
-        if (i != _size - 1)
-            result += string(" ");
+        result += "\n";
     }
     return result;
 }
@@ -177,19 +175,15 @@ void Language::save(const char fileName[]) const {
     if (!file)
         throw (std::ios_base::failure(std::string("An error occurred while opening the file ") + std::string(fileName)));
     //Save the magic string
-    file << MAGIC_STRING_T << endl;
+    file << Language::MAGIC_STRING_T << endl;
 
     //Save the language id
     file << getLanguageId() << endl;
 
-    //Save the number of bigrams
-    file << getSize() << endl;
-
-    //Save the list of bigrams with frequencies on different lines
-    for (int i = 0; i < _size; i++) {
-        file << _vectorBigramFreq[i].toString() << endl;
-    }
-    file.close() ;
+    //Save the Language String
+    file << toString();
+    //Close the file
+    file.close();
 }
 
 /**
@@ -207,28 +201,32 @@ void Language::save(const char fileName[]) const {
  * @throw throw std::invalid_argument Throws a std::invalid_argument if
  * an invalid magic string is found in the given file
  */
-void Language::load(const char fileName[]) {
+void Language::load(const char* fileName) {
     ifstream file;
     //We open the file
+    cout << "Reading language from: " << fileName << endl;
     file.open(fileName);
-
     //If there was an error opening it, throw exception.
-    if (!file)
+    if (!file) {
         throw (std::ios_base::failure(std::string("An error occurred while opening the file ") + std::string(fileName)));
-
+        exit(1);
+    }
     //Read the magic string and if it is not valid, throw exception.
     std::string magicString;
     file >> magicString;
-    if (magicString.compare(MAGIC_STRING_T) != 0)
+    if (magicString.compare(Language::MAGIC_STRING_T) != 0) {
         throw (std::invalid_argument("The given file, does not contain a valid magic string."));
-
+        exit(1);
+    }
     //Read the language id
     file >> _languageId;
 
     //Read the number of bigrams in the file, if it is bigger than maximum dimension, throw error.
     file >> _size;
-    if (_size > DIM_VECTOR_BIGRAM_FREQ)
+    if (_size > DIM_VECTOR_BIGRAM_FREQ) {
         throw (std::out_of_range("The maximum number of arguments is " + DIM_VECTOR_BIGRAM_FREQ));
+        exit(1);
+    }
 
     //Read the array of BigramFreq
     for (int i = 0; i < _size; i++) {
@@ -269,6 +267,7 @@ void Language::append(BigramFreq bigramFreq) {
     if (findBigram(b) == -1)
         if (_size == DIM_VECTOR_BIGRAM_FREQ) {
             throw (std::out_of_range("The element can´t be appended to the language because it has the maximum number of bigrams."));
+            exit(1);
         }
     bool found = false;
     int i = 0;
@@ -284,7 +283,7 @@ void Language::append(BigramFreq bigramFreq) {
 
     if (!found) {
         _vectorBigramFreq[_size] = bigramFreq;
-        _size ++ ;
+        _size++;
     }
 
 }
@@ -299,7 +298,7 @@ void Language::append(BigramFreq bigramFreq) {
  */
 void Language::join(const Language& language) {
     //Iterate through the language and append every bigramFreq
-    for (int i=0 ; i<language.getSize() ; i++) {
-        append(language.at(i)) ;
+    for (int i = 0; i < language.getSize(); i++) {
+        append(language.at(i));
     }
 }

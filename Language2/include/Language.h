@@ -150,7 +150,7 @@ public:
      * @throw throw std::invalid_argument Throws a std::invalid_argument if
      * an invalid magic string is found in the given file
      */
-    void load(const char fileName[]);
+    void load(const char *fileName);
     
     /**
      * @brief Appends a copy of the given BigramFreq to this Language object.

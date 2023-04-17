@@ -15,7 +15,7 @@ Bigram::Bigram(const std::string &text) {
         _text[1] = '_';
         _text[2] = '\0';
     } else {
-        strncpy(_text, text.c_str(), 2) ;
+        strncpy(_text, text.c_str(), 3) ;
     }
 }
 
@@ -61,7 +61,7 @@ std::string Bigram::getText() const {
  * @return The text of this bigram as a string object
  */
 std::string Bigram::toString() const {
-    return _text;
+    return std::string(_text);
 }
 
 /**

@@ -32,7 +32,7 @@ function doTest  {
         # Compose the call and execute it
         if [ $USE_VALGRIND == "YES" ] || [ $FORCE_VALGRIND == "YES" ]
         then 
-            VALGRIND="valgrind --leak-check=full "
+            VALGRIND="$prefix/bin/valgrind --leak-check=full "
         else
             VALGRIND=" "
         fi
