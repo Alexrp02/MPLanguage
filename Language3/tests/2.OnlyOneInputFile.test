@@ -1,6 +1,11 @@
+%%%CALL data/30bigrams.bgr tests/output/30bigrams.bgr.out
+%%%VALGRIND
+%%%DESCRIPTION Only one input file
+%%%FROMFILE tests/output/30bigrams.bgr.out
+%%%OUTPUT
 MP-LANGUAGE-T-1.0
 spanish
-40
+30
 de 822
 do 401
 co 369
@@ -25,19 +30,9 @@ be 42
 bu 41
 fi 39
 gi 38
-am 37
 du 37
-id 37
-ám 37
-ño 37
 fe 34
 bo 28
 ge 26
 hu 23
 fo 19
-ab 4
-al 4
-aá 4
-añ 4
-ii 4
-ña 4

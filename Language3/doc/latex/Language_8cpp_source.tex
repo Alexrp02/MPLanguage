@@ -1,0 +1,182 @@
+\hypertarget{Language_8cpp_source}{}\doxysection{Language.\+cpp}
+\label{Language_8cpp_source}\index{src/Language.cpp@{src/Language.cpp}}
+\mbox{\hyperlink{Language_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00002}00002 \textcolor{comment}{ * Metodología de la Programación: Language2}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00003}00003 \textcolor{comment}{ * Curso 2022/2023}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00004}00004 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00014}00014 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Language_8h}{Language.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00017}00017 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00019}00019 \textcolor{keyword}{const} \textcolor{keywordtype}{string} Language::MAGIC\_STRING\_T = \textcolor{stringliteral}{"{}MP-\/LANGUAGE-\/T-\/1.0"{}};}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00025}\mbox{\hyperlink{classLanguage_a09448361f9188bceaaeebc5576cd6896}{00025}} \mbox{\hyperlink{classLanguage_a09448361f9188bceaaeebc5576cd6896}{Language::Language}}() \{}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00026}00026     \_languageId = string(\textcolor{stringliteral}{"{}unknown"{}});}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00027}00027 \}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00039}\mbox{\hyperlink{classLanguage_a1af860af276c044418eff975b14a52e1}{00039}} \mbox{\hyperlink{classLanguage_a09448361f9188bceaaeebc5576cd6896}{Language::Language}}(\textcolor{keywordtype}{int} numberBigrams) \{}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00040}00040     \textcolor{keywordflow}{if} (numberBigrams > Language::DIM\_VECTOR\_BIGRAM\_FREQ or numberBigrams < 0)}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00041}00041         \textcolor{keywordflow}{throw} (std::out\_of\_range(\textcolor{stringliteral}{"{}The number of bigram frequencies can´t be less than 0 and more than "{}} + DIM\_VECTOR\_BIGRAM\_FREQ));}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00043}00043     \_languageId = string(\textcolor{stringliteral}{"{}unknown"{}});}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00044}00044     \_size = numberBigrams;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00045}00045 \}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00052}\mbox{\hyperlink{classLanguage_accf302317f67bf20e93ee6ac0fe87c49}{00052}} std::string \mbox{\hyperlink{classLanguage_accf302317f67bf20e93ee6ac0fe87c49}{Language::getLanguageId}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00053}00053     \textcolor{keywordflow}{return} \_languageId;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00054}00054 \}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00061}\mbox{\hyperlink{classLanguage_a418b2d2a94102c778e5754f40407feda}{00061}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classLanguage_a418b2d2a94102c778e5754f40407feda}{Language::setLanguageId}}(\textcolor{keyword}{const} std::string\& \textcolor{keywordtype}{id}) \{}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00062}00062     \_languageId = id;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00063}00063 \}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00074}\mbox{\hyperlink{classLanguage_a2d92a62aae1f0c96f6b974183a5043ca}{00074}} \textcolor{keyword}{const} \mbox{\hyperlink{classBigramFreq}{BigramFreq}} \mbox{\hyperlink{classLanguage_a2d92a62aae1f0c96f6b974183a5043ca}{Language::at}}(\textcolor{keywordtype}{int} index)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00075}00075     \textcolor{keywordflow}{if} (index < 0 or index >= \_size)}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00076}00076         \textcolor{keywordflow}{throw} (std::out\_of\_range(\textcolor{stringliteral}{"{}The given index is not correct."{}}));}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00077}00077     \textcolor{keywordflow}{return} \_vectorBigramFreq[index];}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00078}00078 \}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00089}00089 \textcolor{comment}{//BigramFreq Language::at(int index) const \{}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00090}00090 \textcolor{comment}{//    if (index<0 or index>=\_size)}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00091}00091 \textcolor{comment}{//        throw (std::out\_of\_range("{}The given index is not correct."{})) ;}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00092}00092 \textcolor{comment}{//    return \_vectorBigramFreq[index] ;}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00093}00093 \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00100}\mbox{\hyperlink{classLanguage_aee3824f81dbbee521a28b6de3e210e2a}{00100}} \textcolor{keywordtype}{int} \mbox{\hyperlink{classLanguage_aee3824f81dbbee521a28b6de3e210e2a}{Language::getSize}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00101}00101     \textcolor{keywordflow}{return} \_size;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00102}00102 \}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00117}\mbox{\hyperlink{classLanguage_a073b07a53c240276b4b0476ea4a4b7ad}{00117}} \textcolor{keywordtype}{int} \mbox{\hyperlink{classLanguage_a073b07a53c240276b4b0476ea4a4b7ad}{Language::findBigram}}(\textcolor{keyword}{const} \mbox{\hyperlink{classBigram}{Bigram}}\& bigram)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00118}00118 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00119}00119     \textcolor{comment}{//Iterate through the array to find the Bigram position.}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00120}00120     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \_size; i++) \{}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00121}00121         \textcolor{keywordflow}{if} (\_vectorBigramFreq[i].getBigram().\mbox{\hyperlink{classLanguage_ac06065988f5b735b888faecf7f6329a5}{toString}}().compare(bigram.\mbox{\hyperlink{classBigram_a7a782c0fe5764cd4d42427fa284b79d1}{toString}}()) == 0)}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00122}00122             \textcolor{keywordflow}{return} i;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00123}00123     \}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00124}00124     \textcolor{comment}{//If not, return -\/1}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00125}00125     \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00126}00126 \}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00137}\mbox{\hyperlink{classLanguage_ac06065988f5b735b888faecf7f6329a5}{00137}} std::string \mbox{\hyperlink{classLanguage_ac06065988f5b735b888faecf7f6329a5}{Language::toString}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00138}00138     std::string result;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00139}00139     result += to\_string(\mbox{\hyperlink{classLanguage_aee3824f81dbbee521a28b6de3e210e2a}{getSize}}()) + \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00140}00140     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \_size; i++) \{}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00141}00141         \textcolor{comment}{//        cout << "{}The Bigram is "{} << \_vectorBigramFreq[i].getBigram().toString() << endl ;}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00142}00142         result += \_vectorBigramFreq[i].\mbox{\hyperlink{classBigramFreq_ab795f5f5f963d0d08d5ce5f536842eae}{toString}}();}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00143}00143         result += \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00144}00144     \}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00145}00145     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00146}00146 \}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00147}00147 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00155}\mbox{\hyperlink{classLanguage_a9e5992e8893e995e99677da8a73094b8}{00155}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classLanguage_a9e5992e8893e995e99677da8a73094b8}{Language::sort}}() \{}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00156}00156     \textcolor{comment}{//Call the function to quickSort the vector.}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00157}00157     sortArrayBigramFreq(\_vectorBigramFreq, \_size);}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00158}00158 \}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00159}00159 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00169}\mbox{\hyperlink{classLanguage_a836fbfd47e33674834d3de142d015a4d}{00169}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classLanguage_a836fbfd47e33674834d3de142d015a4d}{Language::save}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} fileName[])\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00170}00170     ofstream file;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00171}00171     \textcolor{comment}{//We open the file}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00172}00172     file.open(fileName);}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00173}00173 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00174}00174     \textcolor{comment}{//If there was an error opening it, throw exception.}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00175}00175     \textcolor{keywordflow}{if} (!file)}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00176}00176         \textcolor{keywordflow}{throw} (std::ios\_base::failure(std::string(\textcolor{stringliteral}{"{}An error occurred while opening the file "{}}) + std::string(fileName)));}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00177}00177     \textcolor{comment}{//Save the magic string}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00178}00178     file << Language::MAGIC\_STRING\_T << endl;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00179}00179 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00180}00180     \textcolor{comment}{//Save the language id}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00181}00181     file << \mbox{\hyperlink{classLanguage_accf302317f67bf20e93ee6ac0fe87c49}{getLanguageId}}() << endl;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00182}00182 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00183}00183     \textcolor{comment}{//Save the Language String}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00184}00184     file << \mbox{\hyperlink{classLanguage_ac06065988f5b735b888faecf7f6329a5}{toString}}();}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00185}00185     \textcolor{comment}{//Close the file}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00186}00186     file.close();}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00187}00187 \}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00188}00188 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00204}\mbox{\hyperlink{classLanguage_a181db5954a11ec63af0d6be3669ffa05}{00204}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classLanguage_a181db5954a11ec63af0d6be3669ffa05}{Language::load}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fileName) \{}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00205}00205     ifstream file;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00206}00206     \textcolor{comment}{//We open the file}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00207}00207 \textcolor{comment}{//    cout << "{}Reading language from: "{} << fileName << endl;}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00208}00208     file.open(fileName);}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00209}00209     \textcolor{comment}{//If there was an error opening it, throw exception.}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00210}00210     \textcolor{keywordflow}{if} (!file) \{}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00211}00211         \textcolor{keywordflow}{throw} (std::ios\_base::failure(std::string(\textcolor{stringliteral}{"{}An error occurred while opening the file "{}}) + std::string(fileName)));}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00212}00212         exit(1);}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00213}00213     \}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00214}00214     \textcolor{comment}{//Read the magic string and if it is not valid, throw exception.}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00215}00215     std::string magicString;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00216}00216     file >> magicString;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00217}00217     \textcolor{keywordflow}{if} (magicString.compare(Language::MAGIC\_STRING\_T) != 0) \{}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00218}00218         \textcolor{keywordflow}{throw} (std::invalid\_argument(\textcolor{stringliteral}{"{}The given file, does not contain a valid magic string."{}}));}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00219}00219         exit(1);}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00220}00220     \}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00221}00221     \textcolor{comment}{//Read the language id}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00222}00222     file >> \_languageId;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00223}00223 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00224}00224     \textcolor{comment}{//Read the number of bigrams in the file, if it is bigger than maximum dimension, throw error.}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00225}00225     file >> \_size;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00226}00226     \textcolor{keywordflow}{if} (\_size > DIM\_VECTOR\_BIGRAM\_FREQ) \{}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00227}00227         \textcolor{keywordflow}{throw} (std::out\_of\_range(\textcolor{stringliteral}{"{}The maximum number of arguments is "{}} + DIM\_VECTOR\_BIGRAM\_FREQ));}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00228}00228         exit(1);}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00229}00229     \}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00230}00230 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00231}00231     \textcolor{comment}{//Read the array of BigramFreq}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00232}00232     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \_size; i++) \{}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00233}00233         std::string bigramText;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00234}00234         \textcolor{keywordtype}{int} bigramFrequency;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00235}00235 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00236}00236         file >> bigramText;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00237}00237         file >> bigramFrequency;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00238}00238 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00239}00239         \textcolor{comment}{//Set the bigramFreq object with the text and frequency from the file.}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00240}00240         \mbox{\hyperlink{classBigramFreq}{BigramFreq}} b;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00241}00241         \mbox{\hyperlink{classBigram}{Bigram}} bigram = \mbox{\hyperlink{classBigram}{Bigram}}(bigramText);}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00242}00242         b.\mbox{\hyperlink{classBigramFreq_afd8e608f4a00fbb31d3da833dda62023}{setBigram}}(bigram);}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00243}00243         b.\mbox{\hyperlink{classBigramFreq_a4e81e3f63bd80b4ca42dba6014c836e3}{setFrequency}}(bigramFrequency);}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00244}00244 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00245}00245         \textcolor{comment}{//Add the created BigramFreq to the array.}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00246}00246         \_vectorBigramFreq[i] = b;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00247}00247     \}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00248}00248     file.close();}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00249}00249 \}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00250}00250 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00265}\mbox{\hyperlink{classLanguage_a286009f1d1005c0d7c4286653d409d42}{00265}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classLanguage_a286009f1d1005c0d7c4286653d409d42}{Language::append}}(\mbox{\hyperlink{classBigramFreq}{BigramFreq}} bigramFreq) \{}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00266}00266     \mbox{\hyperlink{classBigram}{Bigram}} b = bigramFreq.\mbox{\hyperlink{classBigramFreq_a9420973e6741ecce93efbb8ed5b8ffab}{getBigram}}();}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00267}00267     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classLanguage_a073b07a53c240276b4b0476ea4a4b7ad}{findBigram}}(b) == -\/1)}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00268}00268         \textcolor{keywordflow}{if} (\_size == DIM\_VECTOR\_BIGRAM\_FREQ) \{}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00269}00269             \textcolor{keywordflow}{throw} (std::out\_of\_range(\textcolor{stringliteral}{"{}The element can´t be appended to the language because it has the maximum number of bigrams."{}}));}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00270}00270             exit(1);}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00271}00271         \}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00272}00272     \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00273}00273     \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00274}00274 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00275}00275     \textcolor{comment}{//Search the bigram and increment if present.}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00276}00276     \textcolor{keywordflow}{while} (!found and i < \_size) \{}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00277}00277         \textcolor{keywordflow}{if} (\_vectorBigramFreq[i].getBigram().\mbox{\hyperlink{classLanguage_ac06065988f5b735b888faecf7f6329a5}{toString}}().compare(b.\mbox{\hyperlink{classBigram_a7a782c0fe5764cd4d42427fa284b79d1}{toString}}()) == 0) \{}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00278}00278             found = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00279}00279             \_vectorBigramFreq[i].\mbox{\hyperlink{classBigramFreq_a4e81e3f63bd80b4ca42dba6014c836e3}{setFrequency}}(\_vectorBigramFreq[i].getFrequency() + bigramFreq.\mbox{\hyperlink{classBigramFreq_a2678f74a436cca1ff40af7a1ac7b219a}{getFrequency}}());}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00280}00280         \}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00281}00281         i++;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00282}00282     \}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00283}00283 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00284}00284     \textcolor{keywordflow}{if} (!found) \{}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00285}00285         \_vectorBigramFreq[\_size] = bigramFreq;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00286}00286         \_size++;}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00287}00287     \}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00288}00288 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00289}00289 \}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00290}00290 }
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00299}\mbox{\hyperlink{classLanguage_ab555a6e07a99ad77d6d8061ea92f187a}{00299}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classLanguage_ab555a6e07a99ad77d6d8061ea92f187a}{Language::join}}(\textcolor{keyword}{const} \mbox{\hyperlink{classLanguage}{Language}}\& language) \{}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00300}00300     \textcolor{comment}{//Iterate through the language and append every bigramFreq}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00301}00301     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < language.\mbox{\hyperlink{classLanguage_aee3824f81dbbee521a28b6de3e210e2a}{getSize}}(); i++) \{}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00302}00302         \mbox{\hyperlink{classLanguage_a286009f1d1005c0d7c4286653d409d42}{append}}(language.\mbox{\hyperlink{classLanguage_a2d92a62aae1f0c96f6b974183a5043ca}{at}}(i));}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00303}00303     \}}
+\DoxyCodeLine{\Hypertarget{Language_8cpp_source_l00304}00304 \}}
+
+\end{DoxyCode}

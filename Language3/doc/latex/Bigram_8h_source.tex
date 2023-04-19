@@ -1,0 +1,45 @@
+\hypertarget{Bigram_8h_source}{}\doxysection{Bigram.\+h}
+\label{Bigram_8h_source}\index{include/Bigram.h@{include/Bigram.h}}
+\mbox{\hyperlink{Bigram_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00002}00002 \textcolor{comment}{ * Metodología de la Programación: Language1}}
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00003}00003 \textcolor{comment}{ * Curso 2022/2023}}
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00004}00004 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00013}00013 \textcolor{preprocessor}{\#ifndef BIGRAM\_H}}
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00014}00014 \textcolor{preprocessor}{\#define BIGRAM\_H}}
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00016}00016 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00017}00017 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00018}00018 \textcolor{preprocessor}{\#include <cstring>}}
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00026}\mbox{\hyperlink{classBigram}{00026}} \textcolor{keyword}{class }\mbox{\hyperlink{classBigram}{Bigram}} \{}
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00027}00027 \textcolor{keyword}{public}:    }
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00037}00037     \mbox{\hyperlink{classBigram}{Bigram}}(\textcolor{keyword}{const} std::string\& text=\textcolor{stringliteral}{"{}\_\_"{}});}
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00038}00038     }
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00046}00046     \mbox{\hyperlink{classBigram}{Bigram}}(\textcolor{keywordtype}{char} first, \textcolor{keywordtype}{char} second);}
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00047}00047     }
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00056}00056     \mbox{\hyperlink{classBigram}{Bigram}}(\textcolor{keywordtype}{char} text[]);}
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00057}00057     }
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00062}00062     std::string \mbox{\hyperlink{classBigram_ae8a73bc031d48028abea3a78ecbd61b0}{getText}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00063}00063     }
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00068}00068     std::string \mbox{\hyperlink{classBigram_a7a782c0fe5764cd4d42427fa284b79d1}{toString}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00069}00069     }
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00077}00077     \textcolor{keyword}{const} \textcolor{keywordtype}{char}\& \mbox{\hyperlink{classBigram_ae653a8bb70d1f0f8ddde88196ef51564}{at}}(\textcolor{keywordtype}{int} index) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00078}00078     }
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00086}00086     \textcolor{keywordtype}{char}\& \mbox{\hyperlink{classBigram_ae653a8bb70d1f0f8ddde88196ef51564}{at}}(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00087}00087     }
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00091}00091     \textcolor{keywordtype}{void} \mbox{\hyperlink{classBigram_ac23a498073a7c802d254235f0e63c147}{toUpper}}();}
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00092}00092  }
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00093}00093 \textcolor{keyword}{private}:   }
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00099}00099     \textcolor{keywordtype}{char} \_text[3];}
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00100}00100 \};}
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00111}00111 \textcolor{keywordtype}{bool} \mbox{\hyperlink{Bigram_8h_afe6e716ad7a25257188a41370600dfad}{isValidCharacter}}(\textcolor{keywordtype}{char} character, \textcolor{keyword}{const} std::string\& validCharacters);}
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00112}00112 }
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00113}00113 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* BIGRAM\_H */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{Bigram_8h_source_l00114}00114 }
+
+\end{DoxyCode}

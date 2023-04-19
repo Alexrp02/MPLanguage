@@ -1,0 +1,315 @@
+\hypertarget{ArrayBigramFreqFunctions_8h}{}\doxysection{include/\+Array\+Bigram\+Freq\+Functions.h File Reference}
+\label{ArrayBigramFreqFunctions_8h}\index{include/ArrayBigramFreqFunctions.h@{include/ArrayBigramFreqFunctions.h}}
+{\ttfamily \#include \char`\"{}Bigram\+Freq.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ArrayBigramFreqFunctions_8h_a9d0e14c5faa677cd54a2d5d8705f01f1}{read\+Array\+Bigram\+Freq}} (\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} array\mbox{[}$\,$\mbox{]}, const int dim, int \&n\+Elements)
+\begin{DoxyCompactList}\small\item\em Reads the number of used elements and the elements of an array of \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ArrayBigramFreqFunctions_8h_afb350c0b9d4ca009518751feebd4a15b}{print\+Array\+Bigram\+Freq}} (\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} array\mbox{[}$\,$\mbox{]}, int n\+Elements)
+\begin{DoxyCompactList}\small\item\em Prints in the standard output the number of used elements and the elements of an array of \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ArrayBigramFreqFunctions_8h_a778ef2343bf33c9542335fe395145f4c}{swap\+Elements\+Array\+Bigram\+Freq}} (\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} array\mbox{[}$\,$\mbox{]}, int n\+Elements, int first, int second)
+\begin{DoxyCompactList}\small\item\em Swaps the elements at positions {\ttfamily first} and {\ttfamily second} in the given array of \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ArrayBigramFreqFunctions_8h_a383360b5a1b02aae1086bbdf03d5dd80}{sort\+Array\+Bigram\+Freq}} (\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} array\mbox{[}$\,$\mbox{]}, int n\+Elements)
+\begin{DoxyCompactList}\small\item\em Sorts the given array of \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} in decreasing order of frequency and in decreasing order of \mbox{\hyperlink{classBigram}{Bigram}} when frequency is the same. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ArrayBigramFreqFunctions_8h_a197b9bcdb2578a5f610901f600f1ce9e}{to\+Upper\+Array\+Bigram\+Freq}} (\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} array\mbox{[}$\,$\mbox{]}, int n\+Elements)
+\begin{DoxyCompactList}\small\item\em Converts to uppercase all the bigrams within the given array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ArrayBigramFreqFunctions_8h_a5b22f5cd6d515ac4baed002148bece94}{quick\+Sort}} (\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} array\mbox{[}$\,$\mbox{]}, int low, int high)
+\begin{DoxyCompactList}\small\item\em Sorts the given array in the delimited zone by the {\ttfamily low} and {\ttfamily high}, calling other functions like swap and partition. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ArrayBigramFreqFunctions_8h_acd649ea5c9e9d3a8cca59c7f8e5bcd74}{swap}} (\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} array\mbox{[}$\,$\mbox{]}, int pos1, int pos2)
+\item 
+int \mbox{\hyperlink{ArrayBigramFreqFunctions_8h_a3c94fd780cc7c981df0da69c2284b056}{partition}} (\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} array\mbox{[}$\,$\mbox{]}, int low, int high)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+estudiante1\+: Ramos Peña, Alejandro
+\end{DoxyAuthor}
+Created on 7 February 2023, 19\+:45 
+
+Definition in file \mbox{\hyperlink{ArrayBigramFreqFunctions_8h_source}{Array\+Bigram\+Freq\+Functions.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ArrayBigramFreqFunctions_8h_a3c94fd780cc7c981df0da69c2284b056}\label{ArrayBigramFreqFunctions_8h_a3c94fd780cc7c981df0da69c2284b056}} 
+\index{ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}!partition@{partition}}
+\index{partition@{partition}!ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}}
+\doxysubsubsection{\texorpdfstring{partition()}{partition()}}
+{\footnotesize\ttfamily int partition (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}}]{array\mbox{[}$\,$\mbox{]},  }\item[{int}]{low,  }\item[{int}]{high }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & The array to be partitioned. \\
+\hline
+{\em low} & The lower bound where the array is going to be partitioned. \\
+\hline
+{\em high} & The higher bound where the array is going to be partitioned. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The position where the pivot is (the pivot is in the final position of the sorted array). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ArrayBigramFreqFunctions_8cpp_source_l00102}{102}} of file \mbox{\hyperlink{ArrayBigramFreqFunctions_8cpp_source}{Array\+Bigram\+Freq\+Functions.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00102                                                      \{}
+\DoxyCodeLine{00103     \mbox{\hyperlink{classBigramFreq}{BigramFreq}} pivot = array[high];}
+\DoxyCodeLine{00104     \textcolor{keywordtype}{int} pivotInd = low -\/ 1;}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{00106     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = low; i < high; i++) \{}
+\DoxyCodeLine{00107         \textcolor{keywordflow}{if} (array[i].getFrequency() == pivot.\mbox{\hyperlink{classBigramFreq_a2678f74a436cca1ff40af7a1ac7b219a}{getFrequency}}() \&\& array[i].toString().compare(pivot.\mbox{\hyperlink{classBigramFreq_ab795f5f5f963d0d08d5ce5f536842eae}{toString}}()) < 0) \{}
+\DoxyCodeLine{00108             pivotInd++;}
+\DoxyCodeLine{00109             swap(array, pivotInd, i);}
+\DoxyCodeLine{00110         \}}
+\DoxyCodeLine{00111         \textcolor{keywordflow}{if} (array[i].getFrequency() > pivot.\mbox{\hyperlink{classBigramFreq_a2678f74a436cca1ff40af7a1ac7b219a}{getFrequency}}()) \{}
+\DoxyCodeLine{00112             pivotInd++;}
+\DoxyCodeLine{00113             swap(array, pivotInd, i);}
+\DoxyCodeLine{00114         \}}
+\DoxyCodeLine{00115     \}}
+\DoxyCodeLine{00116     pivotInd++;}
+\DoxyCodeLine{00117     swap(array, pivotInd, high);}
+\DoxyCodeLine{00118     \textcolor{keywordflow}{return} pivotInd;}
+\DoxyCodeLine{00119 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ArrayBigramFreqFunctions_8h_afb350c0b9d4ca009518751feebd4a15b}\label{ArrayBigramFreqFunctions_8h_afb350c0b9d4ca009518751feebd4a15b}} 
+\index{ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}!printArrayBigramFreq@{printArrayBigramFreq}}
+\index{printArrayBigramFreq@{printArrayBigramFreq}!ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}}
+\doxysubsubsection{\texorpdfstring{printArrayBigramFreq()}{printArrayBigramFreq()}}
+{\footnotesize\ttfamily void print\+Array\+Bigram\+Freq (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}}]{array\mbox{[}$\,$\mbox{]},  }\item[{int}]{n\+Elements }\end{DoxyParamCaption})}
+
+
+
+Prints in the standard output the number of used elements and the elements of an array of \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & The array of \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} to be printed. Input parameter \\
+\hline
+{\em n\+Elements} & The number of elements used by the array. Input parameter \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ArrayBigramFreqFunctions_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{ArrayBigramFreqFunctions_8cpp_source}{Array\+Bigram\+Freq\+Functions.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046                                                              \{}
+\DoxyCodeLine{00047     cout << nElements << endl ;}
+\DoxyCodeLine{00048     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0 ; i<nElements ; i++) \{}
+\DoxyCodeLine{00049         cout << array[i].\mbox{\hyperlink{classBigramFreq_a9420973e6741ecce93efbb8ed5b8ffab}{getBigram}}().\mbox{\hyperlink{classBigram_a7a782c0fe5764cd4d42427fa284b79d1}{toString}}() << \textcolor{stringliteral}{"{} "{}} << array[i].\mbox{\hyperlink{classBigramFreq_a2678f74a436cca1ff40af7a1ac7b219a}{getFrequency}}() << endl ;}
+\DoxyCodeLine{00050     \}}
+\DoxyCodeLine{00051 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ArrayBigramFreqFunctions_8h_a5b22f5cd6d515ac4baed002148bece94}\label{ArrayBigramFreqFunctions_8h_a5b22f5cd6d515ac4baed002148bece94}} 
+\index{ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}!quickSort@{quickSort}}
+\index{quickSort@{quickSort}!ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}}
+\doxysubsubsection{\texorpdfstring{quickSort()}{quickSort()}}
+{\footnotesize\ttfamily void quick\+Sort (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}}]{array\mbox{[}$\,$\mbox{]},  }\item[{int}]{low,  }\item[{int}]{high }\end{DoxyParamCaption})}
+
+
+
+Sorts the given array in the delimited zone by the {\ttfamily low} and {\ttfamily high}, calling other functions like swap and partition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & The array to be sorted. \\
+\hline
+{\em low} & The lower index of the array to be sorted. \\
+\hline
+{\em high} & The high index of the array to be sorted. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ArrayBigramFreqFunctions_8cpp_source_l00091}{91}} of file \mbox{\hyperlink{ArrayBigramFreqFunctions_8cpp_source}{Array\+Bigram\+Freq\+Functions.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091                                                       \{}
+\DoxyCodeLine{00092     \textcolor{keywordflow}{if} (low >= high || low < 0) \{}
+\DoxyCodeLine{00093         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00094     \}}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00096     \textcolor{keywordtype}{int} pivot = partition(array, low, high);}
+\DoxyCodeLine{00097     quickSort(array, low, pivot-\/1);}
+\DoxyCodeLine{00098     quickSort(array, pivot+1, high);}
+\DoxyCodeLine{00099 }
+\DoxyCodeLine{00100 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ArrayBigramFreqFunctions_8h_a9d0e14c5faa677cd54a2d5d8705f01f1}\label{ArrayBigramFreqFunctions_8h_a9d0e14c5faa677cd54a2d5d8705f01f1}} 
+\index{ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}!readArrayBigramFreq@{readArrayBigramFreq}}
+\index{readArrayBigramFreq@{readArrayBigramFreq}!ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}}
+\doxysubsubsection{\texorpdfstring{readArrayBigramFreq()}{readArrayBigramFreq()}}
+{\footnotesize\ttfamily void read\+Array\+Bigram\+Freq (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}}]{array\mbox{[}$\,$\mbox{]},  }\item[{const int}]{dim,  }\item[{int \&}]{n\+Elements }\end{DoxyParamCaption})}
+
+
+
+Reads the number of used elements and the elements of an array of \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & The array where the elements will be stored. Output parameter \\
+\hline
+{\em dim} & The capacity of the array. Input parameter \\
+\hline
+{\em n\+Elements} & The number of elements used by the array. Output parameter \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ArrayBigramFreqFunctions_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{ArrayBigramFreqFunctions_8cpp_source}{Array\+Bigram\+Freq\+Functions.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023                                                                             \{}
+\DoxyCodeLine{00024     cin >> nElements ;}
+\DoxyCodeLine{00025     \textcolor{keywordflow}{if}(nElements > dim ) nElements = dim ;}
+\DoxyCodeLine{00026     }
+\DoxyCodeLine{00027     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0 ; i<nElements ; i++) \{}
+\DoxyCodeLine{00028         \textcolor{keywordtype}{string} text ;}
+\DoxyCodeLine{00029         \textcolor{keywordtype}{int} freq ;}
+\DoxyCodeLine{00030         \mbox{\hyperlink{classBigramFreq}{BigramFreq}} b ;}
+\DoxyCodeLine{00031         cin >> text ;}
+\DoxyCodeLine{00032         cin >> freq ;}
+\DoxyCodeLine{00033         \mbox{\hyperlink{classBigram}{Bigram}} bigram = \mbox{\hyperlink{classBigram}{Bigram}}(text) ;}
+\DoxyCodeLine{00034         b.\mbox{\hyperlink{classBigramFreq_afd8e608f4a00fbb31d3da833dda62023}{setBigram}}(bigram) ;}
+\DoxyCodeLine{00035         b.\mbox{\hyperlink{classBigramFreq_a4e81e3f63bd80b4ca42dba6014c836e3}{setFrequency}}(freq) ;}
+\DoxyCodeLine{00036         array[i] = b ;}
+\DoxyCodeLine{00037     \}}
+\DoxyCodeLine{00038 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ArrayBigramFreqFunctions_8h_a383360b5a1b02aae1086bbdf03d5dd80}\label{ArrayBigramFreqFunctions_8h_a383360b5a1b02aae1086bbdf03d5dd80}} 
+\index{ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}!sortArrayBigramFreq@{sortArrayBigramFreq}}
+\index{sortArrayBigramFreq@{sortArrayBigramFreq}!ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}}
+\doxysubsubsection{\texorpdfstring{sortArrayBigramFreq()}{sortArrayBigramFreq()}}
+{\footnotesize\ttfamily void sort\+Array\+Bigram\+Freq (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}}]{array\mbox{[}$\,$\mbox{]},  }\item[{int}]{n\+Elements }\end{DoxyParamCaption})}
+
+
+
+Sorts the given array of \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} in decreasing order of frequency and in decreasing order of \mbox{\hyperlink{classBigram}{Bigram}} when frequency is the same. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & The array of \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}. Input/\+Output parameter \\
+\hline
+{\em n\+Elements} & The number of elements used by the array. Input parameter \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ArrayBigramFreqFunctions_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{ArrayBigramFreqFunctions_8cpp_source}{Array\+Bigram\+Freq\+Functions.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074                                                             \{}
+\DoxyCodeLine{00075     quickSort(array, 0, nElements-\/1) ;}
+\DoxyCodeLine{00076 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ArrayBigramFreqFunctions_8h_acd649ea5c9e9d3a8cca59c7f8e5bcd74}\label{ArrayBigramFreqFunctions_8h_acd649ea5c9e9d3a8cca59c7f8e5bcd74}} 
+\index{ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}!swap@{swap}}
+\index{swap@{swap}!ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily void swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}}]{array\mbox{[}$\,$\mbox{]},  }\item[{int}]{pos1,  }\item[{int}]{pos2 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & The array where the swap is going to be done. \\
+\hline
+{\em pos1} & The position of the first item to be swapped. \\
+\hline
+{\em pos2} & The position of the second item to be swapped. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ArrayBigramFreqFunctions_8cpp_source_l00121}{121}} of file \mbox{\hyperlink{ArrayBigramFreqFunctions_8cpp_source}{Array\+Bigram\+Freq\+Functions.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00121                                                               \{}
+\DoxyCodeLine{00122     \mbox{\hyperlink{classBigramFreq}{BigramFreq}} aux = array[pos1];}
+\DoxyCodeLine{00123     array[pos1] = array[pos2];}
+\DoxyCodeLine{00124     array[pos2] = aux;}
+\DoxyCodeLine{00125 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ArrayBigramFreqFunctions_8h_a778ef2343bf33c9542335fe395145f4c}\label{ArrayBigramFreqFunctions_8h_a778ef2343bf33c9542335fe395145f4c}} 
+\index{ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}!swapElementsArrayBigramFreq@{swapElementsArrayBigramFreq}}
+\index{swapElementsArrayBigramFreq@{swapElementsArrayBigramFreq}!ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}}
+\doxysubsubsection{\texorpdfstring{swapElementsArrayBigramFreq()}{swapElementsArrayBigramFreq()}}
+{\footnotesize\ttfamily void swap\+Elements\+Array\+Bigram\+Freq (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}}]{array\mbox{[}$\,$\mbox{]},  }\item[{int}]{n\+Elements,  }\item[{int}]{first,  }\item[{int}]{second }\end{DoxyParamCaption})}
+
+
+
+Swaps the elements at positions {\ttfamily first} and {\ttfamily second} in the given array of \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & The array of \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}. Input/\+Output parameter \\
+\hline
+{\em n\+Elements} & The number of elements used by the array. Input parameter \\
+\hline
+{\em first} & the position of the first element to be swaped. Input parameter \\
+\hline
+{\em second} & the position of the second element to be swaped. Input parameter \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ArrayBigramFreqFunctions_8cpp_source_l00061}{61}} of file \mbox{\hyperlink{ArrayBigramFreqFunctions_8cpp_source}{Array\+Bigram\+Freq\+Functions.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062                     \{}
+\DoxyCodeLine{00063     \mbox{\hyperlink{classBigramFreq}{BigramFreq}} aux = array[second] ;}
+\DoxyCodeLine{00064     array[second] = array[first] ;}
+\DoxyCodeLine{00065     array [first] = array[second] ;}
+\DoxyCodeLine{00066 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ArrayBigramFreqFunctions_8h_a197b9bcdb2578a5f610901f600f1ce9e}\label{ArrayBigramFreqFunctions_8h_a197b9bcdb2578a5f610901f600f1ce9e}} 
+\index{ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}!toUpperArrayBigramFreq@{toUpperArrayBigramFreq}}
+\index{toUpperArrayBigramFreq@{toUpperArrayBigramFreq}!ArrayBigramFreqFunctions.h@{ArrayBigramFreqFunctions.h}}
+\doxysubsubsection{\texorpdfstring{toUpperArrayBigramFreq()}{toUpperArrayBigramFreq()}}
+{\footnotesize\ttfamily void to\+Upper\+Array\+Bigram\+Freq (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}}}]{array\mbox{[}$\,$\mbox{]},  }\item[{int}]{n\+Elements }\end{DoxyParamCaption})}
+
+
+
+Converts to uppercase all the bigrams within the given array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & An array of \mbox{\hyperlink{classBigramFreq}{Bigram\+Freq}} objects. Input/\+Output parameter \\
+\hline
+{\em n\+Elements} & The number of elements in the array. Input parameter \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ArrayBigramFreqFunctions_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{ArrayBigramFreqFunctions_8cpp_source}{Array\+Bigram\+Freq\+Functions.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083                                                                \{}
+\DoxyCodeLine{00084     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0 ; i< nElements ; i++) \{}
+\DoxyCodeLine{00085         \mbox{\hyperlink{classBigram}{Bigram}} aux = array[i].\mbox{\hyperlink{classBigramFreq_a9420973e6741ecce93efbb8ed5b8ffab}{getBigram}}() ;}
+\DoxyCodeLine{00086         aux.\mbox{\hyperlink{classBigram_ac23a498073a7c802d254235f0e63c147}{toUpper}}() ;}
+\DoxyCodeLine{00087         array[i].\mbox{\hyperlink{classBigramFreq_afd8e608f4a00fbb31d3da833dda62023}{setBigram}}(aux) ;}
+\DoxyCodeLine{00088     \}}
+\DoxyCodeLine{00089 \}}
+
+\end{DoxyCode}

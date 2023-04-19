@@ -1,0 +1,70 @@
+\hypertarget{Bigram_8cpp_source}{}\doxysection{Bigram.\+cpp}
+\label{Bigram_8cpp_source}\index{src/Bigram.cpp@{src/Bigram.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Bigram_8h}{Bigram.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00012}\mbox{\hyperlink{classBigram_adc1fcc2edad75ea9885cdfc821159310}{00012}} \mbox{\hyperlink{classBigram_adc1fcc2edad75ea9885cdfc821159310}{Bigram::Bigram}}(\textcolor{keyword}{const} std::string \&text) \{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00013}00013     \textcolor{keywordflow}{if} (text.size() != 2) \{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00014}00014         \_text[0] = \textcolor{charliteral}{'\_'};}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00015}00015         \_text[1] = \textcolor{charliteral}{'\_'};}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00016}00016         \_text[2] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00017}00017     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00018}00018         strncpy(\_text, text.c\_str(), 3) ;}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00019}00019     \}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00020}00020 \}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00029}\mbox{\hyperlink{classBigram_a29672d1f6a5d34d063ea9b512d967d6c}{00029}} \mbox{\hyperlink{classBigram_adc1fcc2edad75ea9885cdfc821159310}{Bigram::Bigram}}(\textcolor{keywordtype}{char} first, \textcolor{keywordtype}{char} second) \{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00030}00030     \textcolor{comment}{//Hay que añadir un \(\backslash\)0 al final del array de caracteres ya que ahora es un cstring}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00031}00031     \_text[0] = first;}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00032}00032     \_text[1] = second;}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00033}00033     \_text[2] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00034}00034 \}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00036}\mbox{\hyperlink{classBigram_a8d32480f5a9edbc17f4bd83f1cfc486b}{00036}} \mbox{\hyperlink{classBigram_adc1fcc2edad75ea9885cdfc821159310}{Bigram::Bigram}}(\textcolor{keywordtype}{char} text[]) \{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00037}00037     \textcolor{keywordtype}{int} count = 0;}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00038}00038     \textcolor{keywordflow}{while} (text[count] != \textcolor{charliteral}{'\(\backslash\)0'})}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00039}00039         count++;}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00040}00040     \textcolor{keywordflow}{if} (count != 2) \{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00041}00041         \_text[0] = \textcolor{charliteral}{'\_'};}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00042}00042         \_text[1] = \textcolor{charliteral}{'\_'};}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00043}00043         \_text[2] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00044}00044     \}\textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00045}00045         \_text[0] = text[0] ;}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00046}00046         \_text[1] = text[1] ;}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00047}00047         \_text[2] = \textcolor{charliteral}{'\(\backslash\)0'} ;}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00048}00048     \}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00049}00049 \}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00055}\mbox{\hyperlink{classBigram_ae8a73bc031d48028abea3a78ecbd61b0}{00055}} std::string \mbox{\hyperlink{classBigram_ae8a73bc031d48028abea3a78ecbd61b0}{Bigram::getText}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00056}00056     \textcolor{keywordflow}{return} \_text;}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00057}00057 \}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00063}\mbox{\hyperlink{classBigram_a7a782c0fe5764cd4d42427fa284b79d1}{00063}} std::string \mbox{\hyperlink{classBigram_a7a782c0fe5764cd4d42427fa284b79d1}{Bigram::toString}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00064}00064     \textcolor{keywordflow}{return} std::string(\_text);}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00065}00065 \}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00074}\mbox{\hyperlink{classBigram_ae653a8bb70d1f0f8ddde88196ef51564}{00074}} \textcolor{keyword}{const} \textcolor{keywordtype}{char} \&\mbox{\hyperlink{classBigram_ae653a8bb70d1f0f8ddde88196ef51564}{Bigram::at}}(\textcolor{keywordtype}{int} index)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00075}00075     \textcolor{keywordflow}{if} (index > 1 || index < 0) \{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00076}00076         \textcolor{keywordflow}{throw} (std::out\_of\_range(\textcolor{stringliteral}{"{}The given index has to be either 0 or 1."{}}));}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00077}00077     \}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00078}00078     \textcolor{keywordflow}{return} \_text[index];}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00079}00079 \}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00088}\mbox{\hyperlink{classBigram_a56175c243027c773f85cf4f1a73d766c}{00088}} \textcolor{keywordtype}{char} \& \mbox{\hyperlink{classBigram_ae653a8bb70d1f0f8ddde88196ef51564}{Bigram::at}}(\textcolor{keywordtype}{int} index) \{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00089}00089     \textcolor{keywordflow}{if} (index > 1 || index < 0) \{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00090}00090         \textcolor{keywordflow}{throw} (std::out\_of\_range(\textcolor{stringliteral}{"{}The given index has to be either 0 or 1."{}}));}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00091}00091     \}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00092}00092     \textcolor{keywordflow}{return} \_text[index];}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00093}00093 \}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00105}\mbox{\hyperlink{Bigram_8h_afe6e716ad7a25257188a41370600dfad}{00105}} \textcolor{keywordtype}{bool} isValidCharacter(\textcolor{keywordtype}{char} character, \textcolor{keyword}{const} std::string\& validCharacters) \{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00106}00106     \textcolor{keywordflow}{return} validCharacters.find(character) != std::string::npos;}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00107}00107 \}}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00109}\mbox{\hyperlink{classBigram_ac23a498073a7c802d254235f0e63c147}{00109}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classBigram_ac23a498073a7c802d254235f0e63c147}{Bigram::toUpper}}() \{}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00110}00110     \_text[0] = toupper(\_text[0]);}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00111}00111     \_text[1] = toupper(\_text[1]);}
+\DoxyCodeLine{\Hypertarget{Bigram_8cpp_source_l00112}00112 \}}
+
+\end{DoxyCode}

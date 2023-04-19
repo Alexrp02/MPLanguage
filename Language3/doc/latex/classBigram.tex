@@ -1,0 +1,305 @@
+\hypertarget{classBigram}{}\doxysection{Bigram Class Reference}
+\label{classBigram}\index{Bigram@{Bigram}}
+
+
+It represents a pair of characters. It is used to store pairs of consecutive characters from a text. It uses a string to store the pair of characters.  
+
+
+
+
+{\ttfamily \#include $<$Bigram.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBigram_adc1fcc2edad75ea9885cdfc821159310}{Bigram}} (const std\+::string \&text=\char`\"{}\+\_\+\+\_\+\char`\"{})
+\begin{DoxyCompactList}\small\item\em It builds a \mbox{\hyperlink{classBigram}{Bigram}} object with {\ttfamily text} as the text of the bigram. If the string {\ttfamily text} contains a number of characters other than two, then the text of the bigram will be initialized with \char`\"{}\+\_\+\+\_\+\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBigram_a29672d1f6a5d34d063ea9b512d967d6c}{Bigram}} (char first, char second)
+\begin{DoxyCompactList}\small\item\em It builds a \mbox{\hyperlink{classBigram}{Bigram}} object using the two characters passed as parameters of this constructor as the text of the bigram. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBigram_a8d32480f5a9edbc17f4bd83f1cfc486b}{Bigram}} (char text\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em It builds a \mbox{\hyperlink{classBigram}{Bigram}} object with {\ttfamily text} (a c-\/string) as the text of the bigram. If the c-\/string {\ttfamily text} contains a number of character other than two, then the text of the bigram will be initialized with \char`\"{}\+\_\+\+\_\+\char`\"{}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classBigram_ae8a73bc031d48028abea3a78ecbd61b0}{get\+Text}} () const
+\begin{DoxyCompactList}\small\item\em Obtains a copy of the text of this bigram as a string object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classBigram_a7a782c0fe5764cd4d42427fa284b79d1}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em Obtains a copy of the text of this bigram as a string object. \end{DoxyCompactList}\item 
+const char \& \mbox{\hyperlink{classBigram_ae653a8bb70d1f0f8ddde88196ef51564}{at}} (int index) const
+\begin{DoxyCompactList}\small\item\em Gets a const reference to the character at the given position. \end{DoxyCompactList}\item 
+char \& \mbox{\hyperlink{classBigram_a56175c243027c773f85cf4f1a73d766c}{at}} (int index)
+\begin{DoxyCompactList}\small\item\em Gets a reference to the character at the given position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBigram_ac23a498073a7c802d254235f0e63c147}{to\+Upper}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+It represents a pair of characters. It is used to store pairs of consecutive characters from a text. It uses a string to store the pair of characters. 
+
+Definition at line \mbox{\hyperlink{Bigram_8h_source_l00026}{26}} of file \mbox{\hyperlink{Bigram_8h_source}{Bigram.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBigram_adc1fcc2edad75ea9885cdfc821159310}\label{classBigram_adc1fcc2edad75ea9885cdfc821159310}} 
+\index{Bigram@{Bigram}!Bigram@{Bigram}}
+\index{Bigram@{Bigram}!Bigram@{Bigram}}
+\doxysubsubsection{\texorpdfstring{Bigram()}{Bigram()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Bigram\+::\+Bigram (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text = {\ttfamily \char`\"{}\+\_\+\+\_\+\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+It builds a \mbox{\hyperlink{classBigram}{Bigram}} object with {\ttfamily text} as the text of the bigram. If the string {\ttfamily text} contains a number of characters other than two, then the text of the bigram will be initialized with \char`\"{}\+\_\+\+\_\+\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & the text for the bigram. It should be a string with just two characters.\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & the text for the bigram. It should be a string with just two characters. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Bigram_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{Bigram_8cpp_source}{Bigram.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012                                     \{}
+\DoxyCodeLine{00013     \textcolor{keywordflow}{if} (text.size() != 2) \{}
+\DoxyCodeLine{00014         \_text[0] = \textcolor{charliteral}{'\_'};}
+\DoxyCodeLine{00015         \_text[1] = \textcolor{charliteral}{'\_'};}
+\DoxyCodeLine{00016         \_text[2] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00017     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00018         strncpy(\_text, text.c\_str(), 3) ;}
+\DoxyCodeLine{00019     \}}
+\DoxyCodeLine{00020 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBigram_a29672d1f6a5d34d063ea9b512d967d6c}\label{classBigram_a29672d1f6a5d34d063ea9b512d967d6c}} 
+\index{Bigram@{Bigram}!Bigram@{Bigram}}
+\index{Bigram@{Bigram}!Bigram@{Bigram}}
+\doxysubsubsection{\texorpdfstring{Bigram()}{Bigram()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Bigram\+::\+Bigram (\begin{DoxyParamCaption}\item[{char}]{first,  }\item[{char}]{second }\end{DoxyParamCaption})}
+
+
+
+It builds a \mbox{\hyperlink{classBigram}{Bigram}} object using the two characters passed as parameters of this constructor as the text of the bigram. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first} & the first character for the bigram \\
+\hline
+{\em second} & the second character for the bigram\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em first} & the first character for the bigram \\
+\hline
+{\em second} & the second character for the bigram \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Bigram_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{Bigram_8cpp_source}{Bigram.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029                                       \{}
+\DoxyCodeLine{00030     \textcolor{comment}{//Hay que añadir un \(\backslash\)0 al final del array de caracteres ya que ahora es un cstring}}
+\DoxyCodeLine{00031     \_text[0] = first;}
+\DoxyCodeLine{00032     \_text[1] = second;}
+\DoxyCodeLine{00033     \_text[2] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00034 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBigram_a8d32480f5a9edbc17f4bd83f1cfc486b}\label{classBigram_a8d32480f5a9edbc17f4bd83f1cfc486b}} 
+\index{Bigram@{Bigram}!Bigram@{Bigram}}
+\index{Bigram@{Bigram}!Bigram@{Bigram}}
+\doxysubsubsection{\texorpdfstring{Bigram()}{Bigram()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Bigram\+::\+Bigram (\begin{DoxyParamCaption}\item[{char}]{text\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+It builds a \mbox{\hyperlink{classBigram}{Bigram}} object with {\ttfamily text} (a c-\/string) as the text of the bigram. If the c-\/string {\ttfamily text} contains a number of character other than two, then the text of the bigram will be initialized with \char`\"{}\+\_\+\+\_\+\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & the text for the bigram. Input parameter \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Bigram_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{Bigram_8cpp_source}{Bigram.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036                           \{}
+\DoxyCodeLine{00037     \textcolor{keywordtype}{int} count = 0;}
+\DoxyCodeLine{00038     \textcolor{keywordflow}{while} (text[count] != \textcolor{charliteral}{'\(\backslash\)0'})}
+\DoxyCodeLine{00039         count++;}
+\DoxyCodeLine{00040     \textcolor{keywordflow}{if} (count != 2) \{}
+\DoxyCodeLine{00041         \_text[0] = \textcolor{charliteral}{'\_'};}
+\DoxyCodeLine{00042         \_text[1] = \textcolor{charliteral}{'\_'};}
+\DoxyCodeLine{00043         \_text[2] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00044     \}\textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00045         \_text[0] = text[0] ;}
+\DoxyCodeLine{00046         \_text[1] = text[1] ;}
+\DoxyCodeLine{00047         \_text[2] = \textcolor{charliteral}{'\(\backslash\)0'} ;}
+\DoxyCodeLine{00048     \}}
+\DoxyCodeLine{00049 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBigram_a56175c243027c773f85cf4f1a73d766c}\label{classBigram_a56175c243027c773f85cf4f1a73d766c}} 
+\index{Bigram@{Bigram}!at@{at}}
+\index{at@{at}!Bigram@{Bigram}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily char \& Bigram\+::at (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Gets a reference to the character at the given position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the position to consider \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & Throws a std\+::out\+\_\+of\+\_\+range exception if the index is not equals to 0 or 1 \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+A reference to the character at the given position 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Bigram_8cpp_source_l00088}{88}} of file \mbox{\hyperlink{Bigram_8cpp_source}{Bigram.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088                            \{}
+\DoxyCodeLine{00089     \textcolor{keywordflow}{if} (index > 1 || index < 0) \{}
+\DoxyCodeLine{00090         \textcolor{keywordflow}{throw} (std::out\_of\_range(\textcolor{stringliteral}{"{}The given index has to be either 0 or 1."{}}));}
+\DoxyCodeLine{00091     \}}
+\DoxyCodeLine{00092     \textcolor{keywordflow}{return} \_text[index];}
+\DoxyCodeLine{00093 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBigram_ae653a8bb70d1f0f8ddde88196ef51564}\label{classBigram_ae653a8bb70d1f0f8ddde88196ef51564}} 
+\index{Bigram@{Bigram}!at@{at}}
+\index{at@{at}!Bigram@{Bigram}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const char \& Bigram\+::at (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Gets a const reference to the character at the given position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the position to consider \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & Throws a std\+::out\+\_\+of\+\_\+range exception if the index is not equals to 0 or 1 \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+A const reference to the character at the given position 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Bigram_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{Bigram_8cpp_source}{Bigram.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074                                       \{}
+\DoxyCodeLine{00075     \textcolor{keywordflow}{if} (index > 1 || index < 0) \{}
+\DoxyCodeLine{00076         \textcolor{keywordflow}{throw} (std::out\_of\_range(\textcolor{stringliteral}{"{}The given index has to be either 0 or 1."{}}));}
+\DoxyCodeLine{00077     \}}
+\DoxyCodeLine{00078     \textcolor{keywordflow}{return} \_text[index];}
+\DoxyCodeLine{00079 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBigram_ae8a73bc031d48028abea3a78ecbd61b0}\label{classBigram_ae8a73bc031d48028abea3a78ecbd61b0}} 
+\index{Bigram@{Bigram}!getText@{getText}}
+\index{getText@{getText}!Bigram@{Bigram}}
+\doxysubsubsection{\texorpdfstring{getText()}{getText()}}
+{\footnotesize\ttfamily std\+::string Bigram\+::get\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Obtains a copy of the text of this bigram as a string object. 
+
+\begin{DoxyReturn}{Returns}
+The text of this bigram as a string object 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Bigram_8cpp_source_l00055}{55}} of file \mbox{\hyperlink{Bigram_8cpp_source}{Bigram.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055                                 \{}
+\DoxyCodeLine{00056     \textcolor{keywordflow}{return} \_text;}
+\DoxyCodeLine{00057 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBigram_a7a782c0fe5764cd4d42427fa284b79d1}\label{classBigram_a7a782c0fe5764cd4d42427fa284b79d1}} 
+\index{Bigram@{Bigram}!toString@{toString}}
+\index{toString@{toString}!Bigram@{Bigram}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string Bigram\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Obtains a copy of the text of this bigram as a string object. 
+
+\begin{DoxyReturn}{Returns}
+The text of this bigram as a string object 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Bigram_8cpp_source_l00063}{63}} of file \mbox{\hyperlink{Bigram_8cpp_source}{Bigram.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063                                  \{}
+\DoxyCodeLine{00064     \textcolor{keywordflow}{return} std::string(\_text);}
+\DoxyCodeLine{00065 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBigram_ac23a498073a7c802d254235f0e63c147}\label{classBigram_ac23a498073a7c802d254235f0e63c147}} 
+\index{Bigram@{Bigram}!toUpper@{toUpper}}
+\index{toUpper@{toUpper}!Bigram@{Bigram}}
+\doxysubsubsection{\texorpdfstring{toUpper()}{toUpper()}}
+{\footnotesize\ttfamily void Bigram\+::to\+Upper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Converts lowercase letters in this bigram to uppercase. Modifier method 
+
+Definition at line \mbox{\hyperlink{Bigram_8cpp_source_l00109}{109}} of file \mbox{\hyperlink{Bigram_8cpp_source}{Bigram.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00109                      \{}
+\DoxyCodeLine{00110     \_text[0] = toupper(\_text[0]);}
+\DoxyCodeLine{00111     \_text[1] = toupper(\_text[1]);}
+\DoxyCodeLine{00112 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Bigram_8h}{Bigram.\+h}}\item 
+src/Bigram.\+cpp\end{DoxyCompactItemize}
