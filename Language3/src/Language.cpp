@@ -112,20 +112,21 @@ void Language::setSize(int size) {
  * Sum all the substractions, divide by the square of the size and return.
  */
 double Language::getDistance(const Language &language) const {
-    int suma = 0 ;
+    double suma = 0 ;
     for (int i=0 ; i<_size ; i++) {
         // Look for the position of the Bigram in the other language
         int pos = language.findBigram(_vectorBigramFreq[i].getBigram()) ;
         
         // If it is not present, assign the size value
-        if(!pos)
+        if(pos == -1)
             pos = language.getSize() ;
         
         // Substract the two values and apply absolute value
         suma += abs(i-pos) ;
     }
     // Divide by the square of the size
-    suma /= _size*_size ;
+    suma = suma / (_size*_size) ;
+    cout << "Suma is " << suma << endl ;
     return suma ;
 }
 

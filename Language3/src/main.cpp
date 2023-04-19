@@ -40,20 +40,77 @@ bool checkFirstParam(int argc, char *argv[]) {
         return true;
     // If the optional parameter is -t, the next has to be either min or max.
     if (strcmp(argv[1], "-t") == 0)
-        if (strcmp(argv[2], "min")==0 || strcmp(argv[2], "max")==0)
-            if(argc >= 5)
+        if (strcmp(argv[2], "min") == 0 || strcmp(argv[2], "max") == 0)
+            if (argc >= 5)
                 return true;
-        return false ;
+    return false;
 }
 
 int main(int argc, char* argv[]) {
     //Give error if the number of args is not enough
-    if (argc < 3 || !checkFirstParam(argc, argv)) {
+    bool param = checkFirstParam(argc, argv); // boolean to check if param was declared
+    if (argc < 3 || !param) {
         cout << "Error, run with the following parameters:";
         cout << endl;
         cout << "language3 [-t min|max] <file1.bgr> <file2.bgr> [ ... <filen.bgr>]" << endl;
         exit(1);
     }
 
+    int tam = argc - 2; // Vector size
+    int i = 1; // first language index
+    bool min = true; // Variable to check or not for the min
+    // If parameter given, update first index and the parameter value
+    if (!strcmp(argv[1], "-t")) {
+        cout << "Has argument" << endl;
+        i = 3;
+        strcmp(argv[2], "min") == 0 ? min = true : min = false;
+        tam -= 2;
+    }
+    // Initialize language vector
+    Language *vector = new Language[tam];
 
+    double res = 0;
+    int pos = 0;
+    int index = i;
+
+    Language comparado;
+    comparado.load(argv[i++]); // Load the first language
+
+    // Assign the initial res to the comparation of the first 2.
+    vector[pos++].load(argv[i]);
+    res = comparado.getDistance(vector[0]);
+    cout << "Distance to " << argv[i++] << ": " << res << endl;
+
+    // Load every other language (if present)
+    for (i; i < argc; i++) {
+        // Load next language and calculate distance
+        vector[pos].load(argv[i]);
+        double distance = comparado.getDistance(vector[pos]);
+        cout << "Distance to " << argv[i] << ": " << distance << endl;
+
+        // Check if we are looking for the maximum or the minimum and update variable
+        if (min) {
+            if (distance < res) {
+                index = i;
+                res = distance;
+            }
+        } else {
+            if (distance > res) {
+                index = i;
+                res = distance;
+            }
+        }
+        pos++;
+    }
+
+    // Show the result
+    if (min) {
+        cout << "Nearest language is " << argv[index] << " with a distance of " << res << endl;
+    } else {
+        cout << "The furthest language is " << argv[index] << " with a distance of " << res << endl;
+    }
+
+    // Deassign memory to the vector
+    delete[] vector;
+    return 0;
 }
