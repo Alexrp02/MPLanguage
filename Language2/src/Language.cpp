@@ -204,7 +204,7 @@ void Language::save(const char fileName[]) const {
 void Language::load(const char* fileName) {
     ifstream file;
     //We open the file
-    cout << "Reading language from: " << fileName << endl;
+//    cout << "Reading language from: " << fileName << endl;
     file.open(fileName);
     //If there was an error opening it, throw exception.
     if (!file) {

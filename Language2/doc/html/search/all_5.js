@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quicksort_0',['quickSort',['../ArrayBigramFreqFunctions_8h.html#a5b22f5cd6d515ac4baed002148bece94',1,'ArrayBigramFreqFunctions.cpp']]]
+  ['join_0',['join',['../classLanguage.html#ab555a6e07a99ad77d6d8061ea92f187a',1,'Language']]]
 ];

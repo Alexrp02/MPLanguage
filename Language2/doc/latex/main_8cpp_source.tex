@@ -9,35 +9,63 @@
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00005}00005 }
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00006}00006 \textcolor{comment}{/* }}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00007}00007 \textcolor{comment}{ * File:   main.cpp}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00008}00008 \textcolor{comment}{ * @author Silvia Acid Carrillo <acid@decsai.ugr.es>}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}00009 \textcolor{comment}{ * @author Andrés Cano Utrera <acu@decsai.ugr.es>}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00010}00010 \textcolor{comment}{ * @author Luis Castillo Vidal <L.Castillo@decsai.ugr.es>}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00011}00011 \textcolor{comment}{ *}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}00012 \textcolor{comment}{ * Created on 2 de febrero de 2023, 12:23}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013 \textcolor{comment}{ */}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015 \textcolor{preprocessor}{\#include <iostream>}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016 \textcolor{preprocessor}{\#include <stdio.h>} }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}00017 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Bigram_8h}{Bigram.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018 \textcolor{preprocessor}{\#include "{}BigramFreq.h"{}}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}00019 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{ArrayBigramFreqFunctions_8h}{ArrayBigramFreqFunctions.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}00020 \textcolor{keyword}{using namespace }std ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}00021 }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}00033 \textcolor{keyword}{const} \textcolor{keywordtype}{int} DIM = 500 ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034 }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035 \textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char}* argv[]) \{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036     \textcolor{keywordtype}{int} tam ; }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037     \mbox{\hyperlink{classBigramFreq}{BigramFreq}} array[DIM] ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038     readArrayBigramFreq(array, DIM, tam ) ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039     }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040     printArrayBigramFreq(array, tam) ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041     }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042     sortArrayBigramFreq(array, tam) ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043     }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044     toUpperArrayBigramFreq(array, tam) ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045     }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046     printArrayBigramFreq(array, tam) ;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047 \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00008}00008 \textcolor{comment}{ * @author estudiante1: Ramos Peña, Alejandro}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}00009 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00010}00010 \textcolor{comment}{ * Created on 2 de febrero de 2023, 12:23}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00011}00011 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014 \textcolor{preprocessor}{\#include <stdio.h>} }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Bigram_8h}{Bigram.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016 \textcolor{preprocessor}{\#include "{}BigramFreq.h"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}00017 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Language_8h}{Language.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{ArrayBigramFreqFunctions_8h}{ArrayBigramFreqFunctions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}00019 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}00032 \textcolor{keyword}{const} \textcolor{keywordtype}{int} DIM = 500;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034 \textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char}* argv[]) \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035 \textcolor{comment}{//    cout << argc << endl;}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036     \textcolor{comment}{//Give error if the number of args is not enough}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037     \textcolor{keywordflow}{if} (argc < 3) \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038         cout << \textcolor{stringliteral}{"{}Error, run with the following parameters:"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039         cout << endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040         cout << \textcolor{stringliteral}{"{}language2 <file1.bgr> [<file2.bgr> ... <filen.bgr>] <outputFile.bgr> "{}} << endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041         exit(1) ;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042     \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044     \textcolor{comment}{//Create an array of Languages to store the laguages from the files}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045     \mbox{\hyperlink{classLanguage}{Language}} languageArray[argc -\/ 2];}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046 \textcolor{comment}{//    cout << "{}Array created."{} << endl;}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}00048     \textcolor{comment}{//Iterate and read every language}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < argc -\/ 2; i++) \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050         \mbox{\hyperlink{classLanguage}{Language}} lang = \mbox{\hyperlink{classLanguage}{Language}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}00051         lang.\mbox{\hyperlink{classLanguage_a181db5954a11ec63af0d6be3669ffa05}{load}}(argv[i + 1]);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052         languageArray[i] = lang;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00053}00053 \textcolor{comment}{//        cout << "{}The readed language is: "{} << endl;}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00054}00054 \textcolor{comment}{//        cout << languageArray[i].toString() << endl;}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00055}00055     \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056 \textcolor{comment}{//    cout << "{}Array iterated and loaded."{} << endl;}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058     \textcolor{comment}{//Join all the languages (only if they are of the same languageID of the first language)}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059     \mbox{\hyperlink{classLanguage}{Language}} languageJoin = languageArray[0];}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i < argc -\/ 2; i++) \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062         \textcolor{comment}{//If same languageId then join}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00063}00063         \textcolor{keywordflow}{if} (languageArray[i].getLanguageId().compare(languageJoin.\mbox{\hyperlink{classLanguage_accf302317f67bf20e93ee6ac0fe87c49}{getLanguageId}}()) == 0)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00064}00064             languageJoin.\mbox{\hyperlink{classLanguage_ab555a6e07a99ad77d6d8061ea92f187a}{join}}(languageArray[i]);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00065}00065     \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00066}00066 \textcolor{comment}{//    cout << "{}Joined all the languages."{} << endl;}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00068}00068     \textcolor{comment}{//Sort the final language}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00069}00069     languageJoin.\mbox{\hyperlink{classLanguage_a9e5992e8893e995e99677da8a73094b8}{sort}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00070}00070 \textcolor{comment}{//    cout << "{}Final language sorted."{} << endl;}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00072}00072     \textcolor{comment}{//Save the join of the languages to the file}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00073}00073     languageJoin.\mbox{\hyperlink{classLanguage_a836fbfd47e33674834d3de142d015a4d}{save}}(argv[argc -\/ 1]);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00074}00074 \textcolor{comment}{//    cout << "{}Finished the join of "{} << argc -\/ 2 << "{} languages:"{} << endl << languageJoin.toString() << endl;}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00075}00075     }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00076}00076 \}}
 
 \end{DoxyCode}

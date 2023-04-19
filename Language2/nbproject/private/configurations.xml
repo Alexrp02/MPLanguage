@@ -13,8 +13,6 @@
         <gdb_interceptlist>
           <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
         </gdb_interceptlist>
-        <gdb_signals>
-        </gdb_signals>
         <gdb_options>
           <DebugOptions>
           </DebugOptions>
@@ -32,6 +30,8 @@
           <runcommandpicklistitem>"${OUTPUT_PATH}" &lt; data/30bigrams.bgr data/30bigrams2.bgr bigrams30_302.bgr.out</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" &lt; ./data/30bigrams.bgr ./data/30bigrams2.bgr bigrams30_302.bgr.out</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" ./data/30bigrams.bgr ./data/30bigrams2.bgr bigrams30_302.bgr.out</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" "../Books/Faust_part1_Der_Tragodie_erster_Teil.Goethe.German.bgr" "../Books/Faust_part2_Der_Tragodie_zweiter_Teil.Goethe.German.bgr" tests/output/german.bgr</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" ./data/36bigrams.bgr bigrams30_302.bgr.out</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" ./data/30bigrams.bgr ./data/36bigrams.bgr bigrams30_302.bgr.out</runcommandpicklistitem>
         </runcommandpicklist>
         <runcommand>"${OUTPUT_PATH}" ./data/30bigrams.bgr ./data/36bigrams.bgr bigrams30_302.bgr.out</runcommand>

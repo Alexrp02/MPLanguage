@@ -104,11 +104,7 @@ int partition(BigramFreq array[], int low, int high) {
     int pivotInd = low - 1;
 
     for (int i = low; i < high; i++) {
-        if (array[i].getFrequency() == pivot.getFrequency() && array[i].toString().compare(pivot.toString()) < 0) {
-            pivotInd++;
-            swap(array, pivotInd, i);
-        }
-        if (array[i].getFrequency() > pivot.getFrequency()) {
+        if ((array[i].getFrequency() == pivot.getFrequency() && array[i].toString().compare(pivot.toString()) < 0) || array[i].getFrequency() > pivot.getFrequency()) {
             pivotInd++;
             swap(array, pivotInd, i);
         }

@@ -84,7 +84,7 @@ $(function() {
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        _text[1] = <span class="charliteral">&#39;_&#39;</span>;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        _text[2] = <span class="charliteral">&#39;\0&#39;</span>;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        strncpy(_text, text.c_str(), 2) ;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        strncpy(_text, text.c_str(), 3) ;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
@@ -115,7 +115,7 @@ $(function() {
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classBigram.html#a7a782c0fe5764cd4d42427fa284b79d1">   63</a></span>std::string <a class="code hl_function" href="classBigram.html#a7a782c0fe5764cd4d42427fa284b79d1">Bigram::toString</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">return</span> _text;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">return</span> std::string(_text);</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classBigram.html#ae653a8bb70d1f0f8ddde88196ef51564">   74</a></span><span class="keyword">const</span> <span class="keywordtype">char</span> &amp;<a class="code hl_function" href="classBigram.html#ae653a8bb70d1f0f8ddde88196ef51564">Bigram::at</a>(<span class="keywordtype">int</span> index)<span class="keyword"> const </span>{</div>

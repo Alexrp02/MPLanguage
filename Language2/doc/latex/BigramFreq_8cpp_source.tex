@@ -16,15 +16,15 @@
 \DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00016}00016     \_frequency = 0;}
 \DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00017}00017 \}}
 \DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00018}00018 }
-\DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00024}\mbox{\hyperlink{classBigramFreq_a35fc546848a8567561e20d1c712a3ac4}{00024}} \mbox{\hyperlink{classBigram}{Bigram}}* \mbox{\hyperlink{classBigramFreq_a35fc546848a8567561e20d1c712a3ac4}{BigramFreq::getBigram}}() \{}
-\DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00025}00025     \textcolor{keywordflow}{return} \&\_bigram;}
+\DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00024}\mbox{\hyperlink{classBigramFreq_a9420973e6741ecce93efbb8ed5b8ffab}{00024}} \textcolor{keyword}{const} \mbox{\hyperlink{classBigram}{Bigram}} \mbox{\hyperlink{classBigramFreq_a9420973e6741ecce93efbb8ed5b8ffab}{BigramFreq::getBigram}}()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00025}00025     \textcolor{keywordflow}{return} \_bigram;}
 \DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00026}00026 \}}
 \DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00027}00027 }
-\DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00033}\mbox{\hyperlink{classBigramFreq_a849f944559e8bc87eeba83ccb3defdc1}{00033}} \textcolor{keywordtype}{int} \mbox{\hyperlink{classBigramFreq_a849f944559e8bc87eeba83ccb3defdc1}{BigramFreq::getFrequency}}() \{}
+\DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00033}\mbox{\hyperlink{classBigramFreq_a2678f74a436cca1ff40af7a1ac7b219a}{00033}} \textcolor{keywordtype}{int} \mbox{\hyperlink{classBigramFreq_a2678f74a436cca1ff40af7a1ac7b219a}{BigramFreq::getFrequency}}()\textcolor{keyword}{ const}\{}
 \DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00034}00034     \textcolor{keywordflow}{return} \_frequency;}
 \DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00035}00035 \}}
 \DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00036}00036 }
-\DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00042}\mbox{\hyperlink{classBigramFreq_aefea747a30cc73aa6d9691ec49e15033}{00042}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classBigramFreq_aefea747a30cc73aa6d9691ec49e15033}{BigramFreq::setBigram}}(\mbox{\hyperlink{classBigram}{Bigram}} bigram) \{}
+\DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00042}\mbox{\hyperlink{classBigramFreq_afd8e608f4a00fbb31d3da833dda62023}{00042}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classBigramFreq_afd8e608f4a00fbb31d3da833dda62023}{BigramFreq::setBigram}}(\mbox{\hyperlink{classBigram}{Bigram}}\& bigram) \{}
 \DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00043}00043     \_bigram = bigram ;}
 \DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00044}00044 \}}
 \DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00045}00045 }
@@ -32,8 +32,8 @@
 \DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00053}00053     \_frequency = frequency ;}
 \DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00054}00054 \}}
 \DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00055}00055 }
-\DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00062}\mbox{\hyperlink{classBigramFreq_af7f5cf937b365fa1ea15c4b9873cf5c1}{00062}} std::string \mbox{\hyperlink{classBigramFreq_af7f5cf937b365fa1ea15c4b9873cf5c1}{BigramFreq::toString}}() \{}
-\DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00063}00063     \textcolor{keywordflow}{return} (\_bigram.\mbox{\hyperlink{classBigram_a7a782c0fe5764cd4d42427fa284b79d1}{toString}}() + \textcolor{stringliteral}{"{} "{}} + std::to\_string(\_frequency)) ;}
+\DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00062}\mbox{\hyperlink{classBigramFreq_ab795f5f5f963d0d08d5ce5f536842eae}{00062}} std::string \mbox{\hyperlink{classBigramFreq_ab795f5f5f963d0d08d5ce5f536842eae}{BigramFreq::toString}}()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00063}00063     \textcolor{keywordflow}{return} std::string(\_bigram.\mbox{\hyperlink{classBigram_a7a782c0fe5764cd4d42427fa284b79d1}{toString}}() + \textcolor{stringliteral}{"{} "{}} + std::to\_string(\_frequency)) ;}
 \DoxyCodeLine{\Hypertarget{BigramFreq_8cpp_source_l00064}00064 \}}
 
 \end{DoxyCode}
