@@ -15,6 +15,7 @@
 
 
 #include <iostream>
+#include <cmath>
 #include "BigramFreq.h"
 #include "ArrayBigramFreqFunctions.h"
 
@@ -206,6 +207,7 @@ public:
     
 private:
     static const int DIM_VECTOR_BIGRAM_FREQ = 2000; ///< The capacity of the array _vectorBigramFreq
+    void setSize (int size) ;
     std::string _languageId; ///< language identifier
     BigramFreq _vectorBigramFreq[DIM_VECTOR_BIGRAM_FREQ]; ///< array of BigramFreq
     int _size; ///< Number of elements in _vectorBigramFreq

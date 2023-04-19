@@ -31,46 +31,29 @@ using namespace std;
  */
 const int DIM = 500;
 
+
+// Funtion to check if the first argument is okay
+
+bool checkFirstParam(int argc, char *argv[]) {
+    // If no optional parameter, it is ok.
+    if (argv[1][0] != '-')
+        return true;
+    // If the optional parameter is -t, the next has to be either min or max.
+    if (strcmp(argv[1], "-t") == 0)
+        if (strcmp(argv[2], "min")==0 || strcmp(argv[2], "max")==0)
+            if(argc >= 5)
+                return true;
+        return false ;
+}
+
 int main(int argc, char* argv[]) {
-//    cout << argc << endl;
     //Give error if the number of args is not enough
-    if (argc < 3) {
+    if (argc < 3 || !checkFirstParam(argc, argv)) {
         cout << "Error, run with the following parameters:";
         cout << endl;
-        cout << "language2 <file1.bgr> [<file2.bgr> ... <filen.bgr>] <outputFile.bgr> " << endl;
-        exit(1) ;
+        cout << "language3 [-t min|max] <file1.bgr> <file2.bgr> [ ... <filen.bgr>]" << endl;
+        exit(1);
     }
 
-    //Create an array of Languages to store the laguages from the files
-    Language languageArray[argc - 2];
-//    cout << "Array created." << endl;
 
-    //Iterate and read every language
-    for (int i = 0; i < argc - 2; i++) {
-        Language lang = Language();
-        lang.load(argv[i + 1]);
-        languageArray[i] = lang;
-//        cout << "The readed language is: " << endl;
-//        cout << languageArray[i].toString() << endl;
-    }
-//    cout << "Array iterated and loaded." << endl;
-
-    //Join all the languages (only if they are of the same languageID of the first language)
-    Language languageJoin = languageArray[0];
-
-    for (int i = 1; i < argc - 2; i++) {
-        //If same languageId then join
-        if (languageArray[i].getLanguageId().compare(languageJoin.getLanguageId()) == 0)
-            languageJoin.join(languageArray[i]);
-    }
-//    cout << "Joined all the languages." << endl;
-
-    //Sort the final language
-    languageJoin.sort();
-//    cout << "Final language sorted." << endl;
-
-    //Save the join of the languages to the file
-    languageJoin.save(argv[argc - 1]);
-//    cout << "Finished the join of " << argc - 2 << " languages:" << endl << languageJoin.toString() << endl;
-    
 }

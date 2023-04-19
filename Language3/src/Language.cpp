@@ -101,9 +101,32 @@ int Language::getSize() const {
     return _size;
 }
 
+void Language::setSize(int size) {
+    _size = size ;
+}
+
+/*
+ * For each Bigram look for the position of the bigram in the @p language
+ * If not present, position must be size value in order to penalize
+ * Substract to the index of the current Bigram the position and apply absolute value
+ * Sum all the substractions, divide by the square of the size and return.
+ */
 double Language::getDistance(const Language &language) const {
-    
-    return 0 ;
+    int suma = 0 ;
+    for (int i=0 ; i<_size ; i++) {
+        // Look for the position of the Bigram in the other language
+        int pos = language.findBigram(_vectorBigramFreq[i].getBigram()) ;
+        
+        // If it is not present, assign the size value
+        if(!pos)
+            pos = language.getSize() ;
+        
+        // Substract the two values and apply absolute value
+        suma += abs(i-pos) ;
+    }
+    // Divide by the square of the size
+    suma /= _size*_size ;
+    return suma ;
 }
 
 /**
