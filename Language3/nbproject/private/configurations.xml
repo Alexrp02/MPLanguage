@@ -13,8 +13,6 @@
         <gdb_interceptlist>
           <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
         </gdb_interceptlist>
-        <gdb_signals>
-        </gdb_signals>
         <gdb_options>
           <DebugOptions>
           </DebugOptions>
@@ -26,7 +24,6 @@
       </nativedebugger>
       <runprofile version="9">
         <runcommandpicklist>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" &lt; ./data/30bigrams.bgr ./data/30bigrams2.bgr bigrams30_302.bgr.out</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" ./data/30bigrams.bgr ./data/30bigrams2.bgr bigrams30_302.bgr.out</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" "../Books/Faust_part1_Der_Tragodie_erster_Teil.Goethe.German.bgr" "../Books/Faust_part2_Der_Tragodie_zweiter_Teil.Goethe.German.bgr" tests/output/german.bgr</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" ./data/36bigrams.bgr bigrams30_302.bgr.out</runcommandpicklistitem>
@@ -36,8 +33,9 @@
           <runcommandpicklistitem>"${OUTPUT_PATH}" -t max data/10bigrams.bgr data/10bigrams.bgr data/30bigrams2.bgr</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" -t min data/10bigrams.bgr data/10bigrams.bgr data/30bigrams2.bgr</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" ../Books/quijote.bgr ../Books/fortunata.bgr ../Books/aliceWonder.bgr ../Books/lesMiserables.bgr ../Books/BodasdeSangre_FedericoGarciaLorca.bgr</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" -t max ../Books/quijote.bgr ../Books/fortunata.bgr ../Books/aliceWonder.bgr ../Books/lesMiserables.bgr ../Books/BodasdeSangre_FedericoGarciaLorca.bgr</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" ../Books/quijote.bgr ../Books/fortunata.bgr ../Books/aliceWonder.bgr ../Books/lesMiserables.bgr ../Books/BodasdeSangre_FedericoGarciaLorca.bgr</runcommand>
+        <runcommand>"${OUTPUT_PATH}" -t max ../Books/quijote.bgr ../Books/fortunata.bgr ../Books/aliceWonder.bgr ../Books/lesMiserables.bgr ../Books/BodasdeSangre_FedericoGarciaLorca.bgr</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <console-type>2</console-type>

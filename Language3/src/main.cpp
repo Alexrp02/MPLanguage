@@ -61,7 +61,6 @@ int main(int argc, char* argv[]) {
     bool min = true; // Variable to check or not for the min
     // If parameter given, update first index and the parameter value
     if (!strcmp(argv[1], "-t")) {
-        cout << "Has argument" << endl;
         i = 3;
         strcmp(argv[2], "min") == 0 ? min = true : min = false;
         tam -= 2;
@@ -71,7 +70,8 @@ int main(int argc, char* argv[]) {
 
     double res = 0;
     int pos = 0;
-    int index = i;
+    int nameIndex = i;
+    int languageIndex = 0;
 
     Language comparado;
     comparado.load(argv[i++]); // Load the first language
@@ -91,13 +91,15 @@ int main(int argc, char* argv[]) {
         // Check if we are looking for the maximum or the minimum and update variable
         if (min) {
             if (distance < res) {
-                index = i;
+                nameIndex = i;
                 res = distance;
+                languageIndex = pos;
             }
         } else {
             if (distance > res) {
-                index = i;
+                nameIndex = i;
                 res = distance;
+                languageIndex = pos;
             }
         }
         pos++;
@@ -105,9 +107,9 @@ int main(int argc, char* argv[]) {
 
     // Show the result
     if (min) {
-        cout << "Nearest language is " << argv[index] << " with a distance of " << res << endl;
+        cout << endl << "Nearest language is " << argv[nameIndex] << " with a distance of " << res << " with language identifier " << vector[languageIndex].getLanguageId() << endl;
     } else {
-        cout << "The furthest language is " << argv[index] << " with a distance of " << res << endl;
+        cout << endl << "The furthest language is " << argv[nameIndex] << " with a distance of " << res << " with language identifier " << vector[languageIndex].getLanguageId() << endl;
     }
 
     // Deassign memory to the vector

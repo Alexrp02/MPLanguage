@@ -24,6 +24,7 @@ const string Language::MAGIC_STRING_T = "MP-LANGUAGE-T-1.0";
  */
 Language::Language() {
     _languageId = string("unknown");
+    _size = 0;
 }
 
 /**
@@ -38,7 +39,7 @@ Language::Language() {
  */
 Language::Language(int numberBigrams) {
     if (numberBigrams > Language::DIM_VECTOR_BIGRAM_FREQ or numberBigrams < 0)
-        throw (std::out_of_range("The number of bigram frequencies can´t be less than 0 and more than " + DIM_VECTOR_BIGRAM_FREQ));
+        throw (std::out_of_range("The number of bigram frequencies can't be less than 0 and more than " + DIM_VECTOR_BIGRAM_FREQ));
 
     _languageId = string("unknown");
     _size = numberBigrams;
@@ -102,7 +103,7 @@ int Language::getSize() const {
 }
 
 void Language::setSize(int size) {
-    _size = size ;
+    _size = size;
 }
 
 /*
@@ -112,22 +113,21 @@ void Language::setSize(int size) {
  * Sum all the substractions, divide by the square of the size and return.
  */
 double Language::getDistance(const Language &language) const {
-    double suma = 0 ;
-    for (int i=0 ; i<_size ; i++) {
+    double suma = 0;
+    for (int i = 0; i < _size; i++) {
         // Look for the position of the Bigram in the other language
-        int pos = language.findBigram(_vectorBigramFreq[i].getBigram()) ;
-        
+        int pos = language.findBigram(_vectorBigramFreq[i].getBigram());
+
         // If it is not present, assign the size value
-        if(pos == -1)
-            pos = language.getSize() ;
-        
+        if (pos == -1)
+            pos = language.getSize();
+
         // Substract the two values and apply absolute value
-        suma += abs(i-pos) ;
+        suma += abs(i - pos);
     }
     // Divide by the square of the size
-    suma = suma / (_size*_size) ;
-    cout << "Suma is " << suma << endl ;
-    return suma ;
+    suma = suma / (_size * _size);
+    return suma;
 }
 
 /**
@@ -233,7 +233,7 @@ void Language::save(const char fileName[]) const {
 void Language::load(const char* fileName) {
     ifstream file;
     //We open the file
-//    cout << "Reading language from: " << fileName << endl;
+    //    cout << "Reading language from: " << fileName << endl;
     file.open(fileName);
     //If there was an error opening it, throw exception.
     if (!file) {
@@ -293,27 +293,24 @@ void Language::load(const char* fileName) {
  */
 void Language::append(BigramFreq bigramFreq) {
     Bigram b = bigramFreq.getBigram();
-    if (findBigram(b) == -1)
+    int pos = findBigram(b);
+    if (pos == -1)
         if (_size == DIM_VECTOR_BIGRAM_FREQ) {
-            throw (std::out_of_range("The element can´t be appended to the language because it has the maximum number of bigrams."));
+            throw (std::out_of_range("The element cannot be appended to the language because it has the maximum number of bigrams."));
             exit(1);
         }
     bool found = false;
     int i = 0;
 
-    //Search the bigram and increment if present.
-    while (!found and i < _size) {
-        if (_vectorBigramFreq[i].getBigram().toString().compare(b.toString()) == 0) {
-            found = true;
-            _vectorBigramFreq[i].setFrequency(_vectorBigramFreq[i].getFrequency() + bigramFreq.getFrequency());
-        }
-        i++;
-    }
-
-    if (!found) {
+    // If it is present, increment the frequency
+    if (pos != -1) {
+        _vectorBigramFreq[i].setFrequency(_vectorBigramFreq[i].getFrequency() + bigramFreq.getFrequency());
+    } else {
+        // If not, append it to the end
         _vectorBigramFreq[_size] = bigramFreq;
         _size++;
     }
+
 
 }
 

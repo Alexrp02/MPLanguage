@@ -6,15 +6,6 @@
     </data>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/home/alexrp/Documentos/MP/GIT/MPLanguage/Language2/src/main.cpp</file>
-            <file>file:/home/alexrp/Documentos/MP/GIT/MPLanguage/Language2/src/Language.cpp</file>
-            <file>file:/home/alexrp/Documentos/MP/GIT/MPLanguage/Language2/src/BigramFreq.cpp</file>
-            <file>file:/home/alexrp/Documentos/MP/GIT/MPLanguage/Language2/include/Language.h</file>
-            <file>file:/home/alexrp/Documentos/MP/GIT/MPLanguage/Language2/include/Bigram.h</file>
-            <file>file:/home/alexrp/Documentos/MP/GIT/MPLanguage/Language2/src/Bigram.cpp</file>
-            <file>file:/home/alexrp/Documentos/MP/GIT/MPLanguage/Language2/include/ArrayBigramFreqFunctions.h</file>
-            <file>file:/home/alexrp/Documentos/MP/GIT/MPLanguage/Language2/include/BigramFreq.h</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
