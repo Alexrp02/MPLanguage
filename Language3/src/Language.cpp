@@ -87,11 +87,11 @@ const BigramFreq Language::at(int index) const {
  * given index is not valid
  * @return A reference to the BigramFreq at the given position
  */
-//BigramFreq Language::at(int index) const {
-//    if (index<0 or index>=_size)
-//        throw (std::out_of_range("The given index is not correct.")) ;
-//    return _vectorBigramFreq[index] ;
-//}
+BigramFreq Language::at(int index) {
+    if (index < 0 or index >= _size)
+        throw (std::out_of_range("The given index is not correct."));
+    return _vectorBigramFreq[index];
+}
 
 /**
  * @brief Gets the number of BigramFreq objects. 

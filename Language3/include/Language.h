@@ -70,7 +70,7 @@ public:
      * given index is not valid
      * @return A const reference to the BigramFreq at the given position
      */
-    const BigramFreq at(int index) const; 
+    const BigramFreq at(int index) const;
 
     /**
      * @brief Gets a reference to the BigramFreq at the given position of the 
@@ -81,7 +81,7 @@ public:
      * given index is not valid
      * @return A reference to the BigramFreq at the given position
      */
-//    BigramFreq at(int index) const; 
+    BigramFreq at(int index);
 
     /**
      * @brief Gets the number of BigramFreq objects. 
@@ -89,7 +89,7 @@ public:
      * @return The number of BigramFreq objects
      */
     int getSize() const;
-    
+
     /**
      * @brief Gets the distance between this Language object (\f$L_1\f$) and 
      * the given one @p otherLanguage (\f$L_2\f$).
@@ -115,7 +115,7 @@ public:
      * one @p otherLanguage.
      */
     double getDistance(const Language &otherLanguage) const;
-    
+
     /**
      * @brief Searchs the given bigram in the list of bigrams in this
      * Language. If found, it returns the position where it was found. If not,
@@ -178,7 +178,7 @@ public:
      * an invalid magic string is found in the given file
      */
     void load(const char *fileName);
-    
+
     /**
      * @brief Appends a copy of the given BigramFreq to this Language object.
      * If the bigram is found in this object, then its frequency is increased
@@ -194,7 +194,7 @@ public:
      * @param bigramFreq The BigramFreq to append to this object. Input parameter
      */
     void append(BigramFreq bigramFreq);
-    
+
     /**
      * @brief Appends to this Language object, the list of pairs  
      * bigram-frequency objects contained in the Language @p language. This
@@ -204,10 +204,10 @@ public:
      * @param language A Language object. Input parameter
      */
     void join(const Language& language);
-    
+
 private:
     static const int DIM_VECTOR_BIGRAM_FREQ = 2000; ///< The capacity of the array _vectorBigramFreq
-    void setSize (int size) ;
+    void setSize(int size);
     std::string _languageId; ///< language identifier
     BigramFreq _vectorBigramFreq[DIM_VECTOR_BIGRAM_FREQ]; ///< array of BigramFreq
     int _size; ///< Number of elements in _vectorBigramFreq
