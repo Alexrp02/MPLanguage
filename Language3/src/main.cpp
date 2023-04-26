@@ -36,8 +36,11 @@ const int DIM = 500;
 
 bool checkFirstParam(int argc, char *argv[]) {
     // If no optional parameter, it is ok.
+    if (argc < 3)
+        return false;
     if (argv[1][0] != '-')
         return true;
+
     // If the optional parameter is -t, the next has to be either min or max.
     if (strcmp(argv[1], "-t") == 0)
         if (strcmp(argv[2], "min") == 0 || strcmp(argv[2], "max") == 0)
@@ -107,9 +110,9 @@ int main(int argc, char* argv[]) {
 
     // Show the result
     if (min) {
-        cout << endl << "Nearest language is " << argv[nameIndex] << " with a distance of " << res << " with language identifier " << vector[languageIndex].getLanguageId() << endl;
+        cout << "Nearest language file: " << argv[nameIndex] << ". Identifier of the farthest language: "<< vector[languageIndex].getLanguageId() ;
     } else {
-        cout << endl << "The furthest language is " << argv[nameIndex] << " with a distance of " << res << " with language identifier " << vector[languageIndex].getLanguageId() << endl;
+        cout << "Farthest language file: " << argv[nameIndex] << ". Identifier of the farthest language: "<< vector[languageIndex].getLanguageId() ;
     }
 
     // Deassign memory to the vector

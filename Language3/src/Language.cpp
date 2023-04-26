@@ -120,7 +120,7 @@ double Language::getDistance(const Language &language) const {
 
         // If it is not present, assign the size value
         if (pos == -1)
-            pos = language.getSize();
+            pos = getSize();
 
         // Substract the two values and apply absolute value
         suma += abs(i - pos);
