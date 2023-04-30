@@ -17,7 +17,6 @@
 #include <iostream>
 #include <cmath>
 #include "BigramFreq.h"
-#include "ArrayBigramFreqFunctions.h"
 
 /**
  * @class Language
@@ -51,7 +50,7 @@ public:
      * Query method.
      * @return A const reference to the identifier of this language object.
      */
-    std::string getLanguageId() const;
+    const std::string& getLanguageId() const;
 
     /**
      * @brief Sets a new identifier for this language object. 
@@ -81,7 +80,7 @@ public:
      * given index is not valid
      * @return A reference to the BigramFreq at the given position
      */
-    BigramFreq& at(int index);
+    BigramFreq& at(int index) ;
 
     /**
      * @brief Gets the number of BigramFreq objects. 
@@ -193,7 +192,7 @@ public:
      * Modifier method
      * @param bigramFreq The BigramFreq to append to this object. Input parameter
      */
-    void append(BigramFreq bigramFreq);
+    void append(const BigramFreq& bigramFreq);
 
     /**
      * @brief Appends to this Language object, the list of pairs  

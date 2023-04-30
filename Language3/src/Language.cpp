@@ -50,7 +50,7 @@ Language::Language(int numberBigrams) {
  * Query method.
  * @return A const reference to the identifier of this language object.
  */
-std::string Language::getLanguageId() const {
+const std::string& Language::getLanguageId() const {
     return _languageId;
 }
 
@@ -175,16 +175,41 @@ std::string Language::toString() const {
     return result;
 }
 
-/**
- * @brief Sort the vector of BigramFreq in decreasing order of frequency.
- * If two BigramFreq objects have the same frequency, then the alphabetical 
- * order of the bigrams of those objects will be considered (the object 
- * with a bigram that comes first alphabetically will appear first)
- * Modifier method
- */
+void swap(BigramFreq array[], const int pos1, const int pos2) {
+    BigramFreq aux = array[pos1];
+    array[pos1] = array[pos2];
+    array[pos2] = aux;
+}
+
+int partition(BigramFreq array[], int low, int high) {
+    BigramFreq pivot = array[high];
+    int pivotInd = low - 1;
+
+    for (int i = low; i < high; i++) {
+        if ((array[i].getFrequency() == pivot.getFrequency() && array[i].toString().compare(pivot.toString()) < 0) || array[i].getFrequency() > pivot.getFrequency()) {
+            pivotInd++;
+            swap(array, pivotInd, i);
+        }
+    }
+    pivotInd++;
+    swap(array, pivotInd, high);
+    return pivotInd;
+}
+
+void quickSort(BigramFreq* array, int low, int high) {
+    if (low >= high || low < 0) {
+        return;
+    }
+
+    int pivot = partition(array, low, high);
+    quickSort(array, low, pivot-1);
+    quickSort(array, pivot+1, high);
+
+}
+
 void Language::sort() {
     //Call the function to quickSort the vector.
-    sortArrayBigramFreq(_vectorBigramFreq, _size);
+    quickSort(_vectorBigramFreq, 0, _size-1);
 }
 
 /**
@@ -289,7 +314,7 @@ void Language::load(const char* fileName) {
  * Modifier method
  * @param bigramFreq The BigramFreq to append to this object. Input parameter
  */
-void Language::append(BigramFreq bigramFreq) {
+void Language::append(const BigramFreq& bigramFreq) {
     Bigram b = bigramFreq.getBigram();
     int pos = findBigram(b);
     if (pos == -1) {

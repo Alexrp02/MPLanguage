@@ -15,7 +15,6 @@
 #include "Bigram.h"
 #include "BigramFreq.h"
 #include "Language.h"
-#include "ArrayBigramFreqFunctions.h"
 using namespace std;
 
 /**
