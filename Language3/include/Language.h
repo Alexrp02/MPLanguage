@@ -70,7 +70,7 @@ public:
      * given index is not valid
      * @return A const reference to the BigramFreq at the given position
      */
-    const BigramFreq at(int index) const;
+    const BigramFreq& at(int index) const;
 
     /**
      * @brief Gets a reference to the BigramFreq at the given position of the 
@@ -81,7 +81,7 @@ public:
      * given index is not valid
      * @return A reference to the BigramFreq at the given position
      */
-    BigramFreq at(int index);
+    BigramFreq& at(int index);
 
     /**
      * @brief Gets the number of BigramFreq objects. 

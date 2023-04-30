@@ -72,7 +72,7 @@ void Language::setLanguageId(const std::string& id) {
  * given index is not valid
  * @return A const reference to the BigramFreq at the given position
  */
-const BigramFreq Language::at(int index) const {
+const BigramFreq& Language::at(int index) const {
     if (index < 0 or index >= _size)
         throw (std::out_of_range("The given index is not correct."));
     return _vectorBigramFreq[index];
@@ -87,7 +87,7 @@ const BigramFreq Language::at(int index) const {
  * given index is not valid
  * @return A reference to the BigramFreq at the given position
  */
-BigramFreq Language::at(int index) {
+BigramFreq& Language::at(int index) {
     if (index < 0 or index >= _size)
         throw (std::out_of_range("The given index is not correct."));
     return _vectorBigramFreq[index];
@@ -165,6 +165,7 @@ int Language::findBigram(const Bigram& bigram) const {
  */
 std::string Language::toString() const {
     std::string result;
+    result += getLanguageId() + "\n" ;
     result += to_string(getSize()) + "\n";
     for (int i = 0; i < _size; i++) {
         //        cout << "The Bigram is " << _vectorBigramFreq[i].getBigram().toString() << endl ;
@@ -205,9 +206,6 @@ void Language::save(const char fileName[]) const {
         throw (std::ios_base::failure(std::string("An error occurred while opening the file ") + std::string(fileName)));
     //Save the magic string
     file << Language::MAGIC_STRING_T << endl;
-
-    //Save the language id
-    file << getLanguageId() << endl;
 
     //Save the Language String
     file << toString();
@@ -294,22 +292,18 @@ void Language::load(const char* fileName) {
 void Language::append(BigramFreq bigramFreq) {
     Bigram b = bigramFreq.getBigram();
     int pos = findBigram(b);
-    if (pos == -1)
+    if (pos == -1) {
         if (_size == DIM_VECTOR_BIGRAM_FREQ) {
             throw (std::out_of_range("The element cannot be appended to the language because it has the maximum number of bigrams."));
             exit(1);
+        } else {
+            // If not, append it to the end
+            _vectorBigramFreq[_size] = bigramFreq;
+            _size++;
         }
-    bool found = false;
-    int i = 0;
+    } else
+        _vectorBigramFreq[pos].setFrequency(_vectorBigramFreq[pos].getFrequency() + bigramFreq.getFrequency());
 
-    // If it is present, increment the frequency
-    if (pos != -1) {
-        _vectorBigramFreq[i].setFrequency(_vectorBigramFreq[i].getFrequency() + bigramFreq.getFrequency());
-    } else {
-        // If not, append it to the end
-        _vectorBigramFreq[_size] = bigramFreq;
-        _size++;
-    }
 
 
 }

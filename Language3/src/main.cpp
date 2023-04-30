@@ -32,6 +32,17 @@ using namespace std;
 const int DIM = 500;
 
 
+/**
+ * Shows help about the use of this program in the given output stream
+ * @param outputStream The output stream where the help will be shown (for example,
+ * cout, cerr, etc) 
+ */
+void showEnglishHelp(ostream& outputStream) {
+    outputStream << "Error, run with the following parameters:" << endl;
+    outputStream << "language3 [-t min|max] <file1.bgr> <file2.bgr> [ ... <filen.bgr>]" << endl;
+}
+
+
 // Funtion to check if the first argument is okay
 
 bool checkFirstParam(int argc, char *argv[]) {
@@ -53,9 +64,7 @@ int main(int argc, char* argv[]) {
     //Give error if the number of args is not enough
     bool param = checkFirstParam(argc, argv); // boolean to check if param was declared
     if (argc < 3 || !param) {
-        cout << "Error, run with the following parameters:";
-        cout << endl;
-        cout << "language3 [-t min|max] <file1.bgr> <file2.bgr> [ ... <filen.bgr>]" << endl;
+        showEnglishHelp(cerr) ;
         exit(1);
     }
 
@@ -73,7 +82,7 @@ int main(int argc, char* argv[]) {
 
     double res = 0;
     int pos = 0;
-    int nameIndex = i;
+    int nameIndex = i+1;
     int languageIndex = 0;
 
     Language comparado;
@@ -110,9 +119,9 @@ int main(int argc, char* argv[]) {
 
     // Show the result
     if (min) {
-        cout << "Nearest language file: " << argv[nameIndex] << ". Identifier of the farthest language: "<< vector[languageIndex].getLanguageId() ;
+        cout << "Nearest language file: " << argv[nameIndex] << ". Identifier of the nearest language: "<< vector[languageIndex].getLanguageId() << endl ;
     } else {
-        cout << "Farthest language file: " << argv[nameIndex] << ". Identifier of the farthest language: "<< vector[languageIndex].getLanguageId() ;
+        cout << "Farthest language file: " << argv[nameIndex] << ". Identifier of the farthest language: "<< vector[languageIndex].getLanguageId() << endl ;
     }
 
     // Deassign memory to the vector
