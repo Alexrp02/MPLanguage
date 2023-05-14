@@ -5,9 +5,7 @@
 
 /** 
  * @file Language.h
- * @author Silvia Acid Carrillo <acid@decsai.ugr.es>
- * @author Andrés Cano Utrera <acu@decsai.ugr.es>
- * @author Luis Castillo Vidal <L.Castillo@decsai.ugr.es>
+ * @author estudiante1: Ramos Peña, Alejandro
  * 
  * Created on 12 February 2023, 10:40
  */
@@ -210,6 +208,9 @@ private:
     BigramFreq* _vectorBigramFreq; ///< Dynamic array of BigramFreq
     int _size; ///< Number of elements in _vectorBigramFreq
     static const std::string MAGIC_STRING_T; ///< A const string with the magic string for text files
-};
+    void allocate(int n) ;
+    void deallocate() ;
+    void copy(const Language& lang) ;
+}; 
 
 #endif /* LANGUAGE_H */
