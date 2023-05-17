@@ -5,9 +5,7 @@
 
 /** 
  * @file Language.h
- * @author Silvia Acid Carrillo <acid@decsai.ugr.es>
- * @author Andrés Cano Utrera <acu@decsai.ugr.es>
- * @author Luis Castillo Vidal <L.Castillo@decsai.ugr.es>
+ * @author estudiante1: Ramos Peña, Alejandro
  * 
  * Created on 12 February 2023, 10:40
  */
@@ -201,14 +199,14 @@ public:
      * @param index index of the element. Input parameter
      * @return A reference to the BigramFreq object at position @p index
      */
-    BigramFreq operator[](int index);
+    const BigramFreq& operator[](int index) const ;
 
     /**
      * @brief Overloading of the [] operator for Language class
      * @param index index of the element. Input parameter 
      * @return A reference to the BigramFreq object at position @p index
      */
-    BigramFreq operator[](int index);
+    BigramFreq& operator[](int index);
     
     /**
      * @brief Overloading of the += operator with a Language parameter. 
