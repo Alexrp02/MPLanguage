@@ -1,0 +1,19 @@
+==3563== Memcheck, a memory error detector
+==3563== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3563== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==3563== Command: /home/alexrp/Documentos/MP/MPLanguage/Language3/dist/Debug/GNU-Linux/language3 ../Books/quijote.bgr ../Books/fortunata.bgr ../Books/aliceWonder.bgr ../Books/lesMiserables.bgr ../Books/BodasdeSangre_FedericoGarciaLorca.bgr
+==3563== 
+Distance to ../Books/fortunata.bgr: 0.0554647
+Distance to ../Books/aliceWonder.bgr: 0.250935
+Distance to ../Books/lesMiserables.bgr: 0.22352
+Distance to ../Books/BodasdeSangre_FedericoGarciaLorca.bgr: 0.13272
+Nearest language file: ../Books/fortunata.bgr. Identifier of the nearest language: spanish
+==3563== 
+==3563== HEAP SUMMARY:
+==3563==     in use at exit: 0 bytes in 0 blocks
+==3563==   total heap usage: 19 allocs, 19 frees, 184,461 bytes allocated
+==3563== 
+==3563== All heap blocks were freed -- no leaks are possible
+==3563== 
+==3563== For lists of detected and suppressed errors, rerun with: -s
+==3563== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

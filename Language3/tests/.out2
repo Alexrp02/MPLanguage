@@ -1,0 +1,16 @@
+==3487== Memcheck, a memory error detector
+==3487== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3487== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==3487== Command: /home/alexrp/Documentos/MP/MPLanguage/Language3/dist/Debug/GNU-Linux/language3 ../Books/30bigrams.bgr
+==3487== 
+Error, run with the following parameters:
+language3 [-t min|max] <file1.bgr> <file2.bgr> [ ... <filen.bgr>]
+==3487== 
+==3487== HEAP SUMMARY:
+==3487==     in use at exit: 0 bytes in 0 blocks
+==3487==   total heap usage: 2 allocs, 2 frees, 72,722 bytes allocated
+==3487== 
+==3487== All heap blocks were freed -- no leaks are possible
+==3487== 
+==3487== For lists of detected and suppressed errors, rerun with: -s
+==3487== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
