@@ -12,25 +12,33 @@
  * Created on 12 February 2023, 11:00
  */
 
+#include <istream>
+
 #include "BigramCounter.h"
 
 
 // Allocate a matrix of ints of nxn size
-int** allocate (int n) {
-    int** sol ;
-    for (int i=0 ; i<n ; i++){
-        sol [i] = new int [n] ;
+
+int** allocate(int n) {
+    int** sol;
+
+    // Allocate space for the array of pointers
+    sol = new int*[n];
+    for (int i = 0; i < n; i++) {
+        sol [i] = new int [n];
     }
-    return sol ;
-        
+    return sol;
+
 }
 
 // Deallocate a matrix of nxn size, where n is @p n
-void deallocate (int** &v, int n) {
-    for (int i=0 ; i<n ; i++) {
-        delete [] v[i] ;
+
+void deallocate(int** &v, int n) {
+    for (int i = 0; i < n; i++) {
+        delete [] v[i];
     }
-    v=nullptr ;
+    delete [] v;
+    v = nullptr;
 }
 
 /**
@@ -43,14 +51,12 @@ void deallocate (int** &v, int n) {
  */
 const char* const BigramCounter::DEFAULT_VALID_CHARACTERS = "abcdefghijklmnopqrstuvwxyz\xE0\xE1\xE2\xE3\xE4\xE5\xE6\xE7\xE8\xE9\xEA\xEB\xEC\xED\xEE\xEF\xF0\xF1\xF2\xF3\xF4\xF5\xF6\xF8\xF9\xFA\xFB\xFC\xFD\xFE\xFF";
 
-
 BigramCounter::BigramCounter(const std::string& validChars) {
-    _validCharacters = validChars ;
-    
+    _validCharacters = validChars;
+
     // Allocate memory for the frequency array
-    _frequency = allocate (validChars.size()) ;
-    
-    
+    _frequency = allocate(validChars.size());
+
 }
 
 /**
@@ -60,16 +66,16 @@ BigramCounter::BigramCounter(const std::string& validChars) {
  */
 BigramCounter::BigramCounter(const BigramCounter& orig) {
     // Copy the string of valid characters
-    this->_validCharacters = orig._validCharacters ;
-    // Reallocate space in frequency matrix for the new valid characters
-    this->_frequency = allocate(_validCharacters.size()) ;
+    this->_validCharacters = orig._validCharacters;
+    // Allocate space in frequency matrix for the new valid characters
+    this->_frequency = allocate(_validCharacters.size());
 }
 
 /**
  * @brief Destructor
  */
 BigramCounter::~BigramCounter() {
-    deallocate(_frequency, _validCharacters.size()) ;
+    deallocate(_frequency, _validCharacters.size());
 }
 
 /**
@@ -79,7 +85,7 @@ BigramCounter::~BigramCounter() {
  * of a word in this BigramCounter object 
  */
 int BigramCounter::getSize() const {
-    return _validCharacters.size() ;
+    return _validCharacters.size();
 }
 
 /**
@@ -88,14 +94,14 @@ int BigramCounter::getSize() const {
  * @return the number of bigrams with a frequency greater than 0
  */
 int BigramCounter::getNumberActiveBigrams() const {
-    int cont = 0 ;
-    for (int i=0 ; i<getSize() ; i++){
-        for (int j=0 ; j<getSize() ; j++) {
-            if (_frequency[i][j] > 0 )
-                cont++ ;
+    int cont = 0;
+    for (int i = 0; i < getSize(); i++) {
+        for (int j = 0; j < getSize(); j++) {
+            if (_frequency[i][j] > 0)
+                cont++;
         }
     }
-    return cont ;
+    return cont;
 }
 
 /**
@@ -107,14 +113,14 @@ int BigramCounter::getNumberActiveBigrams() const {
  * @return true if the bigram was found in this object. false otherwise
  */
 bool BigramCounter::setFrequency(const Bigram& bigram, int frequency) {
-    int i = _validCharacters.find(bigram.at(0)) ;
-    int j = _validCharacters.find(bigram.at(1)) ;
-    
-    if(i==std::string::npos || j==std::string::npos)
-        return false ;
+    int i = _validCharacters.find(bigram.at(0));
+    int j = _validCharacters.find(bigram.at(1));
 
-    _frequency[i][j] = frequency ;
-    return true ;
+    if (i == std::string::npos || j == std::string::npos)
+        return false;
+
+    _frequency[i][j] = frequency;
+    return true;
 }
 
 /**
@@ -131,17 +137,17 @@ bool BigramCounter::setFrequency(const Bigram& bigram, int frequency) {
  */
 void BigramCounter::increaseFrequency(const Bigram& bigram, int frequency) {
     if (!frequency)
-        frequency = 1 ;
-    
-    int i = _validCharacters.find(bigram.at(0)) ;
-    int j = _validCharacters.find(bigram.at(1)) ;
-    
+        frequency = 1;
+
+    int i = _validCharacters.find(bigram.at(0));
+    int j = _validCharacters.find(bigram.at(1));
+
     // If not found in the valid characters then throw the error
-    if(i==std::string::npos || j==std::string::npos)
+    if (i == std::string::npos || j == std::string::npos)
         throw (std::invalid_argument(std::string("The given bigram is not valid")));
-    
-    _frequency[i][j] += frequency ;
-    
+
+    _frequency[i][j] += frequency;
+
 }
 
 /**
@@ -152,16 +158,20 @@ void BigramCounter::increaseFrequency(const Bigram& bigram, int frequency) {
  */
 BigramCounter& BigramCounter::operator=(const BigramCounter& orig) {
     // Delete the array
-    deallocate(_frequency, getSize()) ;
-    
+    deallocate(_frequency, getSize());
+
     // Copy the string of valid characters
-    this->_validCharacters = orig._validCharacters ;
+    this->_validCharacters = orig._validCharacters;
     // Reallocate space in frequency matrix for the new valid characters
-    this->_frequency = allocate(_validCharacters.size()) ;
-    
+    this->_frequency = allocate(_validCharacters.size());
+
+    // Copy the contents of the orig _frequency vector
+    for (int i = 0; i < getSize(); i++)
+        for (int j = 0; i < getSize(); j++)
+            _frequency[i][j] = orig._frequency[i][j];
+
     return *this;
 }
-
 
 /**
  * @brief Overloading of the operator +=. It increases the current 
@@ -172,7 +182,14 @@ BigramCounter& BigramCounter::operator=(const BigramCounter& orig) {
  * @return A reference to this object
  */
 BigramCounter& BigramCounter::operator+=(const BigramCounter& rhs) {
-    
+
+    // Iterate through all the frequencies of rhs and increment those bigrams in this.
+    for (int i = 0; i < getSize(); i++)
+        for (int j = 0; j < getSize(); j++) {
+            Bigram b = Bigram(_validCharacters[i], _validCharacters[j]);
+            increaseFrequency(b, rhs._frequency[i][j]);
+        }
+
     return *this;
 }
 
@@ -186,7 +203,34 @@ BigramCounter& BigramCounter::operator+=(const BigramCounter& rhs) {
  * @return true if the file could be read; false otherwise
  */
 void BigramCounter::calculateFrequencies(const char* fileName) {
-    
+    ifstream file;
+
+    // Open the file
+    file.open(fileName);
+
+    if (!file) {
+        throw (ios_base::failure("The file " + string(fileName) + " couldn´t be opened."));
+    }
+
+    // Get a character
+    char first = file.get();
+    char second;
+
+    // While the second character isn´t the end of the file, read characters.
+    // If the first character readed before the while is the end of the file doesn´t
+    // even enter the while.
+    while (second != EOF && first != EOF);
+    // Find the position in the valid characters
+    int first_index = _validCharacters.find(first);
+    // If it is valid get the next character, go on
+    if (first_index != string::npos) {
+        second = file.get();
+        int second_index = _validCharacters.find(second);
+        // If it is a valid character, increment the frequency of that bigram by 1
+        if (second_index != string::npos)
+            increaseFrequency(Bigram(first, second), 1);
+    }
+
 }
 
 /**
@@ -197,7 +241,24 @@ void BigramCounter::calculateFrequencies(const char* fileName) {
  * @return A Language object from this BigramCounter object
  */
 Language BigramCounter::toLanguage() const {
-    Language lang = Language();
-    
-    return lang ;
+    // Create a new Language with the number of active Bigrams this counter has
+    Language lang = Language(getNumberActiveBigrams());
+
+    int cont = 0;
+    // Iterate through all the Bigrams of this counter and put them in the language
+    for (int i = 0; i < getSize(); i++)
+        for (int j = 0; j < getSize(); j++) {
+            // If the bigram has more than 0 of frequency, add it
+            if (_frequency[i][j] > 0) {
+                // Set the bigramFreq
+                BigramFreq bf = BigramFreq();
+                bf.setBigram(Bigram(_validCharacters[i]), _validCharacters[j]);
+                bf.setFrequency(_frequency[i][j]);
+                // Put it in the language
+                Language.at(cont++) = bf;
+            }
+        }
+
+
+    return lang;
 }

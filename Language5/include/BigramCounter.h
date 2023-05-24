@@ -14,6 +14,8 @@
 #define BIGRAM_COUNTER_H
 
 #include "Language.h"
+#include <fstream>
+using namespace std;
 
 /**
  * @class BigramCounter
