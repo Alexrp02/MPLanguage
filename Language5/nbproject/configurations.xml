@@ -16,7 +16,9 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>src/Bigram.cpp</itemPath>
       <itemPath>src/BigramCounter.cpp</itemPath>
+      <itemPath>src/BigramFreq.cpp</itemPath>
       <itemPath>src/Language.cpp</itemPath>
       <itemPath>src/metamain.cpp</itemPath>
     </logicalFolder>
@@ -42,7 +44,7 @@
       </toolsSet>
       <compileType>
         <ccTool>
-          <standard>11</standard>
+          <standard>8</standard>
           <incDir>
             <pElem>include</pElem>
           </incDir>
@@ -56,7 +58,11 @@
       </item>
       <item path="include/Language.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Bigram.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/BigramCounter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/BigramFreq.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Language.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -92,7 +98,11 @@
       </item>
       <item path="include/Language.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Bigram.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/BigramCounter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/BigramFreq.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Language.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -107,10 +117,11 @@
       </toolsSet>
       <compileType>
         <ccTool>
-          <standard>11</standard>
+          <standard>8</standard>
           <incDir>
             <pElem>include</pElem>
           </incDir>
+          <commandLine>-D LEARN</commandLine>
         </ccTool>
         <linkerTool>
           <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/${CND_CONF}</output>
@@ -124,7 +135,11 @@
       </item>
       <item path="include/Language.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Bigram.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/BigramCounter.cpp" ex="false" tool="1" flavor2="11">
+      </item>
+      <item path="src/BigramFreq.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Language.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -139,10 +154,11 @@
       </toolsSet>
       <compileType>
         <ccTool>
-          <standard>11</standard>
+          <standard>8</standard>
           <incDir>
             <pElem>include</pElem>
           </incDir>
+          <commandLine>-D JOIN</commandLine>
         </ccTool>
         <linkerTool>
           <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/${CND_CONF}</output>
@@ -156,7 +172,11 @@
       </item>
       <item path="include/Language.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Bigram.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/BigramCounter.cpp" ex="false" tool="1" flavor2="11">
+      </item>
+      <item path="src/BigramFreq.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Language.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -171,10 +191,11 @@
       </toolsSet>
       <compileType>
         <ccTool>
-          <standard>11</standard>
+          <standard>8</standard>
           <incDir>
             <pElem>include</pElem>
           </incDir>
+          <commandLine>-D CLASSIFY</commandLine>
         </ccTool>
         <linkerTool>
           <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/${CND_CONF}</output>
@@ -188,7 +209,11 @@
       </item>
       <item path="include/Language.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Bigram.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/BigramCounter.cpp" ex="false" tool="1" flavor2="11">
+      </item>
+      <item path="src/BigramFreq.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Language.cpp" ex="false" tool="1" flavor2="0">
       </item>

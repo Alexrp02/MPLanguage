@@ -12,6 +12,9 @@
  * Created on 29 January 2023, 11:00
  */
 
+#include <iostream>
+
+using namespace std;
 
 /**
  * Shows help about the use of this program in the given output stream
@@ -43,6 +46,6 @@ void showEnglishHelp(ostream& outputStream) {
  * @return 0 If there is no error; a value > 0 if error
  */
 int main(int argc, char* argv[]) {
- 
+    cout << "Ejecutando JOIN" << endl ;
 }
 

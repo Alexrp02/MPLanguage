@@ -225,6 +225,9 @@ private:
     int _size; ///< Number of elements in _vectorBigramFreq
     static const std::string MAGIC_STRING_T; ///< A const string with the magic string for text files
     static const std::string MAGIC_STRING_B; ///< A const string with the magic string for binary files
+    void allocate(int n) ;
+    void deallocate() ;
+    void copy(const Language& lang) ;
 };
 
 /**

@@ -12,6 +12,10 @@
  * Created on 29 January 2023, 11:00
  */
 
+#include <iostream>
+
+using namespace std;
+
 /**
  * Shows help about the use of this program in the given output stream
  * @param outputStream The output stream where the help will be shown (for example,
@@ -40,6 +44,6 @@ void showEnglishHelp(ostream& outputStream) {
  */
 
 int main(int argc, char *argv[]) {   
-
+    cout << "Ejecutando LEARN" << endl ;
 }
 
