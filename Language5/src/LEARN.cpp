@@ -13,6 +13,7 @@
  */
 
 #include <iostream>
+#include "BigramCounter.h"
 
 using namespace std;
 
@@ -33,6 +34,35 @@ void showEnglishHelp(ostream& outputStream) {
     outputStream << "<text1.txt> <text2.txt> <text3.txt> ....: names of the input files (at least one is mandatory)" << endl;
 }
 
+void checkArguments(int& pos, bool& binary, string& languageId, string& outputFile, char *argv[], int argc) {
+
+    // Check if the first argument is an argument
+    if (argv[1][0] == '-') {
+        if (argv[1][1] == 't') {
+            binary = false;
+            pos++;
+        } else if (argv[1][1] == 'b') {
+            binary = true;
+            pos++;
+        } else if (argv[1][1] == 'l') {
+            if (argc > 2) {
+                languageId = argv[2];
+                pos += 2;
+            }else{
+                showEnglishHelp(cerr) ;
+                exit (1) ;
+            }
+        } else if (argv[1][1] == 'o') {
+            outputFile = argv[2];
+            pos += 2;
+        } else if (!argv[1][1]){
+            showEnglishHelp(cerr) ;
+            exit(1) ;
+        }
+
+    }
+}
+
 /**
  * This program learns a Language model from a set of input tex files (tex1.txt,
  * tex2.txt, ...
@@ -43,7 +73,24 @@ void showEnglishHelp(ostream& outputStream) {
  * @return 0 If there is no error; a value > 0 if error
  */
 
-int main(int argc, char *argv[]) {   
-    cout << "Ejecutando LEARN" << endl ;
+int main(int argc, char *argv[]) {
+    cout << "Running LEARN" << endl;
+    
+    // If there isn´t at least one input file, show help and exit
+    if(argc<2) {
+        showEnglishHelp(cerr) ;
+        exit(1) ;
+    }
+    
+    BigramCounter bc = BigramCounter();
+    int pos = 0;
+    bool binary = false;
+    string languageId = "unknown";
+    string outputFile = "output.bgr";
+
+    // Check the parameters
+    checkArguments(pos, binary, languageId, outputFile, argv, argc);
+    cout << pos << " " << binary << " " << languageId << " " << outputFile << " " << endl;
+    cout << argv[1 + pos] << endl ;
 }
 

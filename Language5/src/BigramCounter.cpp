@@ -252,10 +252,10 @@ Language BigramCounter::toLanguage() const {
             if (_frequency[i][j] > 0) {
                 // Set the bigramFreq
                 BigramFreq bf = BigramFreq();
-                bf.setBigram(Bigram(_validCharacters[i]), _validCharacters[j]);
+                bf.setBigram(Bigram(_validCharacters[i], _validCharacters[j]));
                 bf.setFrequency(_frequency[i][j]);
                 // Put it in the language
-                Language.at(cont++) = bf;
+                lang.at(cont++) = bf;
             }
         }
 
