@@ -36,30 +36,39 @@ void showEnglishHelp(ostream& outputStream) {
 
 void checkArguments(int& pos, bool& binary, string& languageId, string& outputFile, char *argv[], int argc) {
 
-    // Check if the first argument is an argument
-    if (argv[1][0] == '-') {
-        if (argv[1][1] == 't') {
-            binary = false;
-            pos++;
-        } else if (argv[1][1] == 'b') {
-            binary = true;
-            pos++;
-        } else if (argv[1][1] == 'l') {
-            if (argc > 2) {
-                languageId = argv[2];
-                pos += 2;
-            }else{
-                showEnglishHelp(cerr) ;
-                exit (1) ;
+    // Iterate through all the arguments and check if any of them is an option
+    string s;
+    for (int i = 1; i < argc; i++) {
+        s = argv[i];
+        // The argument is an option
+        if (s[0] == '-') {
+            // Opción de texto
+            if (s == "-t") {
+                binary = false;
+                pos ++ ;
+            } else if (s == "-b") {
+                binary = true;
+                pos++ ;
+            } else if (s == "-l") {
+                if (argc > i + 2) {
+                    languageId = argv[++i];
+                    pos += 2 ;
+                } else {
+                    showEnglishHelp(cerr);
+                    exit(1) ;
+                }
+            } else if (s == "-o") {
+                if (argc > i + 2) {
+                    outputFile = argv[++i];
+                    pos += 2 ;
+                } else {
+                    showEnglishHelp(cerr);
+                    exit(1) ;
+                }
             }
-        } else if (argv[1][1] == 'o') {
-            outputFile = argv[2];
-            pos += 2;
-        } else if (!argv[1][1]){
-            showEnglishHelp(cerr) ;
-            exit(1) ;
+        }else{
+            break ;
         }
-
     }
 }
 
@@ -75,15 +84,15 @@ void checkArguments(int& pos, bool& binary, string& languageId, string& outputFi
 
 int main(int argc, char *argv[]) {
     cout << "Running LEARN" << endl;
-    
+
     // If there isn´t at least one input file, show help and exit
-    if(argc<2) {
-        showEnglishHelp(cerr) ;
-        exit(1) ;
+    if (argc < 2) {
+        showEnglishHelp(cerr);
+        exit(1);
     }
-    
+
     BigramCounter bc = BigramCounter();
-    int pos = 0;
+    int pos = 1;
     bool binary = false;
     string languageId = "unknown";
     string outputFile = "output.bgr";
@@ -91,6 +100,6 @@ int main(int argc, char *argv[]) {
     // Check the parameters
     checkArguments(pos, binary, languageId, outputFile, argv, argc);
     cout << pos << " " << binary << " " << languageId << " " << outputFile << " " << endl;
-    cout << argv[1 + pos] << endl ;
+    cout << argv[pos] << endl;
 }
 
