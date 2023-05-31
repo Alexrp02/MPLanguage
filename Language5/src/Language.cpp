@@ -270,7 +270,7 @@ void Language::sort() {
  * if the given file cannot be opened or if an error occurs while writing
  * to the file
  */
-void Language::save(const char fileName[]) const {
+void Language::save(const char fileName[], char mode) const {
     ofstream file;
     //We open the file
     file.open(fileName);

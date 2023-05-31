@@ -167,7 +167,7 @@ public:
      * if the given file cannot be opened or if an error occurs while writing
      * to the file
      */
-    void save(const char fileName[]) const;
+    void save(const char fileName[], char mode = 't') const;
 
     /**
      * @brief Loads into this object the Language object stored in the given 

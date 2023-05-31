@@ -214,21 +214,35 @@ void BigramCounter::calculateFrequencies(const char* fileName) {
 
     // Get a character
     char first = file.get();
+    first = tolower(first);
     char second;
 
     // While the second character isn´t the end of the file, read characters.
     // If the first character readed before the while is the end of the file doesn´t
     // even enter the while.
-    while (second != EOF && first != EOF);
-    // Find the position in the valid characters
-    int first_index = _validCharacters.find(first);
-    // If it is valid get the next character, go on
-    if (first_index != string::npos) {
-        second = file.get();
-        int second_index = _validCharacters.find(second);
-        // If it is a valid character, increment the frequency of that bigram by 1
-        if (second_index != string::npos)
-            increaseFrequency(Bigram(first, second), 1);
+    while (second != EOF && first != EOF) {
+        // Find the position in the valid characters
+        int first_index = _validCharacters.find(first);
+        // If it is valid get the next character, go on
+        if (first_index != string::npos) {
+            second = file.get();
+            second = tolower(second);
+
+            int second_index = _validCharacters.find(second);
+            // If it is a valid character, increment the frequency of that bigram by 1
+            if (second_index != string::npos) {
+                increaseFrequency(Bigram(first, second), 1);
+                // If the second char is valid, we assign it to be the next first
+                first = second;
+            }else if (second != EOF){ // If the second char wasn´t the EOF, get another first character for the next iteration
+                first = file.get() ;
+                first = tolower(first) ;
+            }
+
+        }else { // If the first character is not valid, we get the next char
+            first = file.get() ;
+            first = tolower(first) ;
+        }
     }
 
 }

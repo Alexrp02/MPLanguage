@@ -34,7 +34,7 @@ void showEnglishHelp(ostream& outputStream) {
     outputStream << "<text1.txt> <text2.txt> <text3.txt> ....: names of the input files (at least one is mandatory)" << endl;
 }
 
-void checkArguments(int& pos, bool& binary, string& languageId, string& outputFile, char *argv[], int argc) {
+void checkArguments(int& pos, char& mode, string& languageId, string& outputFile, char *argv[], int argc) {
 
     // Iterate through all the arguments and check if any of them is an option
     string s;
@@ -44,30 +44,30 @@ void checkArguments(int& pos, bool& binary, string& languageId, string& outputFi
         if (s[0] == '-') {
             // Opción de texto
             if (s == "-t") {
-                binary = false;
-                pos ++ ;
+                mode = 't';
+                pos++;
             } else if (s == "-b") {
-                binary = true;
-                pos++ ;
+                mode = 'b';
+                pos++;
             } else if (s == "-l") {
                 if (argc > i + 2) {
                     languageId = argv[++i];
-                    pos += 2 ;
+                    pos += 2;
                 } else {
                     showEnglishHelp(cerr);
-                    exit(1) ;
+                    exit(1);
                 }
             } else if (s == "-o") {
                 if (argc > i + 2) {
                     outputFile = argv[++i];
-                    pos += 2 ;
+                    pos += 2;
                 } else {
                     showEnglishHelp(cerr);
-                    exit(1) ;
+                    exit(1);
                 }
             }
-        }else{
-            break ;
+        } else {
+            break;
         }
     }
 }
@@ -92,14 +92,29 @@ int main(int argc, char *argv[]) {
     }
 
     BigramCounter bc = BigramCounter();
-    int pos = 1;
-    bool binary = false;
+    int offset = 1;
+    char mode = 't';
     string languageId = "unknown";
     string outputFile = "output.bgr";
 
-    // Check the parameters
-    checkArguments(pos, binary, languageId, outputFile, argv, argc);
-    cout << pos << " " << binary << " " << languageId << " " << outputFile << " " << endl;
-    cout << argv[pos] << endl;
+    // Check the options
+    checkArguments(offset, mode, languageId, outputFile, argv, argc);
+    if (mode == 'b')
+        cout << "Executing in binary mode" << endl;
+    else
+        cout << "Executing in text mode" << endl;
+
+    cout << "Language id: " << languageId << endl;
+    cout << "Output file: " << outputFile << endl;
+    cout << "Processing the next files: " << endl;
+    for (int i = offset; i < argc; i++) {
+        cout << "Learning " << argv[i] << " ..." << endl;
+        bc.calculateFrequencies(argv[i]) ;
+    }
+    Language lang = bc.toLanguage();
+    lang.setLanguageId(languageId) ;
+    lang.sort();
+//    cout << "Resulted language: " << endl << lang.toString() << endl;
+    lang.save(outputFile.c_str(),mode) ;
 }
 
