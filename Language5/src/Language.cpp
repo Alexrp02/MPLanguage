@@ -17,8 +17,8 @@
 
 using namespace std;
 
-const string Language::MAGIC_STRING_T="MP-LANGUAGE-T-1.0";
-const string Language::MAGIC_STRING_B="MP-LANGUAGE-B-1.0";
+const string Language::MAGIC_STRING_T = "MP-LANGUAGE-T-1.0";
+const string Language::MAGIC_STRING_B = "MP-LANGUAGE-B-1.0";
 
 void Language::allocate(int n) {
     if (n < 1)
@@ -383,6 +383,55 @@ void Language::append(const BigramFreq& bigramFreq) {
 
 
 }
+
+/**
+ * @brief Overloading of the [] operator for Language class
+ * @param index index of the element. Input parameter
+ * @return A reference to the BigramFreq object at position @p index
+ */
+const BigramFreq& Language::operator[](int index) const {
+    return at(index);
+}
+
+/**
+ * @brief Overloading of the [] operator for Language class
+ * @param index index of the element. Input parameter 
+ * @return A reference to the BigramFreq object at position @p index
+ */
+BigramFreq& Language::operator[](int index) {
+    return at(index);
+}
+
+/**
+ * @brief Overloading of the += operator with a Language parameter. 
+ * For each bigram in the given Language @p language, if that bigram is 
+ * found in this object, then its frequency is increased with the one in 
+ * @p language. If not, a copy of the bigram-pair is appended to the end
+ * of the list of BigramFreq objects in this Language.
+ * @param language A Language object. Input parameter
+ * @return A reference to this object.
+ */
+Language Language::operator+=(Language language) {
+    // Iterate through the language and append every bigramFreq
+    for (int i = 0; i < language.getSize(); i++) {
+        append(language.at(i));
+    }
+
+    return *this;
+}
+
+/**
+ * @brief Overloading of the stream insertion operator for Language class
+ * @param os The output stream to be used
+ * @param language the Language object. Input parameter
+ * @return @p os A reference to the output stream
+ */
+//std::ostream operator<<(std::ostream& os, const Language& language) {
+//    
+//    os << language.toString() ;
+//    
+//    return os;
+//}
 
 /**
  * @brief Appends to this Language object, the list of pairs  

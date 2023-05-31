@@ -114,7 +114,7 @@ int main(int argc, char *argv[]) {
     Language lang = bc.toLanguage();
     lang.setLanguageId(languageId) ;
     lang.sort();
-//    cout << "Resulted language: " << endl << lang.toString() << endl;
+//    cout << "The language is " << lang << endl ;
     lang.save(outputFile.c_str(),mode) ;
 }
 
