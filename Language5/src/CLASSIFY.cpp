@@ -53,20 +53,32 @@ int main(int argc, char *argv[]) {
 
     // Get the language to be classified of the bigramCounter
     Language compared = bc.toLanguage();
-    
+    compared.sort() ;
+    cout << "Compared has " << compared.getSize() << " bigrams." << endl ;
+
     // Set the minimum distance to the first language given
-    
     Language auxLang;
-    auxLang.load(argv[2]) ;
-    int minDistance = compared.getDistance(auxLang) ;
-    auxLang.setLanguageId(auxLang.getLanguageId()) ;
-    
+    auxLang.load(argv[2]);
+    double minDistance = compared.getDistance(auxLang);
+    cout << "First minDistance: " << minDistance << endl;
+    compared.setLanguageId(auxLang.getLanguageId());
+
     // Iterate through all the files with languages and calculate distance, save the minimum distance and set the language id
     for (int i = 2; i < argc; i++) {
         // Load the language
-        Language auxLang;
-        auxLang.load(argv[i]) ;
-        
+        Language auxLang2;
+        auxLang2.load(argv[i]);
+        double distance = compared.getDistance(auxLang2);
+        cout << i << " minDistance: " << distance << endl;
+        if (distance < minDistance) {
+            // Change the minimum distance
+            minDistance = distance;
+            // Change the languageID as the distance is less than the minimum
+            compared.setLanguageId(auxLang2.getLanguageId());
+        }
     }
+
+    // Show the final decision of the language id
+    cout << "Final decision: language " << compared.getLanguageId() << " with a distance of " << minDistance << endl;
 }
 
