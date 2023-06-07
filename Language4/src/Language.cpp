@@ -40,7 +40,7 @@ void Language::copy(const Language& lang) {
     this->_size = lang.getSize();
 
     // Copiamos los bigramFreq
-    for (int i = i; i < _size; i++) {
+    for (int i = 0; i < _size; i++) {
         _vectorBigramFreq[i] = lang.at(i);
     }
 }
@@ -80,6 +80,23 @@ Language::Language(const Language& lang) {
     allocate(lang.getSize());
     // Copy the language 
     copy(lang);
+}
+
+Language::Language(const char *filename) {
+    
+    load(filename);
+}
+
+Language Language::filtrarFreq(int min) {
+    Language auxLang = Language();
+    auxLang.setLanguageId(this->_languageId) ;
+    
+    for(int i=0 ; i<_size ; i++) {
+        if (_vectorBigramFreq[i].getFrequency() > min)
+            auxLang.append(_vectorBigramFreq[i]) ;
+    }
+    
+    return auxLang;
 }
 
 Language& Language::operator=(const Language& orig) {
@@ -369,15 +386,18 @@ void Language::load(const char* fileName) {
 void Language::append(const BigramFreq& bigramFreq) {
     Bigram b = bigramFreq.getBigram();
     int pos = findBigram(b);
+    int size = _size ;
     if (pos == -1) {
         // Create an auxiliar pointer and copy the contents of the actual vector
         BigramFreq* v_aux = new BigramFreq [_size + 1];
-        for (int i = 0; i < _size - 1; i++) {
+        for (int i = 0; i < _size; i++) {
             v_aux[i] = _vectorBigramFreq[i];
         }
+        v_aux[_size] = bigramFreq ;
         // Deallocate the old vector
         deallocate();
         // Assign the new value of the vector pointer
+        _size = size +1 ;
         _vectorBigramFreq = v_aux;
     } else
         _vectorBigramFreq[pos].setFrequency(_vectorBigramFreq[pos].getFrequency() + bigramFreq.getFrequency());

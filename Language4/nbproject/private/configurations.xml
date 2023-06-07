@@ -28,8 +28,12 @@
         <runcommandpicklist>
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" ../Books/fortunata.bgr ../Books/quijote.bgr ../Books/fortunata.bgr</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" -q 2 ../Books/fortunata.bgr ../Books/quijote.bgr ../Books/fortunata.bgr</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" -t min ../Books/fortunata.bgr ../Books/quijote.bgr ../Books/fortunata.bgr</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" -t max ../Books/fortunata.bgr ../Books/quijote.bgr ../Books/fortunata.bgr</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" -t max -q 5 ../Books/fortunata.bgr ../Books/quijote.bgr ../Books/fortunata.bgr</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" ../Books/fortunata.bgr ../Books/quijote.bgr ../Books/fortunata.bgr</runcommand>
+        <runcommand>"${OUTPUT_PATH}" -t max -q 5 ../Books/fortunata.bgr ../Books/quijote.bgr ../Books/fortunata.bgr</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>

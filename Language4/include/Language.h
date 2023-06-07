@@ -49,6 +49,8 @@ public:
      */
     Language(const Language& orig);
     
+    Language(const char *filename) ;
+    
     /**
      * @brief Destructor of class Language
      */
@@ -202,6 +204,8 @@ public:
      * @param language A Language object 
      */
     void join(const Language& language);
+    
+    Language filtrarFreq(int min) ;
       
 private:
     std::string _languageId; ///< language identifier

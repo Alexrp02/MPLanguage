@@ -13,6 +13,7 @@
  */
 
 #include <iostream>
+#include "BigramCounter.h"
 
 using namespace std;
 
@@ -40,6 +41,32 @@ void showEnglishHelp(ostream& outputStream) {
  * @return 0 If there is no error; a value > 0 if error
  */
 int main(int argc, char *argv[]) {
-    cout << "Ejecutando CLASSIFY" << endl ;
+    cout << "Ejecutando CLASSIFY" << endl;
+    if (argc < 3) {
+        showEnglishHelp(cerr);
+        exit(1);
+    }
+
+    // Get the bigramCounter out of the first text
+    BigramCounter bc;
+    bc.calculateFrequencies(argv[1]);
+
+    // Get the language to be classified of the bigramCounter
+    Language compared = bc.toLanguage();
+    
+    // Set the minimum distance to the first language given
+    
+    Language auxLang;
+    auxLang.load(argv[2]) ;
+    int minDistance = compared.getDistance(auxLang) ;
+    auxLang.setLanguageId(auxLang.getLanguageId()) ;
+    
+    // Iterate through all the files with languages and calculate distance, save the minimum distance and set the language id
+    for (int i = 2; i < argc; i++) {
+        // Load the language
+        Language auxLang;
+        auxLang.load(argv[i]) ;
+        
+    }
 }
 
