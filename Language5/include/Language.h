@@ -217,7 +217,7 @@ public:
      * @param language A Language object. Input parameter
      * @return A reference to this object.
      */
-    Language operator+=(Language language);
+    Language operator+=(const Language& language);
       
 private:
     std::string _languageId; ///< language identifier
@@ -236,7 +236,7 @@ private:
  * @param language the Language object. Input parameter
  * @return @p os A reference to the output stream
  */
-std::ostream operator<<(std::ostream& os, const Language& language);
+std::ostream & operator<<(std::ostream& os, const Language& language);
 
 /**
  * @brief Overloading of the stream extraction operator for Language class
@@ -246,6 +246,6 @@ std::ostream operator<<(std::ostream& os, const Language& language);
  * @param language the Language object. Output parameter
  * @return @p is A reference to the input stream
  */
-std::istream operator>>(std::istream& is, Language& language);
+std::istream & operator>>(std::istream& is, Language& language);
 
 #endif /* LANGUAGE_H */

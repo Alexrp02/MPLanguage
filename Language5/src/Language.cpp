@@ -24,13 +24,13 @@ void Language::allocate(int n) {
     if (n < 1)
         throw ("Error, allocation of memory must be of more than 0");
     _vectorBigramFreq = new BigramFreq[n];
+    _size = n;
 }
 
 void Language::deallocate() {
     if (_vectorBigramFreq != nullptr)
         delete [] _vectorBigramFreq;
     _vectorBigramFreq = nullptr;
-    _size = 0;
 }
 
 void Language::copy(const Language& lang) {
@@ -38,7 +38,7 @@ void Language::copy(const Language& lang) {
     this->_size = lang.getSize();
 
     // Copiamos los bigramFreq
-    for (int i = i; i < _size; i++) {
+    for (int i = 0; i < _size; i++) {
         _vectorBigramFreq[i] = lang.at(i);
     }
 }
@@ -85,9 +85,11 @@ Language& Language::operator=(const Language& orig) {
     if (this != &orig) {
         // Deallocate the previous vector
         deallocate();
+        _size = 0 ;
 
         // Allocate the same size
         allocate(orig.getSize());
+        _size = orig.getSize() ;
         // Copy the language 
         copy(orig);
     }
@@ -96,6 +98,7 @@ Language& Language::operator=(const Language& orig) {
 
 Language::~Language() {
     deallocate();
+    _size = 0 ;
 }
 
 /**
@@ -326,8 +329,10 @@ void Language::load(const char* fileName) {
     file >> _size;
 
     // Allocate the number of bigrams, if it had already memory allocated, we deallocate it
-    if (_vectorBigramFreq != nullptr)
+    if (_vectorBigramFreq != nullptr){
         deallocate();
+        _size = 0 ;
+    }
     allocate(_size);
 
     //Read the array of BigramFreq
@@ -370,13 +375,15 @@ void Language::append(const BigramFreq& bigramFreq) {
     if (pos == -1) {
         // Create an auxiliar pointer and copy the contents of the actual vector
         BigramFreq* v_aux = new BigramFreq [_size + 1];
-        for (int i = 0; i < _size - 1; i++) {
+        for (int i = 0; i < _size; i++) {
             v_aux[i] = _vectorBigramFreq[i];
         }
+        v_aux[_size] = bigramFreq ;
         // Deallocate the old vector
         deallocate();
         // Assign the new value of the vector pointer
         _vectorBigramFreq = v_aux;
+        _size = _size + 1;
     } else
         _vectorBigramFreq[pos].setFrequency(_vectorBigramFreq[pos].getFrequency() + bigramFreq.getFrequency());
 
@@ -411,13 +418,23 @@ BigramFreq& Language::operator[](int index) {
  * @param language A Language object. Input parameter
  * @return A reference to this object.
  */
-Language Language::operator+=(Language language) {
+Language Language::operator+=(const Language & language) {
     // Iterate through the language and append every bigramFreq
     for (int i = 0; i < language.getSize(); i++) {
         append(language.at(i));
     }
 
     return *this;
+}
+
+std::ostream & operator<<(std::ostream& os, const Language& language) {
+    
+    return os ;
+}
+
+std::istream & operator>>(std::istream& is, Language& language) {
+
+    return is ;
 }
 
 /**

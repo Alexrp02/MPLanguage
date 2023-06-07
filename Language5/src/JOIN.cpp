@@ -92,22 +92,23 @@ int main(int argc, char* argv[]) {
         cout << "Executing in text mode" << endl;
 
     cout << "Output file: " << outputFile << endl;
-    cout << "Joining the next languages: " << endl;
-    
-    // Read the first language from first file
-    ifstream file ;
-    file.open(argv[offset++]) ;
-    if(!file)
+    cout << "Joining the next languages to " + string(argv[offset]) + ": " << endl;
         
     Language lang ;
-    lang << argv[offset++] ;
+    lang.load(argv[offset++]) ;
     
     // Iterate through the other languages and add join them to the first
     for (int i = offset; i < argc; i++) {
         cout << "Joining " << argv[i] << " ..." << endl;
         Language auxLang;
-        auxLang << argv[i] ;
+        auxLang.load(argv[i]) ;
         lang += auxLang ;
     }
+    
+    // Sort the language
+    lang.sort() ;
+    
+    // Save the joined language to the outputfile
+    lang.save(outputFile.c_str()) ;
 }
 
