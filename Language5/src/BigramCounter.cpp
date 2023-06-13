@@ -26,6 +26,10 @@ int** allocate(int n) {
     sol = new int*[n];
     for (int i = 0; i < n; i++) {
         sol [i] = new int [n];
+        
+        // Initialize the value of the frequency to 0
+        for (int j = 0 ; j<n ; j++)
+            sol[i][j] = 0 ;
     }
     return sol;
 
@@ -223,8 +227,8 @@ void BigramCounter::calculateFrequencies(const char* fileName) {
     char first = file.get();
     first = tolower(first);
     char second ;
-    if(first != EOF)
-        second = file.get();
+    if(first != EOF) // Initialize the value to something
+        second = 'a';
     else
         second = EOF ;
 
