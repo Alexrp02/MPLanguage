@@ -65,6 +65,9 @@ void checkArguments(int& pos, char& mode, string& languageId, string& outputFile
                     showEnglishHelp(cerr);
                     exit(1);
                 }
+            }else {
+                showEnglishHelp(cerr) ;
+                exit(1) ;
             }
         } else {
             break;
@@ -83,7 +86,7 @@ void checkArguments(int& pos, char& mode, string& languageId, string& outputFile
  */
 
 int main(int argc, char *argv[]) {
-    cout << "Running LEARN" << endl;
+//    cout << "Running LEARN" << endl;
 
     // If there isn´t at least one input file, show help and exit
     if (argc < 2) {
@@ -99,16 +102,16 @@ int main(int argc, char *argv[]) {
 
     // Check the options
     checkArguments(offset, mode, languageId, outputFile, argv, argc);
-    if (mode == 'b')
-        cout << "Executing in binary mode" << endl;
-    else
-        cout << "Executing in text mode" << endl;
-
-    cout << "Language id: " << languageId << endl;
-    cout << "Output file: " << outputFile << endl;
-    cout << "Processing the next files: " << endl;
+//    if (mode == 'b')
+//        cout << "Executing in binary mode" << endl;
+//    else
+//        cout << "Executing in text mode" << endl;
+//
+//    cout << "Language id: " << languageId << endl;
+//    cout << "Output file: " << outputFile << endl;
+//    cout << "Processing the next files: " << endl;
     for (int i = offset; i < argc; i++) {
-        cout << "Learning " << argv[i] << " ..." << endl;
+//        cout << "Learning " << argv[i] << " ..." << endl;
         bc.calculateFrequencies(argv[i]) ;
     }
     Language lang = bc.toLanguage();

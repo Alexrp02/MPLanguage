@@ -41,7 +41,7 @@ void showEnglishHelp(ostream& outputStream) {
  * @return 0 If there is no error; a value > 0 if error
  */
 int main(int argc, char *argv[]) {
-    cout << "Ejecutando CLASSIFY" << endl;
+//    cout << "Ejecutando CLASSIFY" << endl;
     if (argc < 3) {
         showEnglishHelp(cerr);
         exit(1);
@@ -54,13 +54,13 @@ int main(int argc, char *argv[]) {
     // Get the language to be classified of the bigramCounter
     Language compared = bc.toLanguage();
     compared.sort() ;
-    cout << "Compared has " << compared.getSize() << " bigrams." << endl ;
+//    cout << "Compared has " << compared.getSize() << " bigrams." << endl ;
 
     // Set the minimum distance to the first language given
     Language auxLang;
     auxLang.load(argv[2]);
     double minDistance = compared.getDistance(auxLang);
-    cout << "First minDistance: " << minDistance << endl;
+//    cout << "First minDistance: " << minDistance << endl;
     compared.setLanguageId(auxLang.getLanguageId());
 
     // Iterate through all the files with languages and calculate distance, save the minimum distance and set the language id
@@ -69,7 +69,7 @@ int main(int argc, char *argv[]) {
         Language auxLang2;
         auxLang2.load(argv[i]);
         double distance = compared.getDistance(auxLang2);
-        cout << i << " minDistance: " << distance << endl;
+//        cout << i << " minDistance: " << distance << endl;
         if (distance < minDistance) {
             // Change the minimum distance
             minDistance = distance;

@@ -69,6 +69,13 @@ BigramCounter::BigramCounter(const BigramCounter& orig) {
     this->_validCharacters = orig._validCharacters;
     // Allocate space in frequency matrix for the new valid characters
     this->_frequency = allocate(_validCharacters.size());
+    
+    // Copy the contents of the frequency vector
+    for (int i=0 ; i<orig.getSize() ; i++) {
+        for (int j=0 ; j<orig.getSize() ; j++) {
+            _frequency[i][j] = orig._frequency[i][j] ;
+        }
+    }
 }
 
 /**
@@ -215,7 +222,11 @@ void BigramCounter::calculateFrequencies(const char* fileName) {
     // Get a character
     char first = file.get();
     first = tolower(first);
-    char second;
+    char second ;
+    if(first != EOF)
+        second = file.get();
+    else
+        second = EOF ;
 
     // While the second character isn´t the end of the file, read characters.
     // If the first character readed before the while is the end of the file doesn´t
@@ -272,7 +283,6 @@ Language BigramCounter::toLanguage() const {
                 lang.at(cont++) = bf;
             }
         }
-
 
     return lang;
 }

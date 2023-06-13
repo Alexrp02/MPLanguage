@@ -333,6 +333,7 @@ void Language::load(const char* fileName) {
         deallocate();
         _size = 0 ;
     }
+    _size = 0 ;
     allocate(_size);
 
     //Read the array of BigramFreq

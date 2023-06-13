@@ -1,3 +1,9 @@
+%%%CALL ../Books/changedMan.txt
+%%%VALGRIND
+%%%DESCRIPTION Learn from changedMan.txt book [LEARN ../Books/changedMan.txt]
+%%%RELEASE LEARN
+%%%FROMFILE output.bgr
+%%%OUTPUT
 MP-LANGUAGE-T-1.0
 unknown
 462
@@ -84,7 +90,7 @@ rs 1098
 di 1083
 pe 1081
 ul 1073
-ac 1065
+ac 1064
 un 1051
 sa 1048
 ss 1043

@@ -43,7 +43,7 @@ public:
      * @param validChars The set of characters that are considered as 
      * part of a word. Input parameter
      */
-    BigramCounter(const std::string& validChars = DEFAULT_VALID_CHARACTERS);
+    BigramCounter(const std::string& validChars = string(DEFAULT_VALID_CHARACTERS) );
 
     /**
      * @brief Copy constructor
@@ -143,7 +143,7 @@ private:
      * character will be considered a separator of words. Only lowercase 
      * characters are included in this string 
      */
-    std::string _validCharacters;
+    std::string _validCharacters = DEFAULT_VALID_CHARACTERS;
 
     /**
      * @brief Overloading of the () operator to access to the element at a 

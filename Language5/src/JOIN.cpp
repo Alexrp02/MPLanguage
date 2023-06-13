@@ -57,6 +57,9 @@ void checkArguments(int& pos, char& mode, string& outputFile, char *argv[], int 
                     showEnglishHelp(cerr);
                     exit(1);
                 }
+            }else {
+                showEnglishHelp(cerr) ;
+                exit(1) ;
             }
         } else {
             break;
@@ -78,7 +81,12 @@ void checkArguments(int& pos, char& mode, string& outputFile, char *argv[], int 
  * @return 0 If there is no error; a value > 0 if error
  */
 int main(int argc, char* argv[]) {
-    cout << "Ejecutando JOIN" << endl ;
+//    cout << "Ejecutando JOIN" << endl ;
+    
+    if(argc < 2){
+        showEnglishHelp(cerr) ;
+        exit(1) ;
+    }
     
     int offset = 1 ;
     char mode = 't' ;
@@ -86,20 +94,20 @@ int main(int argc, char* argv[]) {
     
     // Check the options of the program
     checkArguments(offset, mode, outputFile, argv, argc) ;
-    if (mode == 'b')
-        cout << "Executing in binary mode" << endl;
-    else
-        cout << "Executing in text mode" << endl;
-
-    cout << "Output file: " << outputFile << endl;
-    cout << "Joining the next languages to " + string(argv[offset]) + ": " << endl;
+//    if (mode == 'b')
+//        cout << "Executing in binary mode" << endl;
+//    else
+//        cout << "Executing in text mode" << endl;
+//
+//    cout << "Output file: " << outputFile << endl;
+//    cout << "Joining the next languages to " + string(argv[offset]) + ": " << endl;
         
     Language lang ;
     lang.load(argv[offset++]) ;
     
     // Iterate through the other languages and add join them to the first
     for (int i = offset; i < argc; i++) {
-        cout << "Joining " << argv[i] << " ..." << endl;
+//        cout << "Joining " << argv[i] << " ..." << endl;
         Language auxLang;
         auxLang.load(argv[i]) ;
         lang += auxLang ;
