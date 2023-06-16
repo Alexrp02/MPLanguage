@@ -5,7 +5,7 @@
 
 /* 
  * @file   BigramFreq.h
- * @author estudiante1: Ramos Pe?a, Alejandro
+ * @author estudiante1: Ramos Peña, Alejandro
  *
  * Created on 12 February 2023, 10:40
  */
