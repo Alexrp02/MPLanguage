@@ -1,12 +1,12 @@
 /*
- * Metodolog√≠a de la Programaci√≥n: Language5
+ * Metodolog?a de la ProgramaciÛn: Language5
  * Curso 2022/2023
  */
 
 /** 
  * @file JOIN.cpp
  * @author Silvia Acid Carrillo <acid@decsai.ugr.es>
- * @author Andr√©s Cano Utrera <acu@decsai.ugr.es>
+ * @author AndrÈs Cano Utrera <acu@decsai.ugr.es>
  * @author Luis Castillo Vidal <L.Castillo@decsai.ugr.es>
  * 
  * Created on 29 January 2023, 11:00
@@ -42,7 +42,7 @@ void checkArguments(int& pos, char& mode, string& outputFile, char *argv[], int 
         s = argv[i];
         // The argument is an option
         if (s[0] == '-') {
-            // Opci√≥n de texto
+            // OpciÛn de texto
             if (s == "-t") {
                 mode = 't';
                 pos++;
@@ -117,6 +117,6 @@ int main(int argc, char* argv[]) {
     lang.sort() ;
     
     // Save the joined language to the outputfile
-    lang.save(outputFile.c_str()) ;
+    lang.save(outputFile.c_str(), mode) ;
 }
 

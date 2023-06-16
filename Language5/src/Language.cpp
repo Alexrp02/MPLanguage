@@ -276,16 +276,30 @@ void Language::sort() {
 void Language::save(const char fileName[], char mode) const {
     ofstream file;
     //We open the file
-    file.open(fileName);
+    if(mode == 't')
+        file.open(fileName);
+    else if (mode=='b')
+        file.open(fileName, ios::out|ios::binary) ;
 
     //If there was an error opening it, throw exception.
     if (!file)
         throw (std::ios_base::failure(std::string("An error occurred while opening the file ") + std::string(fileName)));
-    //Save the magic string
-    file << Language::MAGIC_STRING_T << endl;
+    
 
-    //Save the Language String
-    file << toString();
+    if(mode == 't'){
+        //Save the magic string
+        file << Language::MAGIC_STRING_T << endl;
+        //Save the Language String
+        file << toString();
+    }else if (mode == 'b'){
+        //Save the magic string
+        file << Language::MAGIC_STRING_B << endl;
+        file << _languageId << endl ;
+        file << _size << endl ;
+        for(int i=0 ; i<_size ; i++) {
+            _vectorBigramFreq[i].serialize(file) ;
+        }
+    }
     //Close the file
     file.close();
 }
@@ -315,43 +329,40 @@ void Language::load(const char* fileName) {
         throw (std::ios_base::failure(std::string("An error occurred while opening the file ") + std::string(fileName)));
         exit(1);
     }
-    //Read the magic string and if it is not valid, throw exception.
-    std::string magicString;
-    file >> magicString;
-    if (magicString.compare(Language::MAGIC_STRING_T) != 0) {
-        throw (std::invalid_argument("The given file, does not contain a valid magic string."));
-        exit(1);
-    }
-    //Read the language id
-    file >> _languageId;
-
-    //Read the number of bigrams in the file
-    file >> _size;
-
-    // Allocate the number of bigrams, if it had already memory allocated, we deallocate it
-    if (_vectorBigramFreq != nullptr){
-        deallocate();
-        _size = 0 ;
-    }
-    allocate(_size);
-
-    //Read the array of BigramFreq
-    for (int i = 0; i < _size; i++) {
-        std::string bigramText;
-        int bigramFrequency;
-
-        file >> bigramText;
-        file >> bigramFrequency;
-
-        //Set the bigramFreq object with the text and frequency from the file.
-        BigramFreq b;
-        Bigram bigram = Bigram(bigramText);
-        b.setBigram(bigram);
-        b.setFrequency(bigramFrequency);
-
-        //Add the created BigramFreq to the array.
-        _vectorBigramFreq[i] = b;
-    }
+//    //Read the magic string and if it is not valid, throw exception.
+//    std::string magicString;
+//    file >> magicString;
+//    if (magicString.compare(Language::MAGIC_STRING_T) != 0 and magicString.compare(Language::MAGIC_STRING_B) != 0) {
+//        throw (std::invalid_argument("The given file, does not contain a valid magic string."));
+//        exit(1);
+//    }
+//    //Read the language id
+//    file >> _languageId;
+//
+//    //Read the number of bigrams in the file
+//    file >> _size;
+//    
+//    if(_size < 0) {
+//        throw (std::out_of_range("The number of bigrams has to be greater or equal than zero.")) ;
+//    }
+//
+//    // Allocate the number of bigrams, if it had already memory allocated, we deallocate it
+//    if (_vectorBigramFreq != nullptr){
+//        deallocate();
+//        _size = 0 ;
+//    }
+//    allocate(_size);
+//    //Read the array of BigramFreq
+//    for (int i = 0; i < _size; i++) {
+//        //Set the bigramFreq object with the text and frequency from the file.
+//        BigramFreq b;
+//        file >> b ;
+//
+//        //Add the created BigramFreq to the array.
+//        _vectorBigramFreq[i] = b;
+//    }
+    // Use the overrided operator to read.
+    file >> (*this) ;
     file.close();
 }
 
@@ -435,15 +446,30 @@ std::ostream & operator<<(std::ostream& os, const Language& language) {
 std::istream & operator>>(std::istream& is, Language& language) {
     string magicString ;
     is >> magicString ;
+    char mode ;
+    if (magicString == "MP-LANGUAGE-T-1.0")
+        mode = 't' ;
+    else if (magicString == "MP-LANGUAGE-B-1.0")
+        mode = 'b' ;
+    else 
+        throw std::invalid_argument("An invalid magic string found.") ;
     string langId ;
     is >> langId;
     language.setLanguageId(langId) ;
     
     int num ;
     is >> num ;
+    is.get() ;
+     if(num < 0) {
+        throw (std::out_of_range("The number of bigrams has to be greater or equal than zero.")) ;
+    }
     for(int i=0 ; i<num ; i++) {
         BigramFreq bf ;
-        is >> bf ;
+        if(mode == 't')
+            is >> bf ;
+        else{
+            bf.deserialize(is) ;
+        }
         language.append(bf);
     }
     return is ;

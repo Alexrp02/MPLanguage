@@ -146,3 +146,31 @@ bool operator<=(const BigramFreq &bigramFreq1, const BigramFreq & bigramFreq2) {
 bool operator>=(const BigramFreq & bigramFreq1, const BigramFreq & bigramFreq2){
     return (bigramFreq1 > bigramFreq2 or bigramFreq1 == bigramFreq2) ;
 }
+
+/**
+     * Serializes this object to the given output stream. It first serializes
+     * the bigram of this object and them the bytes of the
+     * frequency (an int value) in binary format (using 
+     * method ostream::write(const char* s, streamsize n))
+     * @param outputStream A output stream where this object will be serialized
+     */
+    void BigramFreq::serialize(std::ostream& outputStream) {
+        _bigram.serialize(outputStream) ;
+        outputStream.write(reinterpret_cast<char*>(&_frequency), sizeof(int)) ;
+    }
+    
+    /**
+     * Deserializes this object from the given input stream. It first deserializes
+     * the Bigram of this object and them then the bytes of the
+     * frequency (an int value) in binary format (using 
+     * method istream::read(char* s, streamsize n))
+     * @param inputSstream A input stream from which this object will be deserialized
+     */
+    void BigramFreq::deserialize(std::istream& inputSstream) {
+        Bigram b ;
+        b.deserialize(inputSstream) ;
+        _bigram = b ;
+        int f ;
+        inputSstream.read(reinterpret_cast<char*>(&f), sizeof(int)) ;
+        _frequency = f ;
+    }

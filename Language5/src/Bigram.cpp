@@ -1,12 +1,12 @@
 /*
- * Metodolog�a de la Programaci�n: Language3
+ * Metodolog?a de la Programaci?n: Language3
  * Curso 2022/2023
  */
 
 /** 
  * @file Bigram.cpp
  * @author Silvia Acid Carrillo <acid@decsai.ugr.es>
- * @author Andr�s Cano Utrera <acu@decsai.ugr.es>
+ * @author Andr?s Cano Utrera <acu@decsai.ugr.es>
  * @author Luis Castillo Vidal <L.Castillo@decsai.ugr.es>
  * 
  * Created on 12 February 2023, 10:40
@@ -24,7 +24,7 @@ Bigram::Bigram(const std::string& text) {
         strcpy(_text,text.c_str());
     }
     else{
-        strcpy(_text, "__"); // �Lanzar excepci�n?
+        strcpy(_text, "__"); // ?Lanzar excepci?n?
     }
 }
     
@@ -39,7 +39,7 @@ Bigram::Bigram(const char* text)  {
         strcpy(_text, text);
     }
     else{
-        strcpy(_text, "__");  // �Lanzar excepci�n?
+        strcpy(_text, "__");  // ?Lanzar excepci?n?
     } 
 }
 
@@ -91,3 +91,28 @@ std::istream& operator>>(std::istream& is, Bigram& bigram) {
     bigram = Bigram(text) ;
     return is ;
 }
+
+/**
+     * Serializes this object to the given output stream. Only the two
+     * bytes of the two characters of the bigram are sent to the output stream.
+     * The '\0' is not sent to the output stream
+     * @param outputStream A output stream where this object will be serialized
+     */
+    void Bigram::serialize(std::ostream& outputStream) {
+        outputStream.write(&_text[0], sizeof(char)) ;
+        outputStream.write(&_text[1], sizeof(char)) ;
+    }
+    
+    /**
+     * Deserializes this object from the given input stream. It reads two
+     * bytes from the given input stream and put them in the text of this Bigram
+     * @param inputSstream A input stream from which this object will be deserialized
+     */
+    void Bigram::deserialize(std::istream& inputStream) {
+        char c1='_',c2='_' ;
+        inputStream.read(&c1, sizeof(char)) ;
+        inputStream.read(&c2, sizeof(char)) ;
+        _text[0] = c1 ;
+        _text[1] = c2 ;
+        _text[2] = '\0' ;
+    }
