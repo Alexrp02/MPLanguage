@@ -19,7 +19,7 @@
 
 // Allocate a matrix of ints of nxn size
 
-int** allocate(int n) {
+int** BigramCounter::allocate(int n) {
     int** sol;
 
     // Allocate space for the array of pointers
@@ -37,7 +37,7 @@ int** allocate(int n) {
 
 // Deallocate a matrix of nxn size, where n is @p n
 
-void deallocate(int** &v, int n) {
+void BigramCounter::deallocate(int** &v, int n) {
     for (int i = 0; i < n; i++) {
         delete [] v[i];
     }
@@ -178,7 +178,7 @@ BigramCounter& BigramCounter::operator=(const BigramCounter& orig) {
 
     // Copy the contents of the orig _frequency vector
     for (int i = 0; i < getSize(); i++)
-        for (int j = 0; i < getSize(); j++)
+        for (int j = 0; j < getSize(); j++)
             _frequency[i][j] = orig._frequency[i][j];
 
     return *this;
@@ -290,3 +290,27 @@ Language BigramCounter::toLanguage() const {
 
     return lang;
 }
+
+/**
+     * @brief Overloading of the () operator to access to the element at a 
+     * given position
+     * Query method
+     * @param row Row of the element. Input parameter
+     * @param column Column of the element. Input parameter
+     * @return A const reference to the element at the given position
+     */
+    const int& BigramCounter::operator()(int row, int column) const {
+        return _frequency[row][column] ;
+    }
+
+    /**
+     * @brief Overloading of the () operator to access to the element at a 
+     * given position
+     * Query/Modifier method.
+     * @param row Row of the element. Input parameter 
+     * @param column Column of the element. Input parameter
+     * @return A reference to the element at the given position
+     */
+    int& BigramCounter::operator()(int row, int column){
+        return _frequency[row][column] ;
+    }

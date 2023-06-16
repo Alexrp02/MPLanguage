@@ -137,6 +137,8 @@ public:
 
 private:
     int** _frequency; ///< 2D matrix with the frequency of each bigram
+    int** allocate(int n) ;
+    void deallocate(int** &v, int n) ;
 
     /**
      * Set of characters that are considered as part of a word. Any other 

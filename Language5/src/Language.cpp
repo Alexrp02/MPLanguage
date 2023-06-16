@@ -428,12 +428,24 @@ Language Language::operator+=(const Language & language) {
 }
 
 std::ostream & operator<<(std::ostream& os, const Language& language) {
-    
+    os << language.toString();
     return os ;
 }
 
 std::istream & operator>>(std::istream& is, Language& language) {
-
+    string magicString ;
+    is >> magicString ;
+    string langId ;
+    is >> langId;
+    language.setLanguageId(langId) ;
+    
+    int num ;
+    is >> num ;
+    for(int i=0 ; i<num ; i++) {
+        BigramFreq bf ;
+        is >> bf ;
+        language.append(bf);
+    }
     return is ;
 }
 

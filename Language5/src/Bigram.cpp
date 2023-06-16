@@ -1,12 +1,12 @@
 /*
- * Metodología de la Programación: Language3
+ * Metodologï¿½a de la Programaciï¿½n: Language3
  * Curso 2022/2023
  */
 
 /** 
  * @file Bigram.cpp
  * @author Silvia Acid Carrillo <acid@decsai.ugr.es>
- * @author Andrés Cano Utrera <acu@decsai.ugr.es>
+ * @author Andrï¿½s Cano Utrera <acu@decsai.ugr.es>
  * @author Luis Castillo Vidal <L.Castillo@decsai.ugr.es>
  * 
  * Created on 12 February 2023, 10:40
@@ -24,7 +24,7 @@ Bigram::Bigram(const std::string& text) {
         strcpy(_text,text.c_str());
     }
     else{
-        strcpy(_text, "__"); // ¿Lanzar excepción?
+        strcpy(_text, "__"); // ï¿½Lanzar excepciï¿½n?
     }
 }
     
@@ -39,7 +39,7 @@ Bigram::Bigram(const char* text)  {
         strcpy(_text, text);
     }
     else{
-        strcpy(_text, "__");  // ¿Lanzar excepción?
+        strcpy(_text, "__");  // ï¿½Lanzar excepciï¿½n?
     } 
 }
 
@@ -78,4 +78,16 @@ void Bigram::toUpper() {
 
 bool isValidCharacter(char character, const string& validCharacters) {
     return validCharacters.find(character)!=string::npos;
+}
+
+std::ostream& operator<<(std::ostream& os, const Bigram& bigram) {
+    os << bigram.toString() ;
+    return os ;
+}
+
+std::istream& operator>>(std::istream& is, Bigram& bigram) {
+    string text ;
+    is >> text ;
+    bigram = Bigram(text) ;
+    return is ;
 }
